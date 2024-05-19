@@ -1,0 +1,246 @@
+/* index.html */
+/* FORM CONTAINER */
+.container{
+    background-color: #90ee9052; 
+    width:50%;height: max-content; 
+    margin: 12% 20%; 
+    padding: 5%; 
+    box-shadow: -4px 4px 10px #00000085;
+}
+/* ID SUBBUTTON 1 */
+#subButton1{
+    border-radius: 20px; 
+    box-shadow: -1px 1px 5px #00000085;
+    background-color: #ffffffbb;
+    color: rgb(40, 39, 39);
+    cursor: pointer;
+}
+/* SUBBUTTON HOVER */
+#subButton1:hover{
+    border: 3px solid rgb(40, 39, 39);
+    background-color: #aaccffa6;
+    color: rgb(40, 39, 39);
+}
+
+/* main.html */
+/* NAVBAR */
+.navList{
+    height: max-content;
+    background-color: rgba(125, 80, 80, 0.75);
+    border-radius: 30px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0%;
+    box-shadow: -2px 2px 10px #00000085;
+}
+/* NAVBAR ELEMENT */
+.navList li{
+    width: 33%;
+}
+/* SITE NAME */
+.siteName{
+    font-size: 300%;
+    font-weight: bolder;
+    font-family:cursive;
+    text-shadow: 2px 2px 5px #ce4d44;
+}
+/* LOG OUT AND HOME TEXT */
+.logOut,.home{
+    font-size: 150%;
+    color: #ffc2c7e6;
+    text-decoration: none;
+}
+/* LOG OUT AND HOME HOVER */
+.logOut:hover,.home:hover{
+    color: #ffc2c7ac;
+    text-decoration: underline;
+    cursor: pointer;
+}
+/* PROFILE PIC */
+.profilePic{
+    float: right;
+    width: 40px;
+    border-radius: 50px;
+    border: 2px solid white;
+    background-color: antiquewhite;
+    box-shadow: -2px 2px 10px #00000085;
+    
+}
+/* PROFILE PIC HOVER */
+.profilePic:hover{
+    border-color: black;
+    cursor: pointer;
+    box-shadow: -2px 2px 10px #ffffff85;
+}
+.profilePic img{
+    width: 40px;
+}
+/* CONTAINER TO ADD TASK */
+.containerAdd{
+    position: relative;
+    width:80%;
+    margin: 4% 10% 4% 10% ; 
+    background-color: #ffc2c799;
+    font-size: 100px;
+    color:#B6E5D8;
+    border: 0px;
+    border-radius: 40px;
+    box-shadow: -1px 1px 10px #00000085;
+}
+/* CONTAINER HOVER */
+.containerAdd:hover{ 
+    background-color: #b6e5d88c;
+    color:#ffc2c7e6;
+    cursor: pointer;
+}
+
+/* TASK CLASS */
+.task{
+    position:relative;
+    width:80%;
+    height:max-content;
+    margin: 3% 8%;
+    background-color: #ffc2c7e6;
+    font-size: 60%;
+    color:#fd7F20;
+    border: 0px;
+    border-radius: 40px;
+    padding: 1%;
+    box-shadow: -1px 1px 10px #00000085;
+}
+/* TASK ON HOVER */
+.task:hover{
+    background-color:#ffc2c7ac;       
+    border: 0px;
+    cursor: pointer;
+}
+/* TASKTEXT CLASS */
+.taskText{
+    margin-left: 10px;
+}
+/* TASK CHECKBOX */
+.taskCheck{
+    float: right;
+    margin: 0.3% 1% 0% 1%;
+}
+/* TASKTEXT CHECKED */
+.taskTextChecked{
+    margin-left: 10px;
+    text-decoration: line-through;
+    color:#FC2E20;
+}
+/* TASKBUTTON */
+.taskButton{
+    float:right;
+    background-color: #ffc2c7e6;
+    font-size: 10px;
+    color:#B6E5D8;
+    border: 2px solid;
+    margin-right: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+/* TASKBUTTON HOVER */
+.taskButton:hover{
+    background-color:#FC2E20;   
+    cursor: pointer;    
+}
+/* TASK NEAR DEADLINE */
+.deadline{
+    animation: breathe 3s ease-in-out infinite alternate;
+}
+/* TASK DEAD */
+.dead{
+    background-color:#fc2f2089; 
+    color:white;
+}
+/* TASK RESET BUTTON */
+.taskReset{
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin-right: 5px;
+}
+/* BODY BACKGROUND */
+body{
+    background: repeating-linear-gradient(45deg,#ffc2c77b,#b6e5d846,#fbe5c858,#8fdde74e);
+    background-color: #FFFFFF;
+    color: #AACCFF;
+    animation-name: diagonal_move;
+    animation-duration: 50s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+/* BACKGROUND ANIMATION */
+@keyframes diagonal_move {
+    /* BACKGROUND POSITION AT VARIOUS PERCENTAGE OF ANIMATION */
+    0% {
+        background-position: 0rem 0rem;
+    }
+    25% {
+        background-position: 0rem 50rem;
+    }
+    50% {
+        background-position: 50rem 50rem;
+    }
+    75% {
+        background-position: 50rem 0rem;
+    }
+    100% {
+        background-position: 0rem 0rem;
+      }
+  }
+/* DEADLINE ANIMATION */
+@keyframes breathe {
+    0% {
+      background-color:#ffc2c7e6; 
+    }
+    50% {
+      background-color:#fc2f2089; 
+      color:white;
+    }
+    100% {
+      background-color:#ffc2c7e6; 
+    }
+}
+
+/* list.html */
+/* ADD LIST BUTTON CLASS */
+.addListBut{
+    background-color: #ffc2c7e6;
+    color:#fd7F20;
+    border: 0px;
+    width: 30%;
+    height: 40px; 
+    margin: auto 35%;
+    border-radius: 50px;
+    font-size: 120%;
+    box-shadow: -1px 1px 10px #00000085;
+}
+/* ADD LIST HOVER */
+.addListBut:hover{
+    background-color:#fd7F20;
+    color:#ffc2c7e6;
+    border: 0px;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: -1px 1px 10px #00000085;
+}
+
+/* profile.html */
+/* REMBUTTON CLASS */
+.remButton{
+    width: 50%;
+    background-color: #AACCFF;
+    color:#FC2E20;
+    border: 0px;
+    border-radius: 20px;
+}
+/* REMBUTTON HOVER */
+.remButton:hover{
+    background-color:#FC2E20;
+    color:#AACCFF;
+    cursor: pointer;
+}

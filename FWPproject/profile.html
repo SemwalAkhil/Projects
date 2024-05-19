@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./index.css" type="text/css" rel="stylesheet">
+    <script src="./index.js"></script>
+    <link rel="icon" type="image/png" href="./assets/siteLogo.png">
+    <title>Profile</title>
+</head>
+<body style="text-align: center;">
+    <nav>
+        <ul class="navList">
+            <li><a class="home" style="float: left;" href="./main.html">HOME</a></li>
+            <li style="text-align: center;"><span class="siteName">Your To Do</span></li>
+            <li><a class="logOut" style="float: right;" href="./index.html">LOG OUT</a></li>
+        </ul>
+    </nav>
+    <img width="400px" src="./assets/profile.png" alt="" style="border-radius: 190px;border: 2px solid white;background-color: antiquewhite;margin-top: 1%;">
+    <table border="5px" style="width: 40%; margin-left: 30%;margin-top: 1%;">
+        <tr>
+            <th id="userName">USER</th>
+        </tr>
+        <tr>
+            <td id="pTasks">PENDING TASKS</td>
+        </tr>
+        <tr>
+            <td id="rAcc"><button class="remButton" onclick="removeAcc()">DELETE ACCOUNT</button></td>
+        </tr>
+    </table>
+</body>
+</html>

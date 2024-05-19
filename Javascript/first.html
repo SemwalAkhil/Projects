@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <style>
+        .container{
+            border: 2px solid red;
+            margin: 3px;
+        }
+        *{
+            padding: 10px;
+        }
+        .bg-primary{
+            background-color: blueviolet;
+        }
+        #text{
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <div class="container" id="buttonContainer">
+        <button id="click" onclick="clicked()">
+            click me
+            <!--
+                div.<name> -> <div class="name"> </div>
+                button#<id> -> <button id="id"> </button>
+                class -> can be same in multiple elements
+                id -> unique to specific element 
+                    -> id elements can be called directly in web browser inspect console
+                        -> <id>.innerHTML = "New Text";
+                            -> sets inner html of given id to new text
+            -->
+        </button>
+    </div>
+    <div class="container">
+        <h2>
+            Welcome to my site
+        </h2>
+    </div>
+    <div class="container">
+        <p id = "text">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum nihil assumenda corporis sint provident dicta id veritatis nisi amet quisquam. Cupiditate eos, sint consequuntur quis rem quaerat itaque magnam nam?
+        </p>
+    </div>
+    <!-- M1 same file 
+    <script>
+        //Ways to print in Javascript
+
+        //javascript can also be used to reset css and html of website
+        /*
+        alert("Hello World")    //gives web browser toast
+        */
+        /*
+        document.write("I just wrote this") //writes on site
+        */
+        //console API (Application programming interface)
+        /*
+        console.log("Hello ",2+4," World")  //prints in console in inspect menu
+        console.warn("Warning")  //prints yellow color warning on console
+        console.error("Error")   //prints red color error on console
+        console.clear()          //clears console
+        console.assert(4 == 6)  //assertion failed return error on console
+        console.assert(4 == 4)  //assertion passed no error
+        */
+    </script>
+    -->
+    <!-- M2 external -->
+    <script src="first.js"></script>
+</body>
+</html>
+
