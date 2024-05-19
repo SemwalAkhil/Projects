@@ -1,0 +1,2 @@
+Enter message: ";
+    // cin>>str;

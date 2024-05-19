@@ -1,0 +1,21 @@
+.body{
+    margin: 10px 30%;
+}
+.keys{
+    background-color: blueviolet;
+    color: azure;
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+    height: min-content;
+}
+.display{
+    justify-content: end;
+    background-color: rgb(188, 188, 221);
+}
+.divkey{
+    background-color: blueviolet;
+    color: azure;
+    margin: 0%;
+    padding: 0%;
+}

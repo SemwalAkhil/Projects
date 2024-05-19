@@ -1,0 +1,18 @@
+Steps of problem solving
+-> understanding problem
+-> given values
+-> approach
+-> program
+
+rough solution (flowchart/pseudocode) -> program(HLL)(source_code) -> machine understandable
+
+
+***** FLOW OF FOR LOOP *****
+        ------->-------    ------<----
+        |              |   |          |
+for( intialistion ; condition ; updation ){
+                       |             ^
+       --------<--------             |
+       |                             |
+    body --------------->-------------
+}
