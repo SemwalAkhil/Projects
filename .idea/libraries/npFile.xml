@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="npFile">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/C++/npFile/inheritance.zip!/" />
+      <root url="jar://$PROJECT_DIR$/C++/npFile/virtual.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

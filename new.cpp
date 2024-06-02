@@ -3,6 +3,7 @@
 using namespace std;
 
 int main(){
+    /*
     fstream fin("test.txt");
     string str;
 
@@ -27,10 +28,13 @@ int main(){
     gets(str);
     while (getline(fin,str))
     {
-        /* code */
+        // code
     }
     
    
     fin.close();
     return 0;
+    */
+   int n;
+   if (cin>>n){cout<<"hello world";}
 }

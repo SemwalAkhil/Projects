@@ -23,33 +23,29 @@ Output: 2
 
 Explanation: The maximum possible minimum distance will be 2 when 2 cows are placed at positions {1, 3}. Here distance between cows is 2.
 '''
-def isPossible(stalls,k,mid):
-    count = 1
-    distance = 0
+def isPossible(stalls,k,midD):
+    cowCount = 1
+    lastPos = stalls[0]
     for i in range(len(stalls)):
-        if ((distance+stalls[i]) <= mid):
-            distance += stalls[i]
-        else:
-            count += 1
-            distance = stalls[i]
-            if ((stalls[i] > mid) or (count > k)):
-                return False
-    return True
+        if ((stalls[i] - lastPos) >= midD):
+            cowCount += 1
+            lastPos = stalls[i]
+        if (cowCount == k):
+            return True
+    return False
 def aggressiveCows(stalls, k):
     # Write your code here.
-    if (k > len(stalls)):
-        return -1
-    low,high,mid,ans = 0,0,0,-1
-    for i in range(len(stalls)):
-        high += stalls[i]
-    while (high >= low):
-        mid = low + (high-low)//2
-        if isPossible(stalls,k,mid):
-            high = mid - 1
-            ans = mid
+    stalls.sort()
+    minD,maxD,midD,ans = 0,0,0,-1
+    maxD = max(stalls) - min(stalls)
+    while (maxD >= minD):
+        midD = minD + (maxD-minD)//2
+        if (isPossible(stalls,k,midD)):
+            minD = midD + 1
+            ans = midD
         else:
-            low = mid + 1
+            maxD = midD - 1
     return ans
 
-stalls = [1, 2, 3]
+stalls = [1,2,3]
 print(aggressiveCows(stalls,2))
