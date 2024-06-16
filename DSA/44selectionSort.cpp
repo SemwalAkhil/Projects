@@ -10,6 +10,7 @@
     Best Case -> sorted array -> O(n^2) -> no. of comparison remains same
     Worst Case -> reverrse sorted array -> O(n^2) -> no. of comparison remains same
     Space Complexity of selection sort O(1) because variables declaration done in constant space
+    Non - adaptive sort -> The sorting algorithms in which the order of elements of the data doesn’t affect the time complexity of the sorting algorithms are known as non-adaptive sorting algorithms.
     Use Case -> small array , vector or lists
 */
 

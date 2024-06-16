@@ -35,6 +35,24 @@ int main(){
     fin.close();
     return 0;
     */
-   int n;
-   if (cin>>n){cout<<"hello world";}
+//    int n;
+//    if (cin>>n){cout<<"hello world";}
+
+    int a = 5;
+    cout<<++a*a++<<endl; // 6 7 -> Output : 42
+    a = 5;
+    cout<<a++*++a<<endl; // 5 7 -> Output : 35
+    a = 5;
+    cout<<a++<<++a<<endl; // 6 7 -> Output : 67
+    a = 5;
+    cout<<++a<<a++<<endl; // 7 5 -> Output : 75
+    a = 5;
+    cout<<a++<<a<<endl;
+    a = 5;
+    cout<<++a<<a<<endl; 
+    a = 5;
+    cout<<(++a)*(a++)<<endl;
+    a=-28; 
+    a=a>>1;
+    cout<<a;
 }

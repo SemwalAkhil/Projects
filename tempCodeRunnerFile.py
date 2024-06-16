@@ -1,2 +1,2 @@
-match = re.search(pattern1,text)
+ = re.findall(pattern13,text)
 # print(match)

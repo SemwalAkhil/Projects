@@ -118,7 +118,8 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "Please enter a number", Toast.LENGTH_SHORT).show();
             return;
         }
-        double number = Integer.parseInt(input) * weight1 * weight2;
+        float number =
+                Float.parseFloat(input) * (float) weight1 * (float) weight2;
         textView.setText(String.valueOf(number));
     }
 }

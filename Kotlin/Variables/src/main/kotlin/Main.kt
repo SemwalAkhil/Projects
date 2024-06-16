@@ -10,4 +10,4 @@ fun main() {
 //    newName = "ak" //-> reassigning val not allowed
     var age:Int = 15
     println("Hello $userName your age is $age")
-}0
+}

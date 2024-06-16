@@ -9,6 +9,7 @@ Time complexity -> loop inside loop -> O(n^2)
                 -> Best case: already sorted O(n)
                 -> Worst case: reverse array O(n^2)
                 -> stable sorting algorithm
+                -> Adaptive algorithm -> if the data is already sorted, the algorithm will not reorder the elements. As a result, it reduces the number of iterations and improves execution speed.
                 -> in place sort : An in-place algorithm is an algorithm that does not need an extra space and produces an output in the same memory that contains the data by transforming the input 'in-place'. However, a small constant extra space used for variables is allowed.
 '''
 def bubbleSort(arr,n):
