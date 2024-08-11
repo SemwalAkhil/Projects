@@ -8,6 +8,14 @@ export const Contact = () => {
 
   const handleSubmit=(e)=>{
     e.preventDefault();
+    setLoading(true);
+    setError(null);
+    setSuccess(false);
+    if (!firstName || !phone || !email || !message) {
+      setError('Please fill out all fields.');
+      setLoading(false);
+      return;
+    }
     fetch("https://vf-backend.onrender.com/sendEmail",{
           method:"POST",
           headers:{
@@ -19,15 +27,19 @@ export const Contact = () => {
             Email:email,
             Message:message
           })
-        }).then((res)=>
-          res.json()
-        ).then((data)=>{
-          alert("Sent The Data")
-          console.log(data);
-        }).catch((error)=>{
-          console.log(error);
-        })
-  }
+        }).then((res) => res.json())
+    .then((data) => {
+      setLoading(false);
+      setSuccess(true);
+      alert("Data sent successfully!");
+      console.log(data);
+    })
+    .catch((error) => {
+      setLoading(false);
+      setError('An error occurred. Please try again.');
+      console.log(error);
+    });
+  };
   return (
     <div className='mt-5 flex flex-col'>
        <div className='mb-8'>
