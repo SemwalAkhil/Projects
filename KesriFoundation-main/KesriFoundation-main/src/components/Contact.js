@@ -14,23 +14,25 @@ export const Contact = () => {
     setLoading(true);
     setError(null);
     setSuccess(false);
-    if (!firstName || !phone || !email || !message) {
+    if (!firstName.trim() || !phone.trim() || !email.trim() || !message.trim()) {
       setError('Please fill out all fields.');
       setLoading(false);
       return;
     }
-    fetch("https://vf-backend.onrender.com/sendEmail",{
-          method:"POST",
-          headers:{
-            "Content-Type":"application/json"
-          },
-          body:JSON.stringify({
-            Name:firstName,
-            Phone:"+91 "+phone,
-            Email:email,
-            Message:message
-          })
-        }).then((res) => res.json())
+
+    fetch("https://vf-backend.onrender.com/sendEmail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        Name: firstName.trim(),
+        Phone: "+91 " + phone.trim(),
+        Email: email.trim(),
+        Message: message.trim()
+      })
+    })
+    .then((res) => res.json())
     .then((data) => {
       setLoading(false);
       setSuccess(true);
