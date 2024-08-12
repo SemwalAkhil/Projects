@@ -1,0 +1,3 @@
+Android devices come in different screen sizes (phones, tablets, and TVs to name a few), and their screens also have different pixel sizes. That is, while one device has 160 pixels per square inch, another device fits 480 pixels in the same space. If you don't consider these variations in pixel density, the system might scale your images, which could result in blurry images, or large images that consume too much memory, or images that are sized improperly.
+
+When you resize images that are larger than the Android system can handle, an out-of-memory error is thrown. For photographs and background images, such as the current image, the androidparty.png, you should place them in the drawable-nodpi folder, which stops the resizing behavior.

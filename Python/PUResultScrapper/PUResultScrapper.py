@@ -90,9 +90,19 @@ class resulltScraper:
             print("Results successfully written to results.csv")
         return marksList
 
+def getValue(string:str,default:int):
+    val = input("Enter {string} (default value : {default}) : ".format(string=string,default=default))
+    if (val.isnumeric()):
+        return int(val)
+    return default
 
 if __name__ == "__main__":
-    url = 'https://results.puexam.in/ShowResultSemester.aspx?CL=OMWrspIZfRw%3d&SS=uoYiWu2CrbE%3d&Sem=0Zd0+cF3s5g%3d'
+    start = getValue("starting roll no.",23051671)
+    end =  getValue("ending roll no.",23051774)
+    sem = getValue("semester",1)
+    # url = 'https://results.puexam.in/ShowResultSemester.aspx?CL=OMWrspIZfRw%3d&SS=uoYiWu2CrbE%3d&Sem=0Zd0+cF3s5g%3d' #sem1
+    # url = "https://results.puexam.in/ShowResultSemester.aspx?CL=OMWrspIZfRw=&SS=tXQnFQnpmFw=&Sem=AmdKUuyjej8="
+    url = "https://results.puexam.in/ShowResultSemester.aspx?CL=l50z97gRZro=&SS=tXQnFQnpmFw=&Sem=mzi02FJa0LU="
     headers={
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
             }
@@ -101,24 +111,23 @@ if __name__ == "__main__":
                         '__VIEWSTATEGENERATOR': '1B01934C',
                         '__PREVIOUSPAGE': 'LYtW1wnfngRrVGwRGD7olI6q9R22HPwQHf0bzkABoju9C1k72pLd5p429x_g2CtmuPr9g3xorZeiGcm2igUX_d_ibMkmGVkOOBgSlCMIdUMjb1cq-ZHN3FklC67gWfFR0',
                         '__EVENTVALIDATION': '/wEdAC8NWYSAVU+lC2DWJpY4/GViPBz3fLu77W1aBG3ZSnmeBSg/hO2whnNoZzRuuFNjTNn6Q/FwakJbb/5ufeSQEtlur8euZAnI4NJlvPcKsCDAG1+KhWo0RMOcxfAnd+4BzisusdiqTDwyU9T26KANCu95m6mrqh8scR8brxZcSaBNUotnMQ9FBwV8UzvdPRPcNl355CM0pVLNRAjfDaLxNeaOK/vXI5HNnw/jyMZWeYtGK1BnJ/SnV5fR7swLfGGpeFUONbgzgLnx8vdm3UD9s57Y4HIPlrOeSQLttF/t8367aQuBcyL3RSufUtKN5gtKmXwZNj/psJPaOXl+SvuoH5s3yS7BO8d514sSR2jbdL7m3CF1M+eVybi/Tx15IRXPOpgvNRaKRRixEMo8ddd+0OuPE8e6LaD38DeTElYEw+/sUyfARzb8Ahc7mdwGJgZ9AjERg/gruSllifG64Mp+e0PP+n5vjpTYUkymimMWe8zV/b3+QNOSGugUbPBcGyTFWAXw2IOuMez4rWA2oNE3iyEhgNe6LLplnyEJhSnxVv8sd7exxeOmX1Q7QLiUOguRweTM0Ez3y2uyxeV3l0Pve+BBgdI8SZ08h6zN/3B+c0M9EsamaRLMDtOOkWce7AnI0yI1HjqoTQPJVM6aMDqXDUdEbe9F54Ct3B9DtPbGOecZ8sZ1pqqoX7tY1yg3D/A58EVAP97ywZVflwPCTMhNGpy1XoSltHsbWnb+CFwEVWNOtkUlqXR8WaPzd9txaaf6JuJnF7rxFLhmCONS2JCWXIl2CT3KNu+Zs0Y1Hkk8ZLRG9OmDd5vQ5z0MXYGdFsBptO8JTUgdWlbe73HCZea36/tkHM6aVjnxudt0S/K9iL4OZv8yUNaq3bfBREay9c11eR5bvJr6l0xr8vcbXm/a00n0X4t6KyHJkbPJ7uTnnEGqpTASOKRjv6kgva4Lv0+WS9WoYUgQ1PHW+epoYGCHBTadosqKzPArwn0NcOkIAC78AUtyyzsdRlcynAUHDg+GwjKtNYKjXapeP/YgCSRarALO',
-                        'ctl00$cph1$ddlSemester': '1',  # Selected semester value
+                        'ctl00$cph1$ddlSemester': str(sem),  # Selected semester value
                         'ctl00$cph1$ddlCollCode': '-1',  # Selected exam type value
                         'ctl00$cph1$txtRollNo': '#',  # Replace with the actual roll number
                         'ctl00$cph1$btnShowResult': 'Show Result'
                     }
-    start = 23051671
-    end = 23051774
     
+    # '''
     # initialisation with arguements
     rs = resulltScraper(url,headers,data)
     # print(rs.getOne(23051672))
     results = rs.getAll(start,end,False)
-    
+    # '''
     '''
     # initialisation without arguements
     rs = resulltScraper()
     print(rs.getOne(23051672,url,headers,data))
-    results = rs.getAll(start,end,False,url,headers,data)
+    # results = rs.getAll(start,end,False,url,headers,data)
     '''
     for i in results:
         print(i)

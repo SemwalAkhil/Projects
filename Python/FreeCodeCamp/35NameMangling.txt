@@ -1,0 +1,82 @@
+Name mangling in Python is a technique used to avoid naming conflicts in inheritance hierarchies, specifically when a class intends to prevent its methods and attributes from being overridden or accessed by subclasses. This is achieved by prefixing the attribute name with two underscores (`__`). 
+
+When you use double underscores before an attribute name, Python performs name mangling by internally changing the name of the attribute to include the class name. This makes the attribute name unique within the context of the class and helps prevent accidental access or modification.
+
+Here’s how it works:
+
+1. Definition:
+   ---------------------------------------------------------------------------
+   class MyClass:
+       def __init__(self):
+           self.__private_attribute = 42
+
+       def __private_method(self):
+           print(This is a private method)
+   ---------------------------------------------------------------------------
+
+2. Name Mangling:
+   Internally, the attribute `__private_attribute` and method `__private_method` are changed to `_MyClass__private_attribute` and `_MyClass__private_method`, respectively.
+
+3. Access:
+   Attempting to access these attributes directly using their original names will result in an `AttributeError`:
+   ---------------------------------------------------------------------------
+   obj = MyClass()
+   print(obj.__private_attribute)  # Raises AttributeError
+   ---------------------------------------------------------------------------
+
+4. Access using Mangled Name:
+   They can be accessed using their mangled names:
+   ---------------------------------------------------------------------------
+   print(obj._MyClass__private_attribute)  # Outputs: 42
+   obj._MyClass__private_method()  # Outputs: This is a private method
+   ---------------------------------------------------------------------------
+
+### Purpose of Name Mangling
+
+1. Avoid Naming Conflicts:
+   In complex inheritance hierarchies, subclasses might define attributes with names that accidentally override those in their parent classes. Name mangling helps avoid these conflicts.
+
+2. Encapsulation:
+   It promotes encapsulation by making it more difficult (though not impossible) to access private attributes and methods from outside the class, thus signaling that they are intended for internal use.
+
+### Limitations
+
+- Not True Privacy:
+  Name mangling is not a strict privacy mechanism. It’s more of a name-hiding mechanism and can still be bypassed by accessing the mangled name.
+  
+- Complexity:
+  It can add a bit of complexity, especially when debugging or working with reflection.
+
+Here is a complete example to illustrate:
+
+---------------------------------------------------------------------------
+class Base:
+    def __init__(self):
+        self.__hidden = hidden attribute
+
+    def __hidden_method(self):
+        print(hidden method in Base)
+
+class Derived(Base):
+    def __init__(self):
+        super().__init__()
+        self.__hidden = hidden attribute in Derived
+
+    def __hidden_method(self):
+        print(hidden method in Derived)
+
+base = Base()
+derived = Derived()
+
+# Accessing mangled names
+print(base._Base__hidden)  # Outputs: hidden attribute
+base._Base__hidden_method()  # Outputs: hidden method in Base
+
+print(derived._Base__hidden)  # Outputs: hidden attribute
+print(derived._Derived__hidden)  # Outputs: hidden attribute in Derived
+
+derived._Base__hidden_method()  # Outputs: hidden method in Base
+derived._Derived__hidden_method()  # Outputs: hidden method in Derived
+---------------------------------------------------------------------------
+
+In this example, both `Base` and `Derived` classes have private attributes and methods, and name mangling ensures that they don’t accidentally override each other.

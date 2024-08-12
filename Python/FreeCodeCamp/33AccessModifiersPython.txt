@@ -1,0 +1,48 @@
+In Python, access modifiers like public, private, and protected work a bit differently compared to languages like Java or C++.
+Here's how it works:
+Public:
+    By default, all members (attributes and methods) of a class are public in Python. This means they can be accessed from anywhere, both inside and outside the class.
+    There's no specific keyword to denote public access. 
+Protected:
+    Members prefixed with a single underscore (_) are considered protected. This is a convention, not a strict rule.
+    It indicates that these members should only be accessed within the class and its subclasses. However, they can still be accessed from outside the class.
+Private:
+    Members prefixed with double underscores (__) are considered private.
+    This triggers name mangling, which alters the member's name to make it harder to access from outside the class.
+    It's not true privacy, but it discourages direct access.
+Example:
+Python
+------------------------------------------------------------
+class MyClass:
+    def __init__(self):
+        self.public_var = 10  # Public variable
+        self._protected_var = 20  # Protected variable
+        self.__private_var = 30  # Private variable
+
+    def public_method(self):
+        print("Public method")
+
+    def _protected_method(self):
+        print("Protected method")
+
+    def __private_method(self):
+        print("Private method")
+
+obj = MyClass()
+print(obj.public_var) 
+print(obj._protected_var) 
+# print(obj.__private_var)  # This will raise an error
+
+obj.public_method()  # Calling public method
+obj._protected_method()  # Calling protected method (discouraged)
+# obj.__private_method()  # This will raise an error
+------------------------------------------------------------
+Execution output
+10
+20
+Public method
+Protected method
+Key Points:
+    Python's access modifiers are based on convention and name mangling, not strict enforcement.
+    It's still possible to access protected and private members from outside the class, but it's strongly discouraged.
+    This approach encourages encapsulation and helps prevent accidental modification of internal data.

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="51cc1588-1d26-4823-ae4e-10100d4b9aa3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../DSA/56c++StlStack.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DSA/56c++StlStack.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DSA/57c++StlQueue.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DSA/57c++StlQueue.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DSA/58c++StlPriorityQueue.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DSA/58c++StlPriorityQueue.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DSA/59c++StlSet.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DSA/59c++StlSet.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DSA/60c++StlMap.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../DSA/60c++StlMap.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Class.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modifiers.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/BirthdayCard/app/src/main/res/drawable-nodpi/androidparty.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/BusinessCard/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/BusinessCard/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/BusinessCard/.idea/deploymentTargetSelector.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/BusinessCard/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/BusinessCard/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/BusinessCard/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/BusinessCard/.idea/migrations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/BusinessCard/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/BusinessCard/.idea/other.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/BusinessCard/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/BusinessCard/app/src/main/res/drawable-nodpi/android_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/BusinessCard/app/src/main/res/drawable/baseline_call_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/BusinessCard/app/src/main/res/drawable/baseline_mail_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/BusinessCard/app/src/main/res/drawable/baseline_share_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/app/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/app/proguard-rules.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/app/src/androidTest/java/com/example/greetingcard/ExampleInstrumentedTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/app/src/main/java/com/example/greetingcard/MainActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/app/src/main/java/com/example/greetingcard/ui/theme/Color.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/app/src/main/java/com/example/greetingcard/ui/theme/Theme.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/app/src/main/java/com/example/greetingcard/ui/theme/Type.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/app/src/main/res/drawable/ic_launcher_foreground.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/app/src/main/res/mipmap-hdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/app/src/main/res/mipmap-mdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/app/src/main/res/xml/backup_rules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/app/src/main/res/xml/data_extraction_rules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/app/src/test/java/com/example/greetingcard/ExampleUnitTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/gradle/libs.versions.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/GreetingCard/settings.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/PracticeComposeArticle/app/src/main/res/drawable-nodpi/bg_compose_background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/PracticeTaskManager/app/src/main/res/drawable-nodpi/ic_task_completed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/column.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../androidStudio/row.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DSA/55c++StlList.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../DSA/55c++StlList.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DSA/55c++StlList.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../DSA/55c++StlList.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Python/FreeCodeCamp/26API.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Python/FreeCodeCamp/26API.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Python/PUResultScrapper/PUResultScrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Python/PUResultScrapper/PUResultScrapper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/.idea/deploymentTargetSelector.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/.idea/migrations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/app/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/app/src/androidTest/java/com/example/activitiesandlayout/ExampleInstrumentedTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/app/src/main/java/com/example/activitiesandlayout/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/app/src/main/res/drawable/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/app/src/main/res/drawable/img1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/app/src/main/res/drawable/img2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/app/src/main/res/values-night/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/app/src/main/res/values/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/app/src/main/res/xml/backup_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/app/src/main/res/xml/data_extraction_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/app/src/test/java/com/example/activitiesandlayout/ExampleUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/gradle/libs.versions.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/ActivityAndLayout/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/.idea/deploymentTargetSelector.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/.idea/migrations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/app/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/app/src/androidTest/java/com/example/myapplication/ExampleInstrumentedTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/app/src/main/java/com/example/myapplication/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/app/src/main/res/drawable/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/app/src/main/res/values-night/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/app/src/main/res/values/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/app/src/main/res/xml/backup_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/app/src/main/res/xml/data_extraction_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/app/src/test/java/com/example/myapplication/ExampleUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/gradle/libs.versions.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/GreetingApp/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../androidStudio/JavaRefresher/Chapter2/bin/main/com/example/chapter2/MyClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../androidStudio/JavaRefresher/Chapter2/bin/main/com/example/chapter2/MyClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../api.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../data.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../new.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../new.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../new.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../new.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../tempCodeRunnerFile.cpp" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2jSh4X8P6WEHv4J4x9AA2ra9t5O" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="51cc1588-1d26-4823-ae4e-10100d4b9aa3" name="Changes" comment="" />
+      <created>1721386195979</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1721386195979</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

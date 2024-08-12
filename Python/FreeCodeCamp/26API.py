@@ -8,8 +8,10 @@ def showJoke():
     uhand = urllib.request.urlopen(url)
     data = uhand.read().decode()
     js = json.loads(data)
-    print(js["setup"])
-    input("Hit Enter")
-    print(js["punchline"])
+    return [js["setup"] , js["punchline"]]
 
-showJoke()
+if __name__ == "__main__":
+    joke = showJoke()
+    print(joke[0])
+    input("Hit Enter")
+    print(joke[1])
