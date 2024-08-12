@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 
 export const Contact = () => {
-  const [firstName,setFirstName]=useState(null);
-  const [phone,setPhone]=useState(null);
-  const [email,setEmail]=useState(null);
-  const [message,setMessage]=useState(null);
+  const [firstName, setFirstName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(false);
 
   const handleSubmit=(e)=>{
     e.preventDefault();
