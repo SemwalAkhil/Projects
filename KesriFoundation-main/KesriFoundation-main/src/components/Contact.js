@@ -1,50 +1,33 @@
 import React, { useState } from 'react'
 
 export const Contact = () => {
-  const [firstName, setFirstName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [success, setSuccess] = useState(false);
+  const [firstName,setFirstName]=useState(null);
+  const [phone,setPhone]=useState(null);
+  const [email,setEmail]=useState(null);
+  const [message,setMessage]=useState(null);
 
   const handleSubmit=(e)=>{
     e.preventDefault();
-    setLoading(true);
-    setError(null);
-    setSuccess(false);
-    if (!firstName.trim() || !phone.trim() || !email.trim() || !message.trim()) {
-      setError('Please fill out all fields.');
-      setLoading(false);
-      return;
-    }
-
-    fetch("https://vf-backend.onrender.com/sendEmail", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        Name: firstName.trim(),
-        Phone: "+91 " + phone.trim(),
-        Email: email.trim(),
-        Message: message.trim()
-      })
-    })
-    .then((res) => res.json())
-    .then((data) => {
-      setLoading(false);
-      setSuccess(true);
-      alert("Data sent successfully!");
-      console.log(data);
-    })
-    .catch((error) => {
-      setLoading(false);
-      setError('An error occurred. Please try again.');
-      console.log(error);
-    });
-  };
+    fetch("https://vf-backend.onrender.com/sendEmail",{
+          method:"POST",
+          headers:{
+            "Content-Type":"application/json"
+          },
+          body:JSON.stringify({
+            Name:firstName,
+            Phone:"+91 "+phone,
+            Email:email,
+            Message:message
+          })
+        }).then((res)=>
+          res.json()
+        ).then((data)=>{
+          alert("Sent The Data")
+          console.log(data);
+        }).catch((error)=>{
+          console.log(error);
+        })
+  }
   return (
     <div className='mt-5 flex flex-col'>
        <div className='mb-8'>
