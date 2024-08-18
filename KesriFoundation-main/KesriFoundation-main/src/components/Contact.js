@@ -38,8 +38,7 @@ export const Contact = () => {
       email: email,
       message: message
     };
-    console.log("serviceId: ",process.env.SERVICEID)
-    emailjs.send(process.env.SERVICEID, process.env.TEMPLATEID , templateParams, process.env.PUBLICKEY)
+    emailjs.send("service_h61s7gk", "template_h3o6jc5" , templateParams, "h6TJUNwkd0Sn6kwgr")
       .then((response) => {
         alert('Data sent successfully!');
         console.log(response);
