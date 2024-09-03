@@ -1,0 +1,42 @@
+body{
+    background-color: #123456;
+    color: #ffffff;
+}
+nav{
+    display: flex;
+    background-color: #345678;
+    justify-content: space-between;
+}
+nav > ul{
+    display: flex;
+    list-style:none;
+    justify-content: space-between;
+    align-items: center;
+}
+nav > ul > li{
+    padding: 0 2em;
+}
+nav > ul > li > a:hover{
+    background-color: #ffffff;
+    color: #123456;
+    cursor: pointer;
+}
+a{
+    color:#ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+h1{
+    padding-left: 1em;
+}
+.programs{
+    margin: 1em 0;
+}
+tr > td > a:hover{
+    color: #123456;
+    background-color: #ffffff;
+}
+table{
+    width: 100%;
+    margin: 2em;
+}
