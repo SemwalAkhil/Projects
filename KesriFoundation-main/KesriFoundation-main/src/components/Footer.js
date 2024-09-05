@@ -16,6 +16,9 @@ export const Footer = () => {
             <Link href="/Service" className="mr-4 hover:underline lg:mr-6 font-serif text-green-900">What We Provide</Link>
         </li>
         <li>
+            <Link href="/Accredition" className="mr-4 hover:underline lg:mr-6 font-serif text-green-900">Our Accredition</Link>
+        </li>
+        <li>
             <Link href="/Gallerys" className="mr-4 hover:underline lg:mr-6 font-serif text-green-900">Glimpse of Our Events</Link>
         </li>
         <li>
