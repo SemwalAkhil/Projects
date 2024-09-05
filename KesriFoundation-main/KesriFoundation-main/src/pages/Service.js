@@ -10,7 +10,7 @@ const Service = () => {
   return (
     <>
     <Head>
-      <title>Psynchological Support | Kesri Foundation</title>
+      <title>Psychological Support | Kesri Foundation</title>
       <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
     </Head>
     <div>

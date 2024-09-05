@@ -14,7 +14,7 @@ export const Navig = () => {
     {open&&(<div className='flex flex-row justify-center bg-white max-lg:flex max-lg:flex-col max-lg:justify-center max-lg:items-center'>
 
         <Link href='/'><div className='px-10 text-xl bg-transparent font-serif font-bold text-blue-900 hover:bg-blue-900 hover:text-white rounded-full p-5'><button>Home</button></div></Link>
-        <Link href='/Aboutus'><div className='px-10 text-xl bg-transparent font-serif font-bold text-blue-900 hover:bg-blue-900 rounded-full p-5 hover:text-white'><button>About Kesari Foundation</button></div></Link>
+        <Link href='/Aboutus'><div className='px-10 text-xl bg-transparent font-serif font-bold text-blue-900 hover:bg-blue-900 rounded-full p-5 hover:text-white'><button>About Kesri Foundation</button></div></Link>
         <Link href='/Service'><div className='px-10 text-xl bg-transparent font-serif font-bold text-blue-900 hover:bg-blue-900 rounded-full p-5 hover:text-white'><button>What We Provide</button></div></Link>
         <Link href='/Gallerys'><div className='px-10 text-xl bg-transparent font-serif font-bold text-blue-900 hover:bg-blue-900 rounded-full p-5 hover:text-white'><button>Glimpse of Our Events</button></div></Link>
         <Link href='/ContactUs'><div className='px-10 text-xl bg-transparent font-serif font-bold text-blue-900 hover:bg-blue-900 rounded-full p-5 hover:text-white'><button>Reach Out To Us</button></div></Link>
@@ -23,7 +23,7 @@ export const Navig = () => {
     <div className='flex flex-row justify-center bg-white max-lg:hidden'>
 
         <Link href='/'><div className='px-10 text-xl bg-transparent font-serif font-bold text-blue-900 hover:bg-blue-900 hover:text-white rounded-full p-5'><button>Home</button></div></Link>
-        <Link href='/Aboutus'><div className='px-10 text-xl bg-transparent font-serif font-bold text-blue-900 hover:bg-blue-900 rounded-full p-5 hover:text-white'><button>About Kesari Foundation</button></div></Link>
+        <Link href='/Aboutus'><div className='px-10 text-xl bg-transparent font-serif font-bold text-blue-900 hover:bg-blue-900 rounded-full p-5 hover:text-white'><button>About Kesri Foundation</button></div></Link>
         <Link href='/Service'><div className='px-10 text-xl bg-transparent font-serif font-bold text-blue-900 hover:bg-blue-900 rounded-full p-5 hover:text-white'><button>What We Provide</button></div></Link>
         <Link href='/Gallerys'><div className='px-10 text-xl bg-transparent font-serif font-bold text-blue-900 hover:bg-blue-900 rounded-full p-5 hover:text-white'><button>Glimpse of Our Events</button></div></Link>
         <Link href='/ContactUs'><div className='px-10 text-xl bg-transparent font-serif font-bold text-blue-900 hover:bg-blue-900 rounded-full p-5 hover:text-white'><button>Reach Out To Us</button></div></Link>

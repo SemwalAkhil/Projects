@@ -9,6 +9,7 @@ export const Services = () => {
   const[arp,setARP]=useState(false);
   const[qap,setQAP]=useState(false);
   const[pap,setPAP]=useState(false);
+  const[tie,setTiE]=useState(false);
   return (
     <div className='my-5 flex flex-col break-words'>
    
@@ -21,27 +22,39 @@ export const Services = () => {
         setARP(!arp);
         setPAP(false);
         setQAP(false);
+        setTiE(false);
       }} className={!arp?('p-8 bg-blue-900 w-1/5 rounded-lg max-md:w-full'):('p-8 bg-white w-1/5 max-md:w-full  border-blue-900 rounded-lg border-2')}>
-      <h1 className={!arp?('font-extrabold text-white text-center max-md:w-full'):('font-extrabold text-blue-900 text-center max-md:w-full')}>Scholastic Improvement Program</h1>
+      <h1 className={!arp?('font-extrabold text-white text-center max-md:w-full'):('font-extrabold text-blue-900 text-center max-md:w-full')}>Academic Reinforcement Program</h1>
       </button>
       <button onClick={()=>{
         setARP(false);
         setPAP(false);
         setQAP(!qap);
+        setTiE(false);
       }} className={!qap?('p-8 bg-blue-900 w-1/5 rounded-lg max-md:w-full'):('p-8 bg-white  max-md:w-full w-1/5  border-blue-900 rounded-lg border-2')}>
-      <h1 className={!qap?('font-extrabold max-md:w-full text-white text-center'):('font-extrabold max-md:w-full  text-blue-900 text-center')}>Performance Evaluation Program</h1>
+      <h1 className={!qap?('font-extrabold max-md:w-full text-white text-center'):('font-extrabold max-md:w-full  text-blue-900 text-center')}>Quality Assessment Program</h1>
       </button>
       <button onClick={()=>{
         setARP(false);
         setPAP(!pap);
         setQAP(false);
+        setTiE(false);
       }} className={!pap?('p-8 bg-blue-900 w-1/5 max-md:w-full rounded-lg'):('p-8 bg-white max-md:w-full w-1/5  border-blue-900 rounded-lg border-2')}>
-      <h1 className={!pap?('font-extrabold text-white max-md:w-full text-center'):('font-extrabold text-blue-900 max-md:w-full text-center')}>Behavioral Assessment Initiative</h1>
+      <h1 className={!pap?('font-extrabold text-white max-md:w-full text-center'):('font-extrabold text-blue-900 max-md:w-full text-center')}>Psychometric Assessment Program</h1>
+      </button>
+      <button onClick={()=>{
+        setARP(false);
+        setPAP(false);
+        setQAP(false);
+        setTiE(!tie);
+      }} className={!tie?('p-8 bg-blue-900 w-1/5 max-md:w-full rounded-lg'):('p-8 bg-white max-md:w-full w-1/5  border-blue-900 rounded-lg border-2')}>
+      <h1 className={!tie?('font-extrabold text-white max-md:w-full text-center'):('font-extrabold text-blue-900 max-md:w-full text-center')}>Theatre in Education</h1>
       </button>
     </div>
     {arp&&<ARP/>}
     {qap&&<QAP/>}
     {pap&&<PAP/>}
+    {tie&&<TiE/>}
     <div className='mb-8'>
       <h1 className='text-center font-extrabold text-5xl text-blue-900 max-md:text-4xl'>Our Offerings</h1>
     </div>

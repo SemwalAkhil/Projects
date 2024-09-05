@@ -11,11 +11,7 @@ export const TiE = () => {
         </div>
         <div className='w-full flex flex-col justify-start max-md:w-full max-md:text-center'>
           <p className='text-justify'>
-          Its a conceptual artist who moulds knowledge, feelings, thoughts, sensations, and experience into an active and stimulating educational Process. 
-
-To use drama as a toolbox to empower children, young adults, teachers, community workers to be more confident, expressive, imaginative, creative and serve society as a whole.
-
-This create space, both mental and physical, among the participants to open up and become an efficient individual. It fulfills all types of learning and enhances the development process.
+          Theatre in Education integrates drama and performance arts into the educational curriculum. It is a dynamic tool for fostering creativity, communication skills, and emotional expression among students. The program aims to make learning more engaging and interactive, while also promoting critical thinking, teamwork, and social awareness.
           </p>
         </div>
       </div>
