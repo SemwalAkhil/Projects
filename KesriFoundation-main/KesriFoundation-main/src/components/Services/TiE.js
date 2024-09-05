@@ -7,7 +7,7 @@ export const TiE = () => {
       <h1 className='text-3xl font-serif font-extrabold mb-4 max-md:text-2xl max-md:text-center'>Theatre In Education</h1>
       <div className='flex flex-col justify-center items-center gap-10 max-md:flex-col'>
         <div className='max-md:flex max-md:justify-center'>
-          <Image src={'/images/tie.webp'} width={500} height={500}/>
+          <Image src={'/images/tie.webp'} width={300} height={300}/>
         </div>
         <div className='w-full flex flex-col justify-start max-md:w-full max-md:text-center'>
           <p className='text-justify'>
