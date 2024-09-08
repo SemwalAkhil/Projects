@@ -22,6 +22,9 @@ export const Footer = () => {
             <Link href="/Gallerys" className="mr-4 hover:underline lg:mr-6 font-serif text-green-900">Glimpse of Our Events</Link>
         </li>
         <li>
+            <Link href="/Testimonials" className="mr-4 hover:underline lg:mr-6 font-serif text-green-900">Testimonials</Link>
+        </li>
+        <li>
             <Link href="/ContactUs" className="hover:underline font-serif text-green-900">Reach Out To Us</Link>
         </li>
         

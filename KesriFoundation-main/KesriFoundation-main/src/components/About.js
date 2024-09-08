@@ -39,7 +39,7 @@ Kesri Foundation is certified under <span className='font-extrabold text-blue-90
             <div className='flex flex-col pr-8 gap-2'>
               <div className='flex flex-col'>
                 <strong className='h-auto text-xl text-blue-700'>Mr. Neeraj Kumar</strong>
-                <strong className='h-auto text-lg'>Founder(Psychologist)</strong>
+                <strong className='h-auto text-lg'>Founder and Director</strong>
               </div>
               <div>
               <Button className='w-fit' color='blue' onClick={() => setOpenFounder(true)}>View More</Button>
