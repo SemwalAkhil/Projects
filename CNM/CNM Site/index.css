@@ -31,7 +31,11 @@ nav > ul > li{
         justify-content:center ;
     }
     nav>ul>li {
-        padding: 1em 1em;
+        padding: 0.5em 0.5em;
+    }
+    nav>div>h1{
+        font-size: 1em;
+        padding: 1em 0.5em;
     }
 }
 nav > ul > li > a:hover{
