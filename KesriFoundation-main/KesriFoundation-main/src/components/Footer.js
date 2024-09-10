@@ -13,7 +13,10 @@ export const Footer = () => {
             <Link href="/Aboutus" className="mr-4 hover:underline lg:mr-6 font-serif text-green-900 ">About Kesari Foundation</Link>
         </li>
         <li>
-            <Link href="/Service" className="mr-4 hover:underline lg:mr-6 font-serif text-green-900">What We Provide</Link>
+            <Link href="/Service" className="mr-4 hover:underline lg:mr-6 font-serif text-green-900">What We Provide For Institutes</Link>
+        </li>
+        <li>
+            <Link href="/Service2" className="mr-4 hover:underline lg:mr-6 font-serif text-green-900">What We Provide For Professionals</Link>
         </li>
         <li>
             <Link href="/Accredition" className="mr-4 hover:underline lg:mr-6 font-serif text-green-900">Our Accredition</Link>

@@ -48,6 +48,12 @@ export const Accredition = () => {
         />
         <Image
           src={"/certificates/apcda.jpg"}
+          width={500}
+          height={400}
+          className="border-2 border-blue-900"
+        />
+        <Image
+          src={"/certificates/GSTlogo.png"}
           width={400}
           height={400}
           className="border-2 border-blue-900"
