@@ -11,10 +11,19 @@ body{
         scroll-behavior: smooth;
     }
 }
+.flex{
+    display: flex;
+    align-items: center;
+}
+.logo{
+    height: 50px;
+    margin: 1em;
+}
 nav{
     display: flex;
     background-color: #345678;
     justify-content: space-between;
+    padding: 0 1em;
 }
 nav > ul{
     display: flex;
@@ -50,7 +59,6 @@ a{
 }
 h1{
     font-size: 2em;
-    padding-left: 1em;
 }
 .welcomeMessage{
     text-align: center;

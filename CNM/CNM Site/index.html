@@ -6,13 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="index.css" />
   <script src="index.js"></script>
+  <link rel="icon" type="image/x-icon" href="images/favicon.png">
   <title>Practical Work</title>
 </head>
 
 <body>
   <header id="top">
     <nav>
-      <div>
+      <div class="flex">
+        <img class="logo" src="images\favicon.png" alt="Sigma Logo">
         <h1>Practical Work of Computer Oriented Numerical Methods</h1>
       </div>
       <ul>
@@ -65,6 +67,14 @@
         <td>7.</td>
         <td><a href="#prg7">Newton Raphson</a></td>
       </tr>
+      <tr>
+        <td>8.</td>
+        <td><a href="#prg8">Gauss Elimination</a></td>
+      </tr>
+      <tr>
+        <td>9.</td>
+        <td><a href="#prg9">Gauss Jordan</a></td>
+      </tr>
     </table>
     <td>
       <div class="programs" id="prg1">
@@ -95,6 +105,14 @@
     <div class="programs" id="prg7">
       <label for="code7">Newton Raphson</label>
       <iframe src="codes/newtonRaphson.cpp" id="code7"></iframe>
+    </div>
+    <div class="programs" id="prg8">
+      <label for="code7">Gauss Elimination</label>
+      <iframe src="codes/gaussElim.cpp" id="code8"></iframe>
+    </div>
+    <div class="programs" id="prg9">
+      <label for="code7">Gauss Jordan</label>
+      <iframe src="codes/gaussJordan.cpp" id="code9"></iframe>
     </div>
     <a id="topBtn" class="btn" href="#top">Top</a>
   </main>
