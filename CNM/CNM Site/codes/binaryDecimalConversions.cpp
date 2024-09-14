@@ -62,9 +62,13 @@ string decimalRoBinary(double num)
 }
 int main()
 {
-    string bin = "1011011.11110";
+    string bin;
+    double num;
+    cout << "Enter a binary string : ";
+    cin >> bin;
     cout << binaryToDecimal(bin) << endl;
-    double num = 91.9375;
+    cout << "Enter a number : ";
+    cin >> num;
     cout << decimalRoBinary(num) << endl;
     return 0;
 }

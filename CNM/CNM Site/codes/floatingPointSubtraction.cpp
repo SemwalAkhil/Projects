@@ -33,8 +33,10 @@ pair<float, int> subtracter(float first, float second)
 }
 int main()
 {
-    float first = 1356.57f;
-    float second = 123.45f;
+    float first;
+    float second;
+    cout << "Enter floating point numbers (a b) :";
+    cin >> first >> second;
     pair<float, int> res = subtracter(first, second);
     cout << first << " - " << second << " = " << res.first << "E" << res.second << endl;
 }

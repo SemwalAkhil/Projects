@@ -33,8 +33,10 @@ pair<float, int> adder(float first, float second)
 }
 int main()
 {
-    float first = 1356.57f;
-    float second = 123.45f;
+    float first;
+    float second;
+    cout << "Enter floating point numbers (a b) :";
+    cin >> first >> second;
     pair<float, int> res = adder(first, second);
     cout << first << " + " << second << " = " << res.first << "E" << res.second << endl;
 }
