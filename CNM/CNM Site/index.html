@@ -5,8 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="index.css" />
-  <script src="index.js"></script>
+  <!-- <script src="index.js"></script> -->
   <link rel="icon" type="image/x-icon" href="images/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/vs2015.min.css">
   <title>Practical Work</title>
 </head>
 
@@ -79,44 +80,51 @@
     <td>
       <div class="programs" id="prg1">
         <label for="code1">Binary to Decimal and Vice Versa</label>
-        <iframe src="codes/binaryDecimalConversions.cpp" id="code1"></iframe>
+        <pre><code id="code1" class="language-cpp"></code></pre>
+
       </div>
     </td>
     <div class="programs" id="prg2">
       <label for="code2">Floating Point Addition</label>
-      <iframe src="codes/floatingPointAddition.cpp" id="code2"></iframe>
+      <pre><code id="code2" class="language-cpp"></code></pre>
     </div>
     <div class="programs" id="prg3">
       <label for="code3">Floating Point Subtraction</label>
-      <iframe src="codes/floatingPointSubtraction.cpp" id="code3"></iframe>
+      <pre><code id="code3" class="language-cpp"></code></pre>
     </div>
     <div class="programs" id="prg4">
       <label for="code4">Bisection Method</label>
-      <iframe src="codes/bisection.cpp" id="code4"></iframe>
+      <pre><code id="code4" class="language-cpp"></code></pre>
     </div>
     <div class="programs" id="prg5">
       <label for="code5">Regula Falsi (False Position / Interpolation) Method</label>
-      <iframe src="codes/regulaFalsi.cpp" id="code5"></iframe>
+      <pre><code id="code5" class="language-cpp"></code></pre>
     </div>
     <div class="programs" id="prg6">
       <label for="code6">Secant Method</label>
-      <iframe src="codes/secantMethod.cpp" id="code6"></iframe>
+      <pre><code id="code6" class="language-cpp"></code></pre>
     </div>
     <div class="programs" id="prg7">
       <label for="code7">Newton Raphson</label>
-      <iframe src="codes/newtonRaphson.cpp" id="code7"></iframe>
+      <pre><code id="code7" class="language-cpp"></code></pre>
     </div>
     <div class="programs" id="prg8">
       <label for="code7">Gauss Elimination</label>
-      <iframe src="codes/gaussElim.cpp" id="code8"></iframe>
+      <pre><code id="code8" class="language-cpp"></code></pre>
     </div>
     <div class="programs" id="prg9">
       <label for="code7">Gauss Jordan</label>
-      <iframe src="codes/gaussJordan.cpp" id="code9"></iframe>
+      <pre><code id="code9" class="language-cpp"></code></pre>
     </div>
     <a id="topBtn" class="btn" href="#top">Top</a>
   </main>
   <footer>Made by Akhil Semwal</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/cpp.min.js"></script>
+  <script src="index.js"></script>
+  <!-- <script>hljs.highlightAll();</script> -->
 </body>
 
 </html>
