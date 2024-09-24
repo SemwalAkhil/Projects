@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/vs2015.min.css">
+    <title>Stacks</title>
+</head>
+
+<body>
+    <nav id="#top">
+        <h1>Stacks</h1>
+    </nav>
+    <main>
+        <table>
+            <tr>
+                <th>
+                    SERIAL NUMBER
+                </th>
+                <th>
+                    NAME OF PROGRAM
+                </th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td><a href="#code1">CALCULATE FACTORIAL OF A NUMBER USING RECURSION</a></td>
+            </tr>
+
+
+            <tr>
+                <td>2</td>
+                <td><a href="#code2">CALCULATE FIBONACCI OF A NUMBER USING RECURSION</a></td>
+            </tr>
+
+
+            <tr>
+                <td>3</td>
+                <td><a href="#code3">CALCULATE THE SUM OF NATURAL NUMBERS TILL 10 USING RECURSION.</a></td>
+            </tr>
+
+
+            <tr>
+                <td>4</td>
+                <td><a href="#code4">CONVERT A NUMBER INTO BINARY USING RECURSION</a></td>
+            </tr>
+
+
+            <tr>
+                <td>5</td>
+                <td><a href="#code5">FIND THE LARGEST ELEMENT IN THE INTEGER ARRAY USING RECURSION.</a></td>
+            </tr>
+
+
+            <tr>
+                <td>6</td>
+                <td><a href="#code6">FIND THE SMALLEST ELEMENT IN THE INTEGER ARRAY USING RECURSION.</a></td>
+            </tr>
+
+
+            <tr>
+                <td>7</td>
+                <td><a href="#code7">ENTER THE NUMBER FROM THE USER AND ADD ALL DIGITS OF THE NUMBER USING
+                        RECURSION.</a></td>
+            </tr>
+
+
+            <tr>
+                <td>8</td>
+                <td><a href="#code8">FIND THE ARITHMETIC MEAN OF AN INTEGER ARRAY USING RECURSION.</a></td>
+            </tr>
+
+
+            <tr>
+                <td>9</td>
+                <td><a href="#code9">ENTER THE INFIX EXPRESSION FROM USER AND CONVERT INTO PREFIX EXPRESSION.</a></td>
+            </tr>
+
+
+            <tr>
+                <td>10</td>
+                <td><a href="#code10">ENTER THE INFIX EXPRESSION FROM USER AND CONVERT INTO POSTFIX EXPRESSION.</a></td>
+            </tr>
+
+
+            <tr>
+                <td>11</td>
+                <td><a href="#code11">CREATE A PROGRAM TO EVALUATE THE PREFIX EXPRESSION.</a></td>
+            </tr>
+
+
+            <tr>
+                <td>12</td>
+                <td><a href="#code12">CREATE A PROGRAM TO EVALUATE THE POSTFIX EXPRESSION.</a></td>
+            </tr>
+
+            <tr>
+                <td>13</td>
+                <td><a href="#code13">IMPLEMENT THE TOWER OF HANOI USING STACKS.</a></td>
+            </tr>
+
+        </table>
+        <div class="prgrm">
+            <pre><code id="code1" class="language-cpp"></code></pre>
+        </div>
+        <div class="prgrm">
+            <pre><code id="code2" class="language-cpp"></code></pre>
+        </div>
+        <div class="prgrm">
+            <pre><code id="code3" class="language-cpp"></code></pre>
+        </div>
+        <div class="prgrm">
+            <pre><code id="code4" class="language-cpp"></code></pre>
+        </div>
+        <div class="prgrm">
+            <pre><code id="code5" class="language-cpp"></code></pre>
+        </div>
+        <div class="prgrm">
+            <pre><code id="code6" class="language-cpp"></code></pre>
+        </div>
+        <div class="prgrm">
+            <pre><code id="code7" class="language-cpp"></code></pre>
+        </div>
+        <div class="prgrm">
+            <pre><code id="code8" class="language-cpp"></code></pre>
+        </div>
+    </main>
+    <a href="#top" class="topBtn">TOP</a>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/cpp.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Loop through the numbers 1 to 13
+            for (let i = 1; i <= 13; i++) {
+                // Fetch each corresponding C++ file (e.g., 1.cpp, 2.cpp, ..., 9.cpp)
+                fetch(`CODE/RECURSION/${i}.c`)
+                    .then(response => response.text())
+                    .then(data => {
+                        // Find the <code> element with the matching id and insert the code
+                        const cppCode = document.getElementById("code" + i.toString());
+                        cppCode.textContent = data; // Set the content inside the <code> tag
+                        // Highlight the inserted code using Highlight.js
+                        hljs.highlightElement(cppCode);
+                    })
+                    .catch(error => console.error(`Error fetching ${i}.cpp:`, error));
+            }
+        });
+    </script>
+</body>
+
+</html>
