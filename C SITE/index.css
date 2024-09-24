@@ -80,6 +80,7 @@ th{
 td{
     text-align: center;
     color: var(--tertiary-color);
+    text-transform: uppercase;
 }
 .prgrm{
     width: 80%;
