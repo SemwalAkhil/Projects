@@ -22,11 +22,12 @@ nav{
     display: flex;
     background-color: rgba(0, 0, 0, 0.496);
     width: 90%;
-    margin: 2vh auto;
-    height: 5vh;
+    margin: 2vh auto 5vh auto;
+    height: 10vh;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     border-radius: 20px;
+    padding: 1.5vw;
 }
 .containers{
     display: flex;
@@ -45,15 +46,21 @@ a:hover{
     color: var(--quarterny-color);
     border: 1px solid var(--quarterny-color);
 }
+.containers{
+    display: flex;
+    justify-content: center;
+}
 .container{
     display: flex;
-    width: 50%;
+    width: 40%;
     height: 10vh;
     align-items: center;
     justify-content: center;
     border: 3px solid var(--tertiary-color);
     color:var(--tertiary-color);
     text-decoration: none;text-align: center;
+    border-radius: 30px;
+    margin: 10px;
 }
 .container:hover{
     background-color: var(--secondary-color);
