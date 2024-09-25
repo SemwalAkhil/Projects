@@ -1,0 +1,7 @@
+// 7. IMPLEMENT THE OPERATIONS OF PRIORITY QUEUE IN AN INTEGER ARRAY (INSERT, DELETE, PEEK, ISEMPTY, ISFULL)
+#include <stdio.h>
+
+int main(){
+
+    return 0;
+}

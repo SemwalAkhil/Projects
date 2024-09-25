@@ -59,7 +59,7 @@ void isFull(int *queue, int *front, int *rear)
 int main()
 {
     int queue[size];
-    int value, front = 0, rear = 0, choice = 4;
+    int value, front = 0, rear = 0, choice;
     while (1)
     {
         printf("\n1.INSERT\n2.DELETE\n3.PEEK\n4.ISEMPTY\n5.ISFULL\n6.EXIT\nENTER THE OPERATION: ");
