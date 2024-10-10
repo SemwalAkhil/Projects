@@ -1,0 +1,1 @@
+// 6. Enter the Matrix from user, multiply it with a scalar value and display the answer?

@@ -1,0 +1,1 @@
+// 15. Enter an array from user and print all the palindrome numbers?

@@ -1,0 +1,1 @@
+// 19. Find the local maxima in the array? (An element in an array is a local maxima if it greater than the element after it, and the element before it)

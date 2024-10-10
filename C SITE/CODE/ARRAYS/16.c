@@ -1,0 +1,1 @@
+// 16. Enter two arrays from the user and check they are same or not?

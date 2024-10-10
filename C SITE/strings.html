@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/vs2015.min.css">
-    <title>Arrays</title>
+    <title>Strings</title>
 </head>
 
 <body>
     <nav id="#top">
-        <h1>Arrays</h1>
+        <h1>Strings</h1>
         <div class="navList">
             <a href="index.html">Home</a>
         </div>
@@ -223,7 +223,7 @@
             // Loop through the numbers 1 to 20
             for (let i = 1; i <= 20; i++) {
                 // Fetch each corresponding C++ file (e.g., 1.cpp, 2.cpp, ..., 20.cpp)
-                fetch(`CODE/ARRAY/${i}.c`)
+                fetch(`CODE/STRINGS/${i}.c`)
                     .then(response => response.text())
                     .then(data => {
                         // Find the <code> element with the matching id and insert the code

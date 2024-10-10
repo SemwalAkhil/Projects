@@ -1,0 +1,1 @@
+// 18. Find the local minima in the array? (An element in an array is a local minima if it less than the element after it, and the element before it)
