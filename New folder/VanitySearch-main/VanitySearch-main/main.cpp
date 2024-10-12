@@ -316,6 +316,26 @@ void loadProgress(string fileName, BITCRACK_PARAM *bc)
     }
   }
 }
+
+// ------------------------------------------------------------------------------------------
+
+// Function to check for repeated digits more than twice
+bool hasRepeatedDigits(const string &number)
+{
+  std::map<char, int> digitCount;
+
+  // Count frequency of each digit
+  for (char digit : number)
+  {
+    digitCount[digit]++;
+    if (digitCount[digit] > 2)
+    {
+      return true; // Found a digit repeated more than twice
+    }
+  }
+
+  return false;
+}
 // ------------------------------------------------------------------------------------------
 
 void parseFile(string fileName, vector<string> &lines)
@@ -378,25 +398,6 @@ void parseFile(string fileName, vector<string> &lines)
       }
     }
   }
-}
-// ------------------------------------------------------------------------------------------
-
-// Function to check for repeated digits more than twice
-bool hasRepeatedDigits(const string &number)
-{
-  std::map<char, int> digitCount;
-
-  // Count frequency of each digit
-  for (char digit : number)
-  {
-    digitCount[digit]++;
-    if (digitCount[digit] > 2)
-    {
-      return true; // Found a digit repeated more than twice
-    }
-  }
-
-  return false;
 }
 // ------------------------------------------------------------------------------------------
 
