@@ -6,107 +6,68 @@ struct node
     struct node *next;
     int data;
 };
-void push(struct node *start, int val)
+int push(struct node *top, int val)
 {
     struct node *temp = (struct node *)malloc(sizeof(struct node));
     if (temp != NULL)
     {
+        temp->next = top->next;
         temp->data = val;
-        temp->next = start->next;
-        start->next = temp;
-    }
-    else
-    {
-        printf("MEMORY ALLOCATION FAILED !!!\n");
-    }
-}
-void pop(struct node *start)
-{
-    if ((start->next) != NULL)
-    {
-        printf("%d\n", start->next->data);
-        struct node *temp = start->next->next;
-        free(start->next);
-        start->next = temp;
-    }
-    else
-    {
-        printf("STACK EMPTY - OPERATION FAILED !!!\n");
-    }
-}
-int peek(struct node *start)
-{
-    if ((start->next) != NULL)
-    {
-        return start->next->data;
-    }
-    else
-    {
-        printf("STACK EMPTY - OPERATION FAILED !!!\n");
-        return -1;
-    }
-}
-int isEmpty(struct node *start)
-{
-    if (start->next == NULL)
-    {
-        return 1;
-    }
-    else
-    {
+        top->next = temp;
         return 0;
     }
+    return 1;
 }
-int isFull(struct node *start)
+int pop(struct node *top)
+{
+    int temp = top->next->data;
+    struct node *ptr = top->next;
+    top->next = top->next->next;
+    free(ptr);
+    return temp;
+}
+int peek(struct node *top)
+{
+    return top->next->data;
+}
+static inline int isEmpty(struct node *top)
+{
+    return top->next == NULL;
+}
+static inline int isFull(struct node *top)
 {
     struct node *temp = (struct node *)malloc(sizeof(struct node));
-    if (temp == NULL)
-    {
-        free(temp);
-        temp = NULL;
-        return 1;
-    }
-    else
-    {
-        free(temp);
-        temp = NULL;
-        return 0;
-    }
+    return temp == NULL;
 }
 int main()
 {
-    struct node *start = (struct node *)malloc(sizeof(struct node));
-    start->next = NULL;
-    int input = 4;
-    int val;
+    int choice, num;
+    struct node *top;
     while (1)
     {
-        printf("\n1.PUSH\n2.POP\n3.PEEK\n4.ISEMPTY\n5.ISFULL\n6.EXIT\nENTER OPERATION:");
-        scanf("%d", &input);
-        switch (input)
+        printf("1.Push\n2.Pop\n3.Peek\n4.IsEmpty\n5.IsFull\n6.Exit\nChoose an operation: ");
+        scanf("%d", &choice);
+        switch (choice)
         {
         case 1:
-            printf("ENTER VALUE:");
-            scanf("%d", &val);
-            push(start, val);
+            printf("Enter number to push: ");
+            scanf("%d", &num);
+            !isFull(top) ? push(top, num) : printf("Stack Full !!!\n");
             break;
         case 2:
-            pop(start);
+            !isEmpty(top) ? printf("%d\n", pop(top)) : printf("Stack Empty !!!\n");
             break;
         case 3:
-            printf("%d\n", peek(start));
+            !isEmpty(top) ? printf("%d\n", peek(top)) : printf("Stack Empty !!!\n");
             break;
         case 4:
-            printf("%s\n", isEmpty(start) ? "STACK EMPTY" : "STACK NOT EMPTY");
+            isEmpty(top) ? printf("Stack Empty !!!\n") : printf("Stack not Empty\n");
             break;
         case 5:
-            printf("%s\n", isFull(start) ? "STACK FULL" : "STACK NOT FULL");
+            isFull(top) ? printf("Stack Full !!!\n") : printf("Stack not Full\n");
             break;
         case 6:
-            printf("EXITING...\n");
             return 0;
-        default:
-            break;
         }
     }
 }

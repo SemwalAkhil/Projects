@@ -109,7 +109,7 @@ int main()
         result[ind++] = pop(stack, &top);
     }
     reverse(result, ind);
-    printf("\nPREFIX EXPRESSION : ");
+    printf("PREFIX EXPRESSION : ");
     for (int k = 0; k < ind; k++)
     {
         printf("%c", result[k]);
