@@ -1,5 +1,6 @@
-// 9. Gauss Elim
+// 11.Gauss Seidel
 #include <iostream>
+#include <cmath>
 using namespace std;
 class equation
 {
@@ -44,6 +45,18 @@ public:
         temp.d -= eq.d;
         return temp;
     }
+    double valueX(double y, double z)
+    {
+        return (d - (b * y) - (c * z)) / a;
+    }
+    double valueY(double x, double z)
+    {
+        return (d - (a * x) - (c * z)) / b;
+    }
+    double valueZ(double x, double y)
+    {
+        return (d - (b * y) - (a * x)) / c;
+    }
     equation operator*(double val)
     {
         equation temp(this->a, this->b, this->c, this->d);
@@ -61,36 +74,33 @@ ostream &operator<<(ostream &os, equation eq)
     os << eq.a << "x + " << eq.b << "y + " << eq.c << "z = " << eq.d << "\n";
     return os;
 }
-void gaussElim(equation eq1, equation eq2, equation eq3)
+void gaussSeidel(equation eq1, equation eq2, equation eq3, double tolerance = 0.002)
 {
-    // X ELimination
-    eq2 = eq2 - ((eq1 / eq1.a) * (eq2.a)); // remove x from eq 2 by making coeff 0
-    eq3 = eq3 - ((eq1 / eq1.a) * (eq3.a)); // remove x from eq 3 by making coeff 0
+    double x = 0, y = 0, z = 0;
+    double xNew = 0, yNew = 0, zNew = 0;
+    do
+    {
+        x = xNew;
+        y = yNew;
+        z = zNew;
+        xNew = eq1.valueX(yNew, zNew);
+        yNew = eq2.valueY(xNew, zNew);
+        zNew = eq3.valueZ(xNew, yNew);
+    } while ((abs(xNew - x) > tolerance) && (abs(yNew - y) > tolerance) && (abs(zNew - z) > tolerance));
 
-    // Y Elimination
-    eq3 = eq3 - ((eq2 / eq2.b) * (eq3.b)); // remove y from eq 3 by making coeff 0
-
-    // Z Value
-    eq3 = eq3 / eq3.c; // removing coeff of z
-
-    // Y Value
-    eq2 = eq2 / (eq2.b);    // removing coeff of y
-    eq2.d -= eq2.c * eq3.d; // subtracting cz from d
-    // X Value
-    eq1 = eq1 / eq1.a;                          // removing coeff of x
-    eq1.d -= (eq1.b * eq2.d) + (eq1.c * eq3.d); // subtracting (by + cz) from d
-    cout << "x = " << eq1.d << " y = " << eq2.d << " z = " << eq3.d << endl;
+    cout << "x = " << xNew << " y = " << yNew << " z = " << zNew << endl;
 }
 int main()
 {
     double a, b, c, d;
     equation equations[3];
+    cout << "Equation solver for form ax+by+cz=d\n";
     for (int i = 0; i < 3; i++)
     {
         cout << "Enter Equation " << i + 1 << " a b c d : ";
         cin >> a >> b >> c >> d;
         equations[i].set(a, b, c, d);
     }
-    gaussElim(equations[0], equations[1], equations[2]);
+    gaussSeidel(equations[0], equations[1], equations[2]);
     return 0;
 }

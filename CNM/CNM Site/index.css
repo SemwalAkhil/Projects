@@ -94,6 +94,7 @@ tr > td{
     text-align: left;
 }
 #topBtn{
+    display: none;
     background-color: #ffffff;
     color: #123456;
     position: fixed;

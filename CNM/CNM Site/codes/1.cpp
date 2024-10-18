@@ -1,3 +1,4 @@
+// 1. Binary to decimal and vice versa
 #include <iostream>
 #include <cmath>
 #include <string>

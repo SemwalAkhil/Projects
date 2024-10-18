@@ -1,3 +1,4 @@
+// 4. Bisection Method
 #include <iostream>
 #include <cmath>
 using namespace std;

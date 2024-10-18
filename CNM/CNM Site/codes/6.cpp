@@ -1,3 +1,4 @@
+// 6. Secant
 #include <iostream>
 #include <cmath>
 using namespace std;
@@ -6,17 +7,12 @@ double function(double x, double a, double b, double c, double d, double e)
 {
     return (a * pow(x, 4) + b * pow(x, 3) + c * pow(x, 2) + d * x + e);
 }
-double interpolation(double lower, double upper, double a, double b, double c, double d, double e, double tolerance = 0.002)
+double secant(double lower, double upper, double a, double b, double c, double d, double e, double tolerance = 0.002)
 {
     double mid = (lower * (function(upper, a, b, c, d, e)) - upper * (function(lower, a, b, c, d, e))) / (function(upper, a, b, c, d, e) - function(lower, a, b, c, d, e));
-    // double value = function(mid, a, b, c, d, e);
-    if (mid > lower)
+    if (abs(mid - upper) > tolerance)
     {
-        return interpolation(mid, upper, a, b, c, d, e);
-    }
-    else if (m < (-1 * tolerance))
-    {
-        return interpolation(lower, mid, a, b, c, d, e);
+        return secant(upper, mid, a, b, c, d, e);
     }
     else
     {
@@ -43,7 +39,7 @@ int main()
     {
         if ((function(i, a, b, c, d, e) * function(i + 1, a, b, c, d, e)) <= 0)
         {
-            cout << "Possible root of the equation is : " << interpolation(i, i + 1, a, b, c, d, e);
+            cout << "Possible root of the equation is : " << secant(i, i + 1, a, b, c, d, e);
             return 0;
         }
     }

@@ -94,6 +94,7 @@ pre, code{
     border-radius: 10px;
 }
 .topBtn{
+    display: none;
     position: fixed;
     bottom: 5vh;
     right: 3vw;
