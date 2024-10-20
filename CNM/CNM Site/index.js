@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Loop through the numbers 1 to 9
-    for (let i = 1; i <= 9; i++) {
-        // Fetch each corresponding C++ file (e.g., 1.cpp, 2.cpp, ..., 9.cpp)
+    for (let i = 1; i <= 18; i++) {
+        // Fetch each corresponding C++ file (e.g., 1.cpp, 2.cpp, ..., 18.cpp)
         fetch(`codes/${i}.cpp`)
             .then(response => response.text())
             .then(data => {
