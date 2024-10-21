@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/vs2015.min.css">
+    <link rel="icon" type="image/x-icon" href="logo.png">
     <title>Graphs</title>
 </head>
 
@@ -65,47 +66,98 @@
                 <td>6</td>
                 <td><a href="#code6">TRAVERSE THE ADJACENT LIST WITH BREADTH FIRST SEARCH</a></td>
             </tr>
-
+            <div id="programsContainer"></div>
         </table>
-        <div class="prgrm">
-            <pre><code id="code1" class="language-cpp"></code></pre>
-        </div>
-        <div class="prgrm">
-            <pre><code id="code2" class="language-cpp"></code></pre>
-        </div>
-        <div class="prgrm">
-            <pre><code id="code3" class="language-cpp"></code></pre>
-        </div>
-        <div class="prgrm">
-            <pre><code id="code4" class="language-cpp"></code></pre>
-        </div>
-        <div class="prgrm">
-            <pre><code id="code5" class="language-cpp"></code></pre>
-        </div>
-        <div class="prgrm">
-            <pre><code id="code6" class="language-cpp"></code></pre>
-        </div>
+
     </main>
     <a href="#top" class="topBtn">TOP</a>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/cpp.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Loop through the numbers 1 to 6
+            const programsContainer = document.getElementById('programsContainer');
+
+            // Loop through the numbers 1 to 6 to dynamically create each program block
             for (let i = 1; i <= 6; i++) {
-                // Fetch each corresponding C++ file (e.g., 1.cpp, 2.cpp, ..., 6.cpp)
+                // Create the outer div for each program
+                const programDiv = document.createElement('div');
+                programDiv.classList.add('prgrm');
+                programDiv.id = `prg${i}`;
+
+                // Create the inner div for each programTop
+                const programTop = document.createElement('div');
+                programTop.classList.add('programsTop');
+
+                // Create the Copy button
+                const copyButton = document.createElement('button');
+                copyButton.classList.add('copyBtn');
+                copyButton.textContent = 'Run Code';
+                copyButton.setAttribute('data-code', `code${i}`);
+
+                // Create the pre/code block to display the C++ code
+                const pre = document.createElement('pre');
+                const code = document.createElement('code');
+                code.id = `code${i}`;
+                code.classList.add('language-cpp');
+                pre.appendChild(code);
+
+                // Append top to the program div
+                programTop.appendChild(copyButton);
+
+                // Append everything to the program div
+                programDiv.appendChild(pre);
+
+                // Append the entire program div to the container
+                programsContainer.appendChild(programTop);
+                programsContainer.appendChild(programDiv);
+                // Fetch the C++ file and insert it into the <code> element
                 fetch(`CODE/GRAPHS/${i}.c`)
                     .then(response => response.text())
                     .then(data => {
-                        // Find the <code> element with the matching id and insert the code
-                        const cppCode = document.getElementById("code" + i.toString());
-                        cppCode.textContent = data; // Set the content inside the <code> tag
+                        code.textContent = data; // Set the content inside the <code> tag
                         // Highlight the inserted code using Highlight.js
-                        hljs.highlightElement(cppCode);
+                        hljs.highlightElement(code);
                     })
                     .catch(error => console.error(`Error fetching ${i}.cpp:`, error));
             }
+
+            // Add the copy functionality
+            const copyButtons = document.querySelectorAll('.copyBtn');
+            copyButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const codeId = this.getAttribute('data-code');
+                    const codeElement = document.getElementById(codeId);
+
+                    if (codeElement) {
+                        const codeText = codeElement.innerText;
+
+                        // Create a temporary textarea element to copy the code
+                        const tempTextArea = document.createElement('textarea');
+                        tempTextArea.value = codeText;
+                        document.body.appendChild(tempTextArea);
+
+                        // Select and copy the code
+                        tempTextArea.select();
+                        document.execCommand('copy');
+
+                        // Remove the temporary element
+                        document.body.removeChild(tempTextArea);
+
+                        // Inform the user the code has been copied
+                        alert('Code copied to clipboard!');
+
+                        // Ask if the user wants to be redirected to the Programiz compiler
+                        const userConfirmation = confirm('Do you want to open Programiz online compiler to run this code?');
+
+                        // If user agrees, open Programiz in a new tab
+                        if (userConfirmation) {
+                            window.open('https://www.programiz.com/cpp-programming/online-compiler/', '_blank');
+                        }
+                    }
+                });
+            });
         });
+
     </script>
     <script src="index.js"></script>
 </body>
