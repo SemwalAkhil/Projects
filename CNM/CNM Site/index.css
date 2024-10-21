@@ -93,6 +93,11 @@ tr > td{
 #table2 tr th, #table2 tr td{
     text-align: left;
 }
+.programsTop{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 #topBtn{
     display: none;
     background-color: #ffffff;

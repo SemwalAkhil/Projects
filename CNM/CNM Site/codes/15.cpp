@@ -12,7 +12,7 @@ double factorial(double x)
     }
     return x * factorial(x - 1);
 }
-void getTable(double arr[maxSize][2], int size)
+void getTable(double arr[maxSize][maxSize + 1], int size)
 {
     for (int i = 0; i < size; i++)
     {
@@ -66,6 +66,20 @@ double valueAtX(double x, double arr[maxSize][maxSize + 1], int size)
 }
 int main()
 {
-
+    double table[maxSize][maxSize + 1], val;
+    int size;
+    printf("Enter size of table (max : %d) : ", maxSize);
+    cin >> size;
+    if (size > maxSize)
+    {
+        printf("Max Size exceeded ! Operation Failed !");
+    }
+    getTable(table, size);
+    forwardDifferenceTable(table, size);
+    showTable(table, size);
+    printf("Enter x : ");
+    cin >> val;
+    cout << valueAtX(val, table, size);
+    return 0;
     return 0;
 }
