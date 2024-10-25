@@ -12,7 +12,7 @@ void upper(char *arr)
 }
 int main()
 {
-    char *string[100];
+    char string[100];
     printf("Enter a string : ");
     gets(string);
     upper(string);

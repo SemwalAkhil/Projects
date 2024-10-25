@@ -117,7 +117,7 @@
     </main>
     <a href="#top" class="topBtn">TOP</a>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/cpp.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/c.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const programsContainer = document.getElementById('programsContainer');
@@ -143,7 +143,7 @@
                 const pre = document.createElement('pre');
                 const code = document.createElement('code');
                 code.id = `code${i}`;
-                code.classList.add('language-cpp');
+                code.classList.add('language-c');
                 pre.appendChild(code);
 
                 // Append top to the program div
@@ -163,7 +163,7 @@
                         // Highlight the inserted code using Highlight.js
                         hljs.highlightElement(code);
                     })
-                    .catch(error => console.error(`Error fetching ${i}.cpp:`, error));
+                    .catch(error => console.error(`Error fetching ${i}.c:`, error));
             }
 
             // Add the copy functionality
@@ -196,7 +196,7 @@
 
                         // If user agrees, open Programiz in a new tab
                         if (userConfirmation) {
-                            window.open('https://www.programiz.com/cpp-programming/online-compiler/', '_blank');
+                            window.open('https://www.programiz.com/c-programming/online-compiler/', '_blank');
                         }
                     }
                 });
