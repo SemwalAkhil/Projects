@@ -22,15 +22,11 @@ void trim(char str[maxSize])
         str[j] = str[i + j];
     }
     str[j] = 0;
-    for (int k = i + j - 1; k > 0; k--)
+    for (int k = j - 1; k >= 0; k--)
     {
-        printf("%d\n", k);
-        if (str[k] == ' ')
+        if (str[k] != ' ')
         {
-            str[k] = str[k + 1];
-        }
-        else
-        {
+            str[k + 1] = 0;
             break;
         }
     }
@@ -41,6 +37,6 @@ int main()
     printf("Enter string : ");
     gets(str);
     trim(str);
-    printf("Trimmed string : %strailCheck", str);
+    printf("Trimmed string : '%s'", str);
     return 0;
 }

@@ -73,9 +73,9 @@ int checkMat(char mat[rows][cols])
                 return 1;
             }
         }
-        else if (mat[1][1] == mat[0][0])
+        else if (mat[1][1] == mat[0][2])
         {
-            if (mat[0][2] == mat[0][0]) // d2
+            if (mat[0][2] == mat[2][0]) // d2
             {
                 printf("%c wins !!!", mat[0][2]);
                 return 1;
@@ -113,10 +113,12 @@ int insertVal(char mat[rows][cols], int pos, char val)
     if (mat[r][c] == ' ')
     {
         mat[r][c] = val;
+        return 1;
     }
     else
     {
         printf("Value already exists. Try other location \n");
+        return 0;
     }
 }
 int main()
