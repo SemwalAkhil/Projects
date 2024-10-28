@@ -4,14 +4,6 @@
 #define maxSize 100
 using namespace std;
 
-double factorial(double x)
-{
-    if (x <= 1)
-    {
-        return 1;
-    }
-    return x * factorial(x - 1);
-}
 void getTable(double arr[maxSize][maxSize + 1], int size)
 {
     for (int i = 0; i < size; i++)
@@ -28,7 +20,7 @@ void forwardDifferenceTable(double arr[maxSize][maxSize + 1], int size)
     {
         for (int j = 0; j < (size - count); j++)
         {
-            arr[j][i] = arr[j + 1][i - 1] - arr[j][i - 1];
+            arr[j][i] = (arr[j + 1][i - 1] - arr[j][i - 1]) / (arr[j + i - 1][0] - arr[j][0]);
         }
         count++;
     }
@@ -48,19 +40,16 @@ void showTable(double arr[maxSize][maxSize + 1], int size)
 }
 double valueAtX(double x, double arr[maxSize][maxSize + 1], int size)
 {
-    int pos = 0;
     double result = 0;
-    double u, uProd = 1;
-    u = (x - arr[pos][0]) / (arr[1][0] - arr[0][0]);
-    for (int i = 1; i < (size + 1 - pos); i++)
+    double xProd = 1;
+    for (int i = 1; i < (size + 1); i++)
     {
         for (int j = 0; j < (i - 1); j++)
         {
-            uProd *= u - j;
+            xProd *= x - arr[j][0];
         }
-
-        result += (arr[pos][i] * uProd) / factorial(i - 1);
-        uProd = 1;
+        result += (arr[0][i] * xProd);
+        xProd = 1;
     }
     return result;
 }
