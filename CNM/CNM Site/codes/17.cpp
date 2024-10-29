@@ -1,4 +1,4 @@
-// 16. Trapezoidal Method Functional
+// 17. Trapezoidal Method Functional
 #include <iostream>
 using namespace std;
 #define maxSize 100

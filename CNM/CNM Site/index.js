@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const programsContainer = document.getElementById('programsContainer');
 
     // Loop through the numbers 1 to 18 to dynamically create each program block
-    for (let i = 1; i <= 18; i++) {
+    for (let i = 1; i <= 19; i++) {
         // Create the outer div for each program
         const programDiv = document.createElement('div');
         programDiv.classList.add('programs');

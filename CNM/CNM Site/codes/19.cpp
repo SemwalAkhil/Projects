@@ -1,4 +1,4 @@
-// 18. Simpson's 1/3 Functional
+// 19. Simpson's 3/8 Functional
 #include <iostream>
 using namespace std;
 #define maxSize 100
@@ -17,17 +17,17 @@ double simpson(double arr[maxSize][2], int size)
         }
         else
         {
-            if ((i % 2) == 0)
+            if ((i % 3) == 0)
             {
                 result += 2 * arr[i][1];
             }
             else
             {
-                result += 4 * arr[i][1];
+                result += 3 * arr[i][1];
             }
         }
     }
-    return result * ((arr[1][0] - arr[0][0]) / 3);
+    return result * ((3 * (arr[1][0] - arr[0][0])) / 8);
 }
 int makeTable(double arr[maxSize][2], double start, double end, double difference)
 {
