@@ -1,4 +1,4 @@
-// 9. Gauss Elim
+// 9. Gauss Elimination
 #include <iostream>
 using namespace std;
 class equation

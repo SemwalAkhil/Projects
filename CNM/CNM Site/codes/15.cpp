@@ -44,12 +44,8 @@ double valueAtX(double x, double arr[maxSize][maxSize + 1], int size)
     double xProd = 1;
     for (int i = 1; i < (size + 1); i++)
     {
-        for (int j = 0; j < (i - 1); j++)
-        {
-            xProd *= x - arr[j][0];
-        }
-        result += (arr[0][i] * xProd);
-        xProd = 1;
+        result += arr[0][i] * xProd;
+        xProd *= x - arr[i - 1][0];
     }
     return result;
 }
@@ -69,6 +65,5 @@ int main()
     printf("Enter x : ");
     cin >> val;
     cout << valueAtX(val, table, size);
-    return 0;
     return 0;
 }
