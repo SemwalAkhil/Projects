@@ -28,6 +28,6 @@ int main()
     scanf("%lf", &xEnd);
     printf("Interval : ");
     scanf("%lf", &interval);
-    printf("%lf", euler(xInit, yInit, interval, xEnd)); // Sample Case : 1 5 1.5 0.1 -> 8.809
+    printf("%lf", euler(xInit, yInit, xEnd, interval)); // Sample Case : 1 5 1.5 0.1 -> 8.809
     return 0;
 }
