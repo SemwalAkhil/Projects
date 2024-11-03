@@ -1,11 +1,11 @@
-// 1. ENTER A INTEGER ARRAY FROM THE USER AND PERFORM SELECTION SORT ALGORITHM THROUGH ITERATION. ALSO CALCULATE THE WORST AND BEST COMPLEXITY WITH EXACT TIME.
+// 11. ENTER A STRING ARRAY FROM THE USER AND PERFORM SELECTION SORT ALGORITHM THROUGH ITERATION. ALSO CALCULATE THE WORST AND BEST COMPLEXITY WITH EXACT TIME.
 #include <stdio.h>
 #include <time.h>
 #define maxSize 100
 // selection sorts looks for smallest element in the sorted array
-void selectionSort(int arr[], int size)
+void selectionSort(char arr[], int size)
 {
-    int temp, min;
+    char temp, min;
     for (int i = 0; i < size; i++)
     {
         min = i;
@@ -23,7 +23,7 @@ void selectionSort(int arr[], int size)
 }
 int main()
 {
-    int arr[maxSize];
+    char arr[maxSize];
     int size;
     clock_t start, end;
     printf("ENTER SIZE OF ARRAY : ");
@@ -31,11 +31,12 @@ int main()
     for (int i = 0; i < size; i++)
     {
         printf("ENTER ARRAY ELEMENT : ");
-        scanf("%d", &arr[i]);
+        fflush(stdin);
+        scanf("%c", &arr[i]);
     }
     for (int i = 0; i < size; i++)
     {
-        printf("%d ", arr[i]);
+        printf("%c ", arr[i]);
     }
     start = clock();
     selectionSort(arr, size);
@@ -43,8 +44,9 @@ int main()
     printf("\n");
     for (int i = 0; i < size; i++)
     {
-        printf("%d ", arr[i]);
+        printf("%c ", arr[i]);
     }
-    printf("\nExecuted in %fs", (double)(end - start) / CLOCKS_PER_SEC);
+    printf("\nExecuted in %fs\n", (double)(end - start) / CLOCKS_PER_SEC);
+
     return 0;
 }

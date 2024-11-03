@@ -1,23 +1,23 @@
-// 8. ENTER A INTEGER ARRAY FROM THE USER AND PERFORM MERGE SORT ALGORITHM THROUGH RECURSION. ALSO CALCULATE THE WORST AND BEST COMPLEXITY WITH EXACT TIME.
+// 18. ENTER A STRING ARRAY FROM THE USER AND PERFORM MERGE SORT ALGORITHM THROUGH RECURSION. ALSO CALCULATE THE WORST AND BEST COMPLEXITY WITH EXACT TIME.
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #define maxSize 100
-void display(int arr[], int size)
+void display(char arr[], int size)
 {
     for (int i = 0; i < size; i++)
     {
-        printf("%d ", arr[i]);
+        printf("%c ", arr[i]);
     }
     printf("\n");
 }
 // The array is divided into two halves until each sub-array contains a single element (which is inherently sorted).
-void merge(int arr1[], int start, int mid, int end)
+void merge(char arr1[], int start, int mid, int end)
 {
     int i = start;
     int j = mid + 1;
     int k;
-    int *temp = (int *)calloc(sizeof(int), end - start + 1);
+    char *temp = (char *)calloc(sizeof(char), end - start + 1);
     for (k = 0; k <= (end - start); k++)
     {
         if ((i <= mid) && (j <= end))
@@ -49,7 +49,7 @@ void merge(int arr1[], int start, int mid, int end)
     }
     free(temp);
 }
-void mergeSort(int arr[maxSize], int start, int end)
+void mergeSort(char arr[maxSize], int start, int end)
 {
     if (start >= end)
     {
@@ -65,7 +65,7 @@ void mergeSort(int arr[maxSize], int start, int end)
 }
 int main()
 {
-    int arr[maxSize];
+    char arr[maxSize];
     int size;
     clock_t start, end;
     printf("ENTER SIZE OF ARRAY : ");
@@ -73,7 +73,8 @@ int main()
     for (int i = 0; i < size; i++)
     {
         printf("ENTER ARRAY ELEMENT : ");
-        scanf("%d", &arr[i]);
+        fflush(stdin);
+        scanf("%c", &arr[i]);
     }
     display(arr, size);
     start = clock();
