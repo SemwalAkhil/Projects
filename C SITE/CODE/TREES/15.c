@@ -1,60 +1,48 @@
-// TODO
 // 15. CONSTRUCT BINARY SEARCH TREE FROM GIVEN PREORDER TRAVERSAL THROUGH ARRAYS
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 
-typedef struct Node
+// Structure for a tree node
+struct TreeNode
 {
     int data;
-    struct Node *left;
-    struct Node *right;
-} Node;
+    struct TreeNode *left;
+    struct TreeNode *right;
+};
 
-Node *createNode(int data)
+// Function to create a new tree node
+struct TreeNode *createNode(int data)
 {
-    Node *newNode = (Node *)malloc(sizeof(Node));
+    struct TreeNode *newNode = (struct TreeNode *)malloc(sizeof(struct TreeNode));
     newNode->data = data;
     newNode->left = newNode->right = NULL;
     return newNode;
 }
 
-Node *constructBSTFromPreorder(int *preorder, int size)
+// Function to construct BST from preorder traversal
+struct TreeNode *constructBSTFromPreorder(int *preorder, int *preorderIndex, int n, int min, int max)
 {
-    if (size == 0)
-        return NULL;
-
-    Node *root = createNode(preorder[0]);
-    Node **stack = (Node **)malloc(size * sizeof(Node *));
-    int top = -1;
-    stack[++top] = root;
-
-    for (int i = 1; i < size; i++)
+    // Base case: if we've processed all elements or if the current value is out of the bounds
+    if (*preorderIndex >= n || preorder[*preorderIndex] < min || preorder[*preorderIndex] > max)
     {
-        Node *temp = NULL;
-
-        while (top >= 0 && preorder[i] > stack[top]->data)
-        {
-            temp = stack[top];
-            top--;
-        }
-
-        if (temp != NULL)
-        {
-            temp->right = createNode(preorder[i]);
-            stack[++top] = temp->right;
-        }
-        else
-        {
-            stack[top]->left = createNode(preorder[i]);
-            stack[++top] = stack[top]->left;
-        }
+        return NULL;
     }
 
-    free(stack);
+    // Create the root node with the current value
+    int key = preorder[*preorderIndex];
+    (*preorderIndex)++;
+    struct TreeNode *root = createNode(key);
+
+    // Construct left and right subtrees with updated bounds
+    root->left = constructBSTFromPreorder(preorder, preorderIndex, n, min, key);
+    root->right = constructBSTFromPreorder(preorder, preorderIndex, n, key, max);
+
     return root;
 }
 
-void inorderTraversal(Node *root)
+// Function to perform inorder traversal of the tree
+void inorderTraversal(struct TreeNode *root)
 {
     if (root != NULL)
     {
@@ -64,16 +52,40 @@ void inorderTraversal(Node *root)
     }
 }
 
+// Function to free the allocated memory for the tree
+void freeTree(struct TreeNode *root)
+{
+    if (root != NULL)
+    {
+        freeTree(root->left);
+        freeTree(root->right);
+        free(root);
+    }
+}
+
 int main()
 {
-    int preorder[] = {10, 5, 1, 7, 40, 50};
-    int size = sizeof(preorder) / sizeof(preorder[0]);
+    int n;
+    printf("Enter the number of nodes in the preorder traversal: ");
+    scanf("%d", &n);
 
-    Node *root = constructBSTFromPreorder(preorder, size);
+    int preorder[n];
+    printf("Enter the preorder traversal elements: ");
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &preorder[i]);
+    }
 
-    printf("Inorder Traversal of the constructed BST: ");
+    int preorderIndex = 0; // Initialize index for preorder array
+    struct TreeNode *root = constructBSTFromPreorder(preorder, &preorderIndex, n, INT_MIN, INT_MAX);
+
+    // Display the inorder traversal of the constructed tree
+    printf("Inorder traversal of the constructed BST: ");
     inorderTraversal(root);
     printf("\n");
+
+    // Free the allocated memory for the tree
+    freeTree(root);
 
     return 0;
 }
