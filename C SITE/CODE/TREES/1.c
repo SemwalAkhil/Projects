@@ -2,135 +2,92 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define maxSize 100
-struct node
+// Define a binary tree node
+struct Node
 {
     int data;
-    struct node *left;
-    struct node *right;
+    struct Node *left;
+    struct Node *right;
 };
-int getRootIndex(int root, int inOrder[maxSize], int size)
+
+// Function to create a new node
+struct Node *newNode(int data)
 {
-    for (int i = 0; i < size; i++)
+    struct Node *node = (struct Node *)malloc(sizeof(struct Node));
+    node->data = data;
+    node->left = node->right = NULL;
+    return node;
+}
+
+// Function to search for a value in an array
+int search(int arr[], int start, int end, int value)
+{
+    for (int i = start; i <= end; i++)
     {
-        if (inOrder[i] == root)
-        {
+        if (arr[i] == value)
             return i;
-        }
     }
     return -1;
 }
-int makeBt(struct node *start, int preorder[maxSize], int inorder[maxSize], int size, int rootIndex)
+
+// Recursive function to construct binary tree from preorder and inorder traversals
+struct Node *buildTree(int inorder[], int preorder[], int inStart, int inEnd, int *preIndex)
 {
-    struct node *pos = start;
-    pos->data = preorder[0];
-    int ri = rootIndex;
-    int pi;
-    for (int i = 1; i < size; i++)
-    {
-        for (int j = 0; j < size; j++)
-        {
-            if (inorder[j] == preorder[i])
-            {
-                struct node *temp = (struct node *)malloc(sizeof(struct node));
-                temp->data = preorder[i];
-                temp->left = NULL;
-                temp->right = NULL;
-                if (temp != NULL)
-                {
-                    if (j < ri)
-                    {
-                        printf("%d <- %d\n ", temp->data, pos->data);
-                        pos->left = temp;
-                        pos = pos->left;
-                        pi = ri;
-                        ri = j;
-                    }
-                    else
-                    {
-                        printf("%d -> %d\n ", pos->data, temp->data);
-                        pos->right = temp;
-                        pos = pos->right;
-                        ri = pi;
-                        
-                    }
-                }
-                else
-                {
-                    return 1;
-                }
-            }
-        }
-    }
-    return 0;
+    if (inStart > inEnd)
+        return NULL;
+
+    // The current node in preorder traversal is the root of the subtree
+    int current = preorder[*preIndex];
+    (*preIndex)++;
+    struct Node *node = newNode(current);
+
+    // If the node has no children, return it
+    if (inStart == inEnd)
+        return node;
+
+    // Find the index of this node in inorder traversal
+    int inIndex = search(inorder, inStart, inEnd, current);
+
+    // Recursively build the left and right subtrees
+    node->left = buildTree(inorder, preorder, inStart, inIndex - 1, preIndex);
+    node->right = buildTree(inorder, preorder, inIndex + 1, inEnd, preIndex);
+
+    return node;
 }
-void displayBtPreOrder(struct node *start)
+
+// Function to print the inorder traversal of the tree for verification
+void printInorder(struct Node *node)
 {
-    printf("%d ", start->data);
-    if (start->left != NULL)
-    {
-        displayBtPreOrder(start->left);
-    }
-    else if (start->right != NULL)
-    {
-        displayBtPreOrder(start->right);
-    }
+    if (node == NULL)
+        return;
+    printInorder(node->left);
+    printf("%d ", node->data);
+    printInorder(node->right);
 }
-void displayBtInOrder(struct node *start)
-{
-    if (start->left != NULL)
-    {
-        displayBtInOrder(start->left);
-    }
-    else
-    {
-        printf("%d ", start->data);
-        if (start->right != NULL)
-        {
-            displayBtInOrder(start->right);
-        }
-    }
-}
+
 int main()
 {
+    int inorder[maxSize];
+    int preorder[maxSize];
     int size;
-    int preorder[maxSize], inorder[maxSize];
-    struct node *start = (struct node *)malloc(sizeof(struct node));
-    start->left = NULL;
-    start->right = NULL;
-    int ri;
-    printf("Size of list (max size 100) : ");
+    printf("Enter the number of nodes : ");
     scanf("%d", &size);
-    // for (int i = 0; i < size; i++)
-    // {
-    //     printf("Enter pre order element [%d] : ", i);
-    //     scanf("%d", preorder + i);
-    // }
-    // for (int i = 0; i < size; i++)
-    // {
-    //     printf("Enter in order element [%d] : ", i);
-    //     scanf("%d", inorder + i);
-    // }
-    preorder[0] = 1;
-    preorder[1] = 2;
-    preorder[2] = 4;
-    preorder[3] = 8;
-    preorder[4] = 5;
-    preorder[5] = 3;
-    preorder[6] = 6;
-    preorder[7] = 7;
-    inorder[0] = 4;
-    inorder[1] = 8;
-    inorder[2] = 2;
-    inorder[3] = 5;
-    inorder[4] = 1;
-    inorder[5] = 6;
-    inorder[6] = 3;
-    inorder[7] = 7;
-    ri = getRootIndex(preorder[0], inorder, size);
-    makeBt(start, preorder, inorder, size, ri);
-    printf("Binary Tree InOrder : ");
-    displayBtInOrder(start);
-    printf("\nBinary Tree PreOrder : ");
-    displayBtPreOrder(start);
+    for (int i = 0; i < size; i++)
+    {
+        printf("Enter inorder element : ");
+        scanf("%d", &inorder);
+    }
+    for (int i = 0; i < size; i++)
+    {
+        printf("Enter preorder element : ");
+        scanf("%d", &preorder);
+    }
+    int preIndex = 0;
+
+    struct Node *root = buildTree(inorder, preorder, 0, size - 1, &preIndex);
+
+    printf("Inorder traversal of the constructed tree:\n");
+    printInorder(root);
+
     return 0;
 }
