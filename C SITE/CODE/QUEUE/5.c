@@ -1,88 +1,108 @@
 // 5. IMPLEMENT THE OPERATIONS OF CIRCULAR QUEUE IN AN INTEGER ARRAY (INSERT, DELETE, PEEK, ISEMPTY, ISFULL)
 #include <stdio.h>
-#define size 5
-int isFull(int *queue, int *front, int *rear)
-{
-    if (*rear - *front < size)
-        return 0;
-    else
-        return 1;
-}
-int isEmpty(int *queue, int *front, int *rear)
-{
-    if (*front < *rear)
-        return 0;
-    else
-        return 1;
-}
-void insert(int *queue, int *front, int *rear, int val)
-{
+#define SIZE 5
 
-    if (!isFull(queue, front, rear))
+int queue[SIZE];
+int front = -1;
+int rear = -1;
+
+// Check if the queue is full
+int isFull()
+{
+    return (front == 0 && rear == SIZE - 1) || (front == rear + 1);
+}
+
+// Check if the queue is empty
+int isEmpty()
+{
+    return front == -1;
+}
+
+// Insert an element into the circular queue
+void insert(int value)
+{
+    if (isFull())
     {
-        queue[((*rear)++) % size] = val;
+        printf("Queue Full\n");
     }
     else
     {
-        printf("QUEUE FULL\n");
+        if (front == -1) // First element being inserted
+            front = 0;
+
+        rear = (rear + 1) % SIZE; // Move rear to the next position
+        queue[rear] = value;
+        printf("Inserted %d\n", value);
     }
 }
-void delete(int *queue, int *front, int *rear)
+
+// Delete an element from the circular queue
+void delete()
 {
-    if (!(isEmpty(queue, front, rear)))
+    if (isEmpty())
     {
-        printf("%d\n", queue[((*front)++) % size]);
+        printf("Queue Empty\n");
     }
     else
     {
-        printf("QUEUE EMPTY\n");
+        printf("Deleted %d\n", queue[front]);
+
+        if (front == rear)
+        { // Queue becomes empty
+            front = rear = -1;
+        }
+        else
+        {
+            front = (front + 1) % SIZE; // Move front to the next position
+        }
     }
 }
-void peek(int *queue, int *front, int *rear)
+
+// Peek at the front element in the circular queue
+void peek()
 {
-    if (!(isEmpty(queue, front, rear)))
+    if (isEmpty())
     {
-        printf("%d\n", queue[(*front) % size]);
+        printf("Queue Empty\n");
     }
     else
     {
-        printf("QUEUE EMPTY\n");
+        printf("Front: %d\n", queue[front]);
     }
 }
 
 int main()
 {
-    int queue[size];
-    int val, choice = 4, front = 0, rear = 0;
+    int choice, value;
     while (1)
     {
-        printf("1.INSERT\n2.DELETE\n3.PEEK\n4.ISEMPTY\n5.ISFULL\n6.EXIT\nENTER CHOICE : ");
+        printf("\n1. INSERT\n2. DELETE\n3. PEEK\n4. ISEMPTY\n5. ISFULL\n6. EXIT\nENTER THE OPERATION: ");
         scanf("%d", &choice);
+
         switch (choice)
         {
         case 1:
-            printf("ENTER NUMBER : ");
-            scanf("%d", &val);
-            insert(queue, &front, &rear, val);
+            printf("Enter the value: ");
+            scanf("%d", &value);
+            insert(value);
             break;
         case 2:
-            delete (queue, &front, &rear);
+            delete ();
             break;
         case 3:
-            peek(queue, &front, &rear);
+            peek();
             break;
         case 4:
-            printf("%s", isEmpty(queue, &front, &rear) ? "QUEUE IS EMPTY\n" : "QUEUE IS NOT EMPTY\n");
+            printf(isEmpty() ? "Queue is Empty\n" : "Queue is Not Empty\n");
             break;
         case 5:
-            printf("%s", isFull(queue, &front, &rear) ? "QUEUE IS FULL\n" : "QUEUE IS NOT FULL\n");
+            printf(isFull() ? "Queue is Full\n" : "Queue is Not Full\n");
             break;
         case 6:
             return 0;
         default:
+            printf("Invalid option. Please try again.\n");
             break;
         }
     }
-
-    return 1;
 }

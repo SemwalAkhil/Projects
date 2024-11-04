@@ -1,49 +1,54 @@
-// TODO
 // 15. CONSTRUCT BINARY SEARCH TREE FROM GIVEN PREORDER TRAVERSAL THROUGH ARRAYS
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
 
-// Structure for a tree node
-struct TreeNode
+// Define a node structure for the BST
+struct Node
 {
     int data;
-    struct TreeNode *left;
-    struct TreeNode *right;
+    struct Node *left;
+    struct Node *right;
 };
 
-// Function to create a new tree node
-struct TreeNode *createNode(int data)
+// Helper function to create a new node
+struct Node *newNode(int data)
 {
-    struct TreeNode *newNode = (struct TreeNode *)malloc(sizeof(struct TreeNode));
-    newNode->data = data;
-    newNode->left = newNode->right = NULL;
-    return newNode;
+    struct Node *node = (struct Node *)malloc(sizeof(struct Node));
+    node->data = data;
+    node->left = NULL;
+    node->right = NULL;
+    return node;
 }
 
-// Function to construct BST from preorder traversal
-struct TreeNode *constructBSTFromPreorder(int *preorder, int *preorderIndex, int n, int min, int max)
+// Recursive function to construct BST from preorder traversal
+struct Node *constructBST(int preorder[], int *index, int key, int min, int max, int n)
 {
-    // Base case: if we've processed all elements or if the current value is out of the bounds
-    if (*preorderIndex >= n || preorder[*preorderIndex] < min || preorder[*preorderIndex] > max)
+    // Base case: If the entire preorder array is traversed or key is out of range
+    if (*index >= n || key < min || key > max)
     {
         return NULL;
     }
 
-    // Create the root node with the current value
-    int key = preorder[*preorderIndex];
-    (*preorderIndex)++;
-    struct TreeNode *root = createNode(key);
+    // Allocate memory for the root node of the BST
+    struct Node *root = newNode(key);
+    *index = *index + 1;
 
-    // Construct left and right subtrees with updated bounds
-    root->left = constructBSTFromPreorder(preorder, preorderIndex, n, min, key);
-    root->right = constructBSTFromPreorder(preorder, preorderIndex, n, key, max);
+    // If there are more elements in preorder, construct the left and right subtrees
+    if (*index < n)
+    {
+        // Construct the left subtree for values less than the current key
+        root->left = constructBST(preorder, index, preorder[*index], min, key - 1, n);
+
+        // Construct the right subtree for values greater than the current key
+        root->right = constructBST(preorder, index, preorder[*index], key + 1, max, n);
+    }
 
     return root;
 }
 
-// Function to perform inorder traversal of the tree
-void inorderTraversal(struct TreeNode *root)
+// Utility function to print the inorder traversal of the BST
+void inorderTraversal(struct Node *root)
 {
     if (root != NULL)
     {
@@ -53,40 +58,25 @@ void inorderTraversal(struct TreeNode *root)
     }
 }
 
-// Function to free the allocated memory for the tree
-void freeTree(struct TreeNode *root)
-{
-    if (root != NULL)
-    {
-        freeTree(root->left);
-        freeTree(root->right);
-        free(root);
-    }
-}
-
 int main()
 {
     int n;
-    printf("Enter the number of nodes in the preorder traversal: ");
+    printf("Enter the number of elements in preorder traversal: ");
     scanf("%d", &n);
 
     int preorder[n];
-    printf("Enter the preorder traversal elements: ");
+    printf("Enter the preorder traversal: ");
     for (int i = 0; i < n; i++)
     {
         scanf("%d", &preorder[i]);
     }
 
-    int preorderIndex = 0; // Initialize index for preorder array
-    struct TreeNode *root = constructBSTFromPreorder(preorder, &preorderIndex, n, INT_MIN, INT_MAX);
+    int index = 0;
+    struct Node *root = constructBST(preorder, &index, preorder[0], INT_MIN, INT_MAX, n);
 
-    // Display the inorder traversal of the constructed tree
     printf("Inorder traversal of the constructed BST: ");
     inorderTraversal(root);
     printf("\n");
-
-    // Free the allocated memory for the tree
-    freeTree(root);
 
     return 0;
 }
