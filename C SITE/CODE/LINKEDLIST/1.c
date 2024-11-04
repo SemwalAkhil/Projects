@@ -90,22 +90,19 @@ int deletee(struct node *start)
 int delete(struct node *start, int pos)
 {
     if (pos < 0)
-    {
         return 1;
-    }
+
     struct node *temp = start;
-    struct node *temp2;
     for (int i = 0; i < pos; i++)
     {
-        temp = temp->next;
-        if (temp == NULL)
-        {
+        if (temp->next == NULL)
             return 1;
-        }
+        temp = temp->next;
     }
+
     if (temp->next != NULL)
     {
-        temp2 = temp->next;
+        struct node *temp2 = temp->next;
         temp->next = temp2->next;
         free(temp2);
         return 0;
@@ -140,6 +137,15 @@ int search(struct node *start, int val)
         temp = temp->next;
     }
     return -1;
+}
+int isEmpty(struct node *start)
+{
+    return (start->next == NULL);
+}
+int isFull()
+{
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    return (temp == NULL);
 }
 int main()
 {
@@ -181,8 +187,10 @@ int main()
             delete (start, pos) ? printf("FAILED TO DELETE\n\n") : printf("DELETED SUCCESSFULLY\n\n");
             break;
         case 7:
+            isEmpty(start) ? printf("EMPTY LIST\n\n") : printf("LIST NOT EMPTY\n\n");
             break;
         case 8:
+            isFull() ? printf("LIST FULL\n\n") : printf("LIST NOT FULL\n\n");
             break;
         case 9:
             display(start) ? printf("EMPTY LIST\n\n") : printf("\n\n");

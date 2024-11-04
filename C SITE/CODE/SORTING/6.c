@@ -1,33 +1,35 @@
-// TODO
 // 6. ENTER A INTEGER ARRAY FROM THE USER AND PERFORM INSERTION SORT ALGORITHM THROUGH RECURSION. ALSO CALCULATE THE WORST AND BEST COMPLEXITY WITH EXACT TIME.
 #include <stdio.h>
+#include <time.h>
 #define maxSize 100
-// inserts element from unsorted array to sorted array at its correct place
-void insertionSort(int arr[], int size, int i, int j, int temp)
+// Recursive function to perform insertion sort
+void insertionSort(int arr[], int n)
 {
-    printf("\n");
-    for (int i = 0; i < size; i++)
+    // Base case: If array has one element, return
+    if (n <= 1)
+        return;
+
+    // Sort the first n-1 elements
+    insertionSort(arr, n - 1);
+
+    // Insert the last element at its correct position
+    int last = arr[n - 1];
+    int j = n - 2;
+
+    // Shift elements of arr[0..n-2] that are greater than last
+    while (j >= 0 && arr[j] > last)
     {
-        printf("%d ", arr[i]);
+        arr[j + 1] = arr[j];
+        j--;
     }
-    if (j < size)
-    {
-        if ((arr[i] > temp) && (i > 0))
-        {
-            arr[i + 1] = arr[i];
-            insertionSort(arr, size, i - 1, j, temp);
-        }
-        else
-        {
-            arr[i] = temp;
-            insertionSort(arr, size, j - 1, j, arr[j]);
-        }
-    }
+    arr[j + 1] = last;
 }
+
 int main()
 {
     int arr[maxSize];
     int size;
+    clock_t start, end;
     printf("ENTER SIZE OF ARRAY : ");
     scanf("%d", &size);
     for (int i = 0; i < size; i++)
@@ -39,12 +41,14 @@ int main()
     {
         printf("%d ", arr[i]);
     }
-    insertionSort(arr, size, 0, 1, arr[1]);
+    start = clock();
+    insertionSort(arr, size);
+    end = clock();
     printf("\n");
     for (int i = 0; i < size; i++)
     {
         printf("%d ", arr[i]);
     }
-
+    printf("\nExecuted in %fs\n", (double)(end - start) / CLOCKS_PER_SEC);
     return 0;
 }
