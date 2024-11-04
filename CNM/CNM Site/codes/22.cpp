@@ -1,33 +1,48 @@
 // 22. Euler's Method
 #include <iostream>
+#include <iomanip>
+
 using namespace std;
-double function(double x, double y)
+
+// Function that defines the differential equation dy/dx = f(x, y)
+double f(double x, double y)
 {
-    return x * y;
+    return x * y; // Example: dy/dx = x + y
 }
-double euler(double x, double y, double end, double interval)
+
+// Function to perform Euler's method
+void eulerMethod(double x0, double y0, double xEnd, double h)
 {
-    double y1 = y + (interval * function(x, y));
-    if ((x + interval) >= end)
+    double x = x0;
+    double y = y0;
+
+    cout << "x" << setw(10) << "y" << endl;
+    cout << "-------------------" << endl;
+    while (x <= xEnd)
     {
-        return y1;
-    }
-    else
-    {
-        return euler(x + interval, y1, end, interval);
+        cout << fixed << setprecision(4) << x << setw(10) << y << endl;
+
+        y = y + h * f(x, y); // Euler formula: y(i+1) = y(i) + h * f(x(i), y(i))
+        x = x + h;
     }
 }
+
 int main()
 {
-    double xInit, yInit, xEnd, interval;
-    printf("X initial : ");
-    scanf("%lf", &xInit);
-    printf("Y initial : ");
-    scanf("%lf", &yInit);
-    printf("X end : ");
-    scanf("%lf", &xEnd);
-    printf("Interval : ");
-    scanf("%lf", &interval);
-    printf("%lf", euler(xInit, yInit, xEnd, interval)); // Sample Case : 1 5 1.5 0.1 -> 8.809
+    double x0, y0, xEnd, h;
+
+    // Input initial conditions
+    cout << "Enter initial value of x (x0): ";
+    cin >> x0;
+    cout << "Enter initial value of y (y0): ";
+    cin >> y0;
+    cout << "Enter the value of x at which to end (xEnd): ";
+    cin >> xEnd;
+    cout << "Enter step size (h): ";
+    cin >> h;
+
+    // Call the Euler's method
+    eulerMethod(x0, y0, xEnd, h);
+
     return 0;
 }
