@@ -6,86 +6,115 @@
         No disk may be placed on top of a disk that is smaller than it.
 */
 #include <stdio.h>
-#define max 5
-#define mid 4
-#define min 3
+#define MAX_DISCS 5
+#define MIN_DISCS 3
+#define MID_DISCS 4
+
 void push(int *stack, int *top, int val)
 {
     stack[++(*top)] = val;
 }
+
 int pop(int *stack, int *top)
 {
     return stack[(*top)--];
 }
+
 int peek(int *stack, int *top)
 {
     return stack[*top];
 }
+
 static inline int isEmpty(int *stack, int *top)
 {
     return *top == -1;
 }
+
 static inline int isFull(int *stack, int *top, int level)
 {
     return *top == (level - 1);
 }
+
+void displayRods(int rodArray[3][MAX_DISCS], int topArray[3])
+{
+    for (int j = 0; j < 3; j++)
+    {
+        printf("Rod %d: ", j + 1);
+        for (int k = topArray[j]; k >= 0; k--)
+        {
+            printf("%d ", rodArray[j][k]);
+        }
+        printf("\n");
+    }
+    printf("------------------------------------\n");
+}
+
 int main()
 {
     int level;
-    int rodArray[3][max];
-    int topArray[] = {-1, -1, -1};
+    int rodArray[3][MAX_DISCS] = {0};
+    int topArray[3] = {-1, -1, -1}; // Top indices of each rod
     int discs;
-    int from;
-    int to;
-    printf("1.EASY\n2.MEDIUM\n3.HARD\nCHOOSE LEVEL: ");
+    int from, to;
+
+    printf("1. EASY\n2. MEDIUM\n3. HARD\nCHOOSE LEVEL: ");
     scanf("%d", &level);
+    printf("MOVE FROM ROD 1 TO ROD 3\n");
+    // Set number of discs based on difficulty level
     if (level == 1)
     {
-        level = min;
+        discs = MIN_DISCS;
     }
     else if (level == 2)
     {
-        level = mid;
+        discs = MID_DISCS;
     }
     else if (level == 3)
     {
-        level = max;
+        discs = MAX_DISCS;
     }
     else
     {
-        level = min;
+        discs = MIN_DISCS;
     }
-    for (int i = level; i > 0; i--)
+
+    // Initialize the first rod with discs
+    for (int i = discs; i > 0; i--)
     {
-        push(rodArray[0], &topArray[0], i);
+        push(rodArray[0], &topArray[0], i); // Push discs onto the first rod
     }
+
+    // Display initial state
+    displayRods(rodArray, topArray);
 
     while (1)
     {
-        for (int j = 0; j < 3; j++)
-        {
-            for (int k = topArray[j]; k >= 0; k--)
-            {
-                for (int i = 0; i < rodArray[j][k]; i++)
-                {
-                    printf("*");
-                }
-                printf("\n");
-            }
-            printf("------------------------------------\n");
-        }
-        printf("MOVE FROM (1/2/3) : ");
+        printf("MOVE FROM (1/2/3): ");
         scanf("%d", &from);
-        printf("MOVE TO (1/2/3) : ");
+        printf("MOVE TO (1/2/3): ");
         scanf("%d", &to);
-        if (isEmpty(rodArray[from - 1], &topArray[from - 1]) || ((rodArray[from - 1][topArray[from - 1]] > rodArray[to - 1][topArray[to - 1]]) && (topArray[to - 1] != -1)))
+
+        // Validate the move
+        if (isEmpty(rodArray[from - 1], &topArray[from - 1]) ||
+            (!isEmpty(rodArray[to - 1], &topArray[to - 1]) &&
+             rodArray[from - 1][topArray[from - 1]] > rodArray[to - 1][topArray[to - 1]]))
         {
-            printf("MOVE FAILED\n");
+            printf("MOVE FAILED: Invalid move!\n");
         }
         else
         {
-            push(rodArray[to - 1], &topArray[to - 1],
-                 pop(rodArray[from - 1], &topArray[from - 1]));
+            // Perform the move
+            push(rodArray[to - 1], &topArray[to - 1], pop(rodArray[from - 1], &topArray[from - 1]));
+            displayRods(rodArray, topArray); // Display state after the move
+        }
+
+        // Check if the game is won (all discs on the last rod)
+        if (topArray[2] == discs - 1)
+        {
+            printf("Congratulations! You solved the Tower of Hanoi!\n");
+            break;
         }
     }
+
+    return 0;
 }
