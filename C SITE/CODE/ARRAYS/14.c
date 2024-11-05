@@ -1,49 +1,60 @@
 // 14. Enter an array from user and print all possible combinations of the elements?
-// TODO
 #include <stdio.h>
-void getArr(int arr[], int size)
+
+void printCombination(int arr[], int data[], int start, int end, int index, int r)
 {
-    for (int i = 0; i < size; i++)
+    // If current combination is ready to be printed
+    if (index == r)
     {
-        printf("ENTER ELEMENT %d : ", i);
-        scanf("%d", arr + i);
-    }
-}
-void display(int arr[], int size)
-{
-    for (int i = 0; i < size; i++)
-    {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
-}
-void printCombination(int arr[], int size)
-{
-    int j, k;
-    for (int i = 0; i < size; i++)
-    {
-        for (int j = 0; j < i; j++)
+        for (int j = 0; j < r; j++)
         {
-            printf("%d ", arr[j]);
-        }
-        for (int k = i; k < size; k++)
-        {
-            printf("%d ", arr[k]);
+            printf("%d ", data[j]);
         }
         printf("\n");
+        return;
+    }
+
+    // Replace index with all possible elements. The condition
+    // "end-i+1 >= r-index" makes sure that including one element
+    // at index will make a combination with remaining elements
+    // at remaining positions
+    for (int i = start; i <= end && end - i + 1 >= r - index; i++)
+    {
+        data[index] = arr[i];
+        printCombination(arr, data, i + 1, end, index + 1, r);
     }
 }
+
+void printAllCombinations(int arr[], int n)
+{
+    // Print combinations of all sizes from 1 to n
+    for (int r = 1; r <= n; r++)
+    {
+        int data[r]; // temporary array to store current combination
+        printCombination(arr, data, 0, n - 1, 0, r);
+        printf("\n"); // add space between combinations of different sizes
+    }
+}
+
 int main()
 {
-    int arr[100];
-    int size;
-    printf("ENTER SIZE : ");
-    scanf("%d", &size);
-    getArr(arr, size);
-    printCombination(arr, size);
+    int n;
+
+    // Get array size from user
+    printf("Enter the size of array: ");
+    scanf("%d", &n);
+
+    int arr[n];
+
+    // Get array elements from user
+    printf("Enter %d elements:\n", n);
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("\nAll possible combinations:\n");
+    printAllCombinations(arr, n);
+
     return 0;
 }
-/*
-    1 2 3 4 5
-    i = 0 ; j = 1
-*/

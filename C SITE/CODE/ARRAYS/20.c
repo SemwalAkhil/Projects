@@ -10,50 +10,59 @@ Explanation -
          _  | |_   _|   |_| |_    2
         |_|_|_ _|_|_ _ _ _ _ _|   1
 */
-// TODO
 #include <stdio.h>
-// water will be trapped if the next elevation is greater than previous elevation
-int trapWater(int height[], int heightSize)
+/*
+The solution involves finding the water trapped above each bar by identifying the amount of water it can hold based on the height of its neighboring bars. Here's how to approach it:
+    Identify the maximum heights to the left and right of each bar:
+        For each bar, we need to know the maximum height to its left and the maximum height to its right.
+    Calculate water trapped above each bar:
+        For each bar at index 𝑖, the water it can trap depends on the minimum of the maximum heights to its left and right, minus the height of the bar itself.
+    Sum up the trapped water above each bar.
+*/
+#include <stdio.h>
+
+int trapRainWater(int *height, int n)
 {
-    int a, b;
-    int result = 0;
-    int layerNum = 1;
-    int layerWater;
-    do
+    if (n <= 2)
+        return 0; // Not enough bars to trap any water
+
+    int leftMax[n], rightMax[n];
+    int waterTrapped = 0;
+
+    // Fill leftMax array
+    leftMax[0] = height[0];
+    for (int i = 1; i < n; i++)
     {
-        layerWater = 0;
-        a = 0;
-        b = 0;
-        for (int i = 0; i < heightSize; i++)
+        leftMax[i] = (height[i] > leftMax[i - 1]) ? height[i] : leftMax[i - 1];
+    }
+
+    // Fill rightMax array
+    rightMax[n - 1] = height[n - 1];
+    for (int i = n - 2; i >= 0; i--)
+    {
+        rightMax[i] = (height[i] > rightMax[i + 1]) ? height[i] : rightMax[i + 1];
+    }
+
+    // Calculate total water trapped
+    for (int i = 0; i < n; i++)
+    {
+        int minHeight = (leftMax[i] < rightMax[i]) ? leftMax[i] : rightMax[i];
+        if (minHeight > height[i])
         {
-            printf("(%d < %d) && (%d >= %d) && (%d == 0) && (%d < %d)\n", i, heightSize - 1, height[i], layerNum, a, height[i + 1], height[i]);
-            if ((i < (heightSize - 1)) && (height[i] >= layerNum) && (a == 0) && (height[i + 1] < height[i]))
-            {
-                a = i;
-                printf("1 a = %d b = %d\n", a, b);
-                continue;
-            }
-            printf("(%d >= %d) && (%d != 0) && ((%d - %d)>0)\n", height[i], layerNum, a, b, a);
-            if ((height[i] >= layerNum) && (a != 0) && ((i - a) > 0))
-            {
-                b = i;
-                layerWater += b - a - 1;
-                printf("2 a = %d b = %d lw=%d \n", a, b, layerWater);
-                a = 0;
-                b = 0;
-            }
+            waterTrapped += minHeight - height[i];
         }
-        printf("%d\n", layerWater);
-        result += layerWater;
-        layerNum++;
-    } while (layerWater != 0);
-    return result;
+    }
+
+    return waterTrapped;
 }
+
 int main()
 {
-    // int arr[] = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
-    int arr[] = {4, 2, 0, 3, 2, 5};
-    // printf("%d\n", trapWater(arr, 12));
-    printf("%d\n", trapWater(arr, 6));
+    int height[] = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
+    int n = sizeof(height) / sizeof(height[0]);
+
+    int result = trapRainWater(height, n);
+    printf("Total water trapped: %d\n", result);
+
     return 0;
 }
