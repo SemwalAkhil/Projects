@@ -12,20 +12,16 @@ int insertb(struct node **start, int val)
 {
     struct node *temp = (struct node *)malloc(sizeof(struct node));
     if (temp == NULL)
-    {
-        return 1; // Memory allocation failed
-    }
-    temp->data = val;
+        return 1;
 
+    temp->data = val;
     if (*start == NULL)
     {
-        // List is empty, initialize the first node
         *start = temp;
         temp->next = *start;
     }
     else
     {
-        // Insert at the beginning
         struct node *last = *start;
         while (last->next != *start)
         {
@@ -42,14 +38,11 @@ int inserte(struct node **start, int val)
 {
     struct node *temp = (struct node *)malloc(sizeof(struct node));
     if (temp == NULL)
-    {
-        return 1; // Memory allocation failed
-    }
-    temp->data = val;
+        return 1;
 
+    temp->data = val;
     if (*start == NULL)
     {
-        // List is empty, initialize the first node
         *start = temp;
         temp->next = *start;
     }
@@ -73,11 +66,9 @@ int insert(struct node **start, int val, int pos)
 
     struct node *temp = (struct node *)malloc(sizeof(struct node));
     if (temp == NULL)
-    {
-        return 1; // Memory allocation failed
-    }
-    temp->data = val;
+        return 1;
 
+    temp->data = val;
     if (*start == NULL)
     {
         if (pos == 0)
@@ -86,47 +77,52 @@ int insert(struct node **start, int val, int pos)
             temp->next = *start;
             return 0;
         }
-        free(temp);
-        return 1; // Invalid position for an empty list
+        else
+        {
+            free(temp);
+            return 1;
+        }
     }
 
     struct node *curr = *start;
-    for (int i = 0; i < pos - 1 && curr->next != *start; i++)
-    {
-        curr = curr->next;
-    }
-    temp->next = curr->next;
-    curr->next = temp;
-
     if (pos == 0)
     {
-        *start = temp;
+        return insertb(start, val);
     }
+
+    for (int i = 1; i < pos; i++)
+    {
+        if (curr->next == *start)
+            return 1;
+        curr = curr->next;
+    }
+
+    temp->next = curr->next;
+    curr->next = temp;
     return 0;
 }
 
 int deleteb(struct node **start)
 {
     if (*start == NULL)
-    {
-        return 1; // List is empty
-    }
+        return 1;
 
     struct node *temp = *start;
-    if (temp->next == *start)
+    if ((*start)->next == *start)
     {
         *start = NULL;
+        free(temp);
+        return 0;
     }
-    else
+
+    struct node *last = *start;
+    while (last->next != *start)
     {
-        struct node *last = *start;
-        while (last->next != *start)
-        {
-            last = last->next;
-        }
-        *start = temp->next;
-        last->next = *start;
+        last = last->next;
     }
+
+    *start = (*start)->next;
+    last->next = *start;
     free(temp);
     return 0;
 }
@@ -134,12 +130,10 @@ int deleteb(struct node **start)
 int deletee(struct node **start)
 {
     if (*start == NULL)
-    {
-        return 1; // List is empty
-    }
+        return 1;
 
     struct node *temp = *start;
-    if (temp->next == *start)
+    if ((*start)->next == *start)
     {
         *start = NULL;
         free(temp);
@@ -152,6 +146,7 @@ int deletee(struct node **start)
         prev = temp;
         temp = temp->next;
     }
+
     prev->next = *start;
     free(temp);
     return 0;
@@ -160,24 +155,21 @@ int deletee(struct node **start)
 int delete(struct node **start, int pos)
 {
     if (*start == NULL || pos < 0)
-    {
-        return 1; // List is empty or invalid position
-    }
+        return 1;
+
+    if (pos == 0)
+        return deleteb(start);
 
     struct node *temp = *start;
-    if (pos == 0)
-    {
-        return deleteb(start);
-    }
-
     struct node *prev = NULL;
-    for (int i = 0; i < pos && temp->next != *start; i++)
+
+    for (int i = 0; i < pos; i++)
     {
+        if (temp->next == *start)
+            return 1;
         prev = temp;
         temp = temp->next;
     }
-    if (temp == *start)
-        return 1; // Position out of bounds
 
     prev->next = temp->next;
     free(temp);
@@ -187,9 +179,7 @@ int delete(struct node **start, int pos)
 int display(struct node *start)
 {
     if (start == NULL)
-    {
-        return 1; // List is empty
-    }
+        return 1;
 
     struct node *temp = start;
     do
@@ -204,22 +194,19 @@ int display(struct node *start)
 int search(struct node *start, int val)
 {
     if (start == NULL)
-    {
-        return -1; // List is empty
-    }
+        return -1;
 
     struct node *temp = start;
-    int index = 0;
+    int pos = 0;
     do
     {
         if (temp->data == val)
-        {
-            return index;
-        }
+            return pos;
+        pos++;
         temp = temp->next;
-        index++;
     } while (temp != start);
-    return -1; // Value not found
+
+    return -1;
 }
 
 int isEmpty(struct node *start)
@@ -230,18 +217,16 @@ int isEmpty(struct node *start)
 int isFull()
 {
     struct node *temp = (struct node *)malloc(sizeof(struct node));
-    if (temp == NULL)
-    {
-        return 1;
-    }
+    int full = (temp == NULL);
     free(temp);
-    return 0;
+    return full;
 }
 
 int main()
 {
     int choice, val, pos;
     struct node *start = NULL;
+
     do
     {
         printf("1.INSERT BEGINNING\n2.INSERT END\n3.INSERT\n4.DELETE BEGINNING\n5.DELETE END\n6.DELETE\n7.IS EMPTY\n8.IS FULL\n9.DISPLAY\n10.SEARCH\n11.EXIT\nCHOOSE AN OPERATION: ");
@@ -289,12 +274,25 @@ int main()
             printf("ENTER VALUE TO BE SEARCHED : ");
             scanf("%d", &val);
             pos = search(start, val);
-            (pos >= 0) ? printf("VALUE FOUND AT %d INDEX\n\n", pos) : printf("VALUE NOT FOUND\n\n");
+            (pos >= 0) ? printf("VALUE FOUND AT POSITION %d\n\n", pos) : printf("VALUE NOT FOUND\n\n");
             break;
         default:
             break;
         }
     } while (choice != 11);
+
+    // Free all nodes in the circular list
+    if (start != NULL)
+    {
+        struct node *temp = start->next;
+        while (temp != start)
+        {
+            struct node *next = temp->next;
+            free(temp);
+            temp = next;
+        }
+        free(start);
+    }
 
     return 0;
 }
