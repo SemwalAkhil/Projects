@@ -1,3 +1,4 @@
+# BEAUTIFUL SOUP SCRAPPER I
 import requests                 # to send request to browser page
 from bs4 import BeautifulSoup   # to scrap the web page and extract data
 import csv                      # to save data to a csv file
@@ -100,9 +101,9 @@ if __name__ == "__main__":
     start = getValue("starting roll no.",23051671)
     end =  getValue("ending roll no.",23051774)
     sem = getValue("semester",1)
-    # url = 'https://results.puexam.in/ShowResultSemester.aspx?CL=OMWrspIZfRw%3d&SS=uoYiWu2CrbE%3d&Sem=0Zd0+cF3s5g%3d' #sem1
+    url = 'https://results.puexam.in/ShowResultSemester.aspx?CL=OMWrspIZfRw%3d&SS=uoYiWu2CrbE%3d&Sem=0Zd0+cF3s5g%3d' #sem1
     # url = "https://results.puexam.in/ShowResultSemester.aspx?CL=OMWrspIZfRw=&SS=tXQnFQnpmFw=&Sem=AmdKUuyjej8="
-    url = "https://results.puexam.in/ShowResultSemester.aspx?CL=l50z97gRZro=&SS=tXQnFQnpmFw=&Sem=mzi02FJa0LU="
+    # url = "https://results.puexam.in/ShowResultSemester.aspx?CL=l50z97gRZro=&SS=tXQnFQnpmFw=&Sem=mzi02FJa0LU="
     headers={
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
             }

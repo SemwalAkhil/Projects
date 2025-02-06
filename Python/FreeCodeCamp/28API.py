@@ -2,7 +2,7 @@ import tweepy
 import json
 import urllib.request,urllib.parse
 
-with open(r"D:\Projects\Python\FreeCodeCamp\29twitter_keys.json","r") as inFile:
+with open(r"D:\Projects\credentials\29twitter_keys.json","r") as inFile:
     creds = inFile.read()
 creds = json.loads(creds)
 BEARER_TOKEN = creds["BEARER_TOKEN"]
