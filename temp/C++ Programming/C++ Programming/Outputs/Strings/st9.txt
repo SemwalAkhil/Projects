@@ -1,0 +1,2 @@
+Input: hello
+Output: You entered: hello

@@ -1,0 +1,6 @@
+Input: hello world\nhow are you
+Output:Number of
+Words: 4
+Spaces: 3
+Characters: 18
+Lines: 1

@@ -1,0 +1,2 @@
+Input: hello world
+Output: Number of vowels in given string: 3

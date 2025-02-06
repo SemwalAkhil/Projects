@@ -1,0 +1,13 @@
+Enter the number of nodes: 5
+Enter value for node 1: 10
+Enter value for node 2: 20
+Enter value for node 3: 30
+Enter value for node 4: 40
+Enter value for node 5: 50
+
+Enter left and right children indices for node 1 (-1 if no child): 2 3
+Enter left and right children indices for node 2 (-1 if no child): 4 -1
+Enter left and right children indices for node 3 (-1 if no child): -1 5
+Enter left and right children indices for node 4 (-1 if no child): -1 -1
+Enter left and right children indices for node 5 (-1 if no child): -1 -1
+Right View: 10 30 50

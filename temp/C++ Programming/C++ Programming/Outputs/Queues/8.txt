@@ -1,0 +1,7 @@
+Enter strings to insert (type 'exit' to stop):
+apple
+banana
+cherry
+exit
+First element: apple
+First element after deletion: banana

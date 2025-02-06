@@ -1,0 +1,7 @@
+Enter the number of strings: 5
+Enter the strings:
+pear mango apple cherry orange
+Sorted array: apple cherry mango orange pear
+Time taken: 0.000004 seconds
+Best case complexity: O(n log n)
+Worst case complexity: O(n^2)

@@ -1,0 +1,24 @@
+1. Insert at Beginning
+2. Insert at End
+3. Delete at Beginning
+4. Delete at End
+5. Display
+6. Exit
+Choose an option: 1
+Enter string to insert: Hello
+1. Insert at Beginning
+2. Insert at End
+3. Delete at Beginning
+4. Delete at End
+5. Display
+6. Exit
+Choose an option: 2
+Enter string to insert: World
+1. Insert at Beginning
+2. Insert at End
+3. Delete at Beginning
+4. Delete at End
+5. Display
+6. Exit
+Choose an option: 5
+Hello -> World -> NULL

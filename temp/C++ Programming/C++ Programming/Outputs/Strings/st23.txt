@@ -1,0 +1,3 @@
+Input: hello world hello
+Word: hello
+Output: The word 'hello' occurs 2 times

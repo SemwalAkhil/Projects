@@ -1,0 +1,2 @@
+Input: abc
+Output: Sum of ASCII's in string: 294

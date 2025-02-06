@@ -1,0 +1,6 @@
+Enter dimensions of grid (n m): 3 3
+Enter the grid (3 x 3), use 0 for empty cell, 1 for fresh orange, 2 for rotten orange:
+0 1 2
+0 1 2
+2 1 1
+Time until all oranges are rotten: 1

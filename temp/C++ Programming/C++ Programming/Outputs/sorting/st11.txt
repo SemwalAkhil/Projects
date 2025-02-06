@@ -1,0 +1,7 @@
+Enter the number of strings: 4
+Enter the strings:
+apple orange banana grape
+Sorted array: apple banana grape orange
+Time taken: 0.000003 seconds
+Best case complexity: O(n^2)
+Worst case complexity: O(n^2)

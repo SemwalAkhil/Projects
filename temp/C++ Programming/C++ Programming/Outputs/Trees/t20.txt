@@ -1,0 +1,7 @@
+Enter number of nodes to insert in BST: 5
+Enter value for node 1: 10
+Enter value for node 2: 5
+Enter value for node 3: 1
+Enter value for node 4: 7
+Enter value for node 5: 40
+Number of nodes in the Binary Search Tree: 5

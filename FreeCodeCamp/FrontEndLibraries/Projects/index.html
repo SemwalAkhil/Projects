@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Machine</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="./styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="container-fluid" id="quote-box">
+            <p id="text"></p>
+            <p id="author"></p>
+            <span id="tweet-quote"></span>
+            <button id="new-quote"></button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+
+</html>
+<!--
+User Story #1: I can see a wrapper element with a corresponding id="quote-box".
+
+User Story #2: Within #quote-box, I can see an element with a corresponding id="text".
+
+User Story #3: Within #quote-box, I can see an element with a corresponding id="author".
+
+User Story #4: Within #quote-box, I can see a clickable element with a corresponding id="new-quote".
+
+User Story #5: Within #quote-box, I can see a clickable a element with a corresponding id="tweet-quote".
+
+User Story #6: On first load, my quote machine displays a random quote in the element with id="text".
+
+User Story #7: On first load, my quote machine displays the random quote's author in the element with id="author".
+
+User Story #8: When the #new-quote button is clicked, my quote machine should fetch a new quote and display it in the
+#text element.
+
+User Story #9: My quote machine should fetch the new quote's author when the #new-quote button is clicked and display it
+in the #author element.
+
+User Story #10: I can tweet the current quote by clicking on the #tweet-quote a element. This a element should include
+the "twitter.com/intent/tweet" path in its href attribute to tweet the current quote.
+
+User Story #11: The #quote-box wrapper element should be horizontally centered. Please run tests with browser's zoom
+level at 100% and page maximized.
+
+You can build your project by using this CodePen template and clicking Save to create your own pen. If you prefer to use
+another environment, then put this
+<script> tag into the body of your index.html file: <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+Once you're done, submit the URL to your working project with all its tests passing.
+
+Note: Twitter does not allow links to be loaded in an iframe. Try using the target="_blank" or target="_top" attribute
+on the #tweet-quote element if your tweet won't load. target="_top" will replace the current tab so make sure your work
+is saved.
+-->

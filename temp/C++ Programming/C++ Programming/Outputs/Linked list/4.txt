@@ -1,0 +1,24 @@
+1. Insert at Beginning
+2. Insert at End
+3. Delete at Beginning
+4. Delete at End
+5. Display
+6. Exit
+Choose an option: 1
+Enter value to insert: 10
+1. Insert at Beginning
+2. Insert at End
+3. Delete at Beginning
+4. Delete at End
+5. Display
+6. Exit
+Choose an option: 2
+Enter value to insert: 20
+1. Insert at Beginning
+2. Insert at End
+3. Delete at Beginning
+4. Delete at End
+5. Display
+6. Exit
+Choose an option: 5
+10 <-> 20 <-> (back to head)

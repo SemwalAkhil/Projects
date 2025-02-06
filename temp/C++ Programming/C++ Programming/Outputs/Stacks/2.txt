@@ -1,0 +1,40 @@
+1.Push
+2.Pop
+3.Peek
+4.IsEmpty
+5.IsFull
+6.Exit
+Choose an operation: 1
+Enter character to push: A
+1.Push
+2.Pop
+3.Peek
+4.IsEmpty
+5.IsFull
+6.Exit
+Choose an operation: 1
+Enter character to push: B
+1.Push
+2.Pop
+3.Peek
+4.IsEmpty
+5.IsFull
+6.Exit
+Choose an operation: 2
+B
+1.Push
+2.Pop
+3.Peek
+4.IsEmpty
+5.IsFull
+6.Exit
+Choose an operation: 2
+A
+1.Push
+2.Pop
+3.Peek
+4.IsEmpty
+5.IsFull
+6.Exit
+Choose an operation: 2
+Stack Empty !!!

@@ -1,0 +1,8 @@
+Enter number of vertices: 3
+Enter number of edges: 3
+Enter edge (u v): 0 1
+Enter edge (u v): 1 2
+Enter edge (u v): 0 2
+Vertex 0: 2 -> 1 -> NULL
+Vertex 1: 2 -> NULL
+Vertex 2: NULL

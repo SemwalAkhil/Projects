@@ -1,26 +1,15 @@
-fun add(num1:Int,num2:Int):Int {
-    val sum = num1 + num2
-    return sum
-}
 fun main() {
-    // add(10,2)
-    // add(11,5)
-    
-    // println(add(10,2))
-    
-    // showName("a","s")
+    // Start measuring time
+    val startTime = System.nanoTime()
 
-    val count:Int = 10
-    println("You have $count unread messages")
+    // Code block whose execution time you want to measure
+    for (i in 0 until 100000000) {} // Example loop
 
-    val name = "abc"
-    print("You have message from $name")
-    birthdayGreeting()
-}
-fun showName(FirstName:String,LastName:String) {
-    println(FirstName+LastName)
-}
-fun birthdayGreeting(): Unit {
-    println("Happy Birthday, Rover!")
-    println("You are now 5 years old!")
+    // Stop measuring time
+    val endTime = System.nanoTime()
+
+    // Calculate the time taken in seconds
+    val timeTaken = (endTime - startTime) / 1_000_000_000.0
+
+    println("Kotlin Execution Time: %.6f seconds".format(timeTaken))
 }

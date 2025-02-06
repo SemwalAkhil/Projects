@@ -1,0 +1,8 @@
+Enter number of elements in queue: 5
+Enter value of K: 3
+Enter 5 elements:
+1 2 3 4 5
+Original Queue:
+1 2 3 4 5 
+Queue after reversing first 3 elements:
+3 2 1 4 5 

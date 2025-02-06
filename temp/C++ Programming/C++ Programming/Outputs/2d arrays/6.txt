@@ -1,0 +1,7 @@
+Enter elements for a 2x2 matrix:
+1 2
+3 4
+Enter scalar value to multiply: 3
+Matrix after scalar multiplication:
+3    6
+9    12

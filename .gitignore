@@ -1,0 +1,4 @@
+.env*
+credentials
+*.sql
+pklData.json

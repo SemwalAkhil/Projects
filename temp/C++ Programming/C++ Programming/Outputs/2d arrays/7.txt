@@ -1,0 +1,7 @@
+Player X, enter a number: 1
+Player O, enter a number: 5
+Player X, enter a number: 9
+Player O, enter a number: 6
+Player X, enter a number: 4
+Player O, enter a number: 2
+...

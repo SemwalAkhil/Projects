@@ -1,0 +1,3 @@
+// Output
+ENTER A NUMBER : 5
+FACTORIAL OF 5 : 120

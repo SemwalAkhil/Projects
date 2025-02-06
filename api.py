@@ -1,8 +1,12 @@
 import google.generativeai as genai
 import markdown
 import requests
+import os
+from dotenv import load_dotenv
 
-API_KEY = "AIzaSyCOQiz6vJzfVQzQWzcisQv_BQbcaQQVC68"
+load_dotenv(".env.local")
+
+API_KEY = os.getenv("KEY")
 
 def createModel(API_KEY:str):
   genai.configure(api_key=API_KEY)
@@ -49,8 +53,8 @@ def downloadImage(url:str):
   else:
     print(f"Download failed: {response.status_code}")
 
-# url = r"D:\Projects\PythonRegX.png"
-# fileName = "Random"
-# model = createModel(API_KEY)
-# getLocalImageResponse(model=model,filePath=url,fileName=fileName)
+url = r"D:\Projects\PythonRegX.png"
+fileName = "Random"
+model = createModel(API_KEY)
+getLocalImageResponse(model=model,filePath=url,fileName=fileName)
 

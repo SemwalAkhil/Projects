@@ -1,0 +1,8 @@
+Enter strings to insert at rear (type 'exit' to stop):
+apple
+banana
+cherry
+exit
+Front element: apple
+Rear element: cherry
+Front element after deletion: banana

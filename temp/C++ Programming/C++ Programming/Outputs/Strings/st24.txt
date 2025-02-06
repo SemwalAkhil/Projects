@@ -1,0 +1,4 @@
+Input: hello world
+Word: world
+Replace: everyone
+Output: Updated sentence: hello everyone

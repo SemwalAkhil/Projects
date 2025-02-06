@@ -1,13 +1,22 @@
-def arithmetic_arranger(problems, show_answers=False):
-    for i in range(len(problems)):
-        vals = problems[i].split()
-        maxLen = len(max(vals))
-        problems[i] = " "*(maxLen-len(vals[0])) + vals[0] + "\n" + vals[1] + " " + vals[2] + "\n" + "-"*(maxLen+2)
-    return problems
+import hashlib
+import random
 
-# print(f'\n{arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])}')
-# print("hello"+"\n"+"world")
+def encrypt_code(code: str) -> str:
+    if not code.isdigit() or len(code) != 4:
+        raise ValueError("Input must be a 4-digit numeric string.")
+    
+    # Generate a random salt of 4 digits
+    salt = str(random.randint(1000, 9999))
+    
+    # Hash the input code combined with the salt
+    hash_digest = hashlib.sha256((code + salt).encode()).hexdigest()
+    numeric_hash = ''.join(str(int(c, 16)) for c in hash_digest[:8])
+    
+    # Mix the hash and salt to create a 12-digit encrypted code
+    encrypted_code = numeric_hash[:6] + salt[:2] + numeric_hash[6:] + salt[2:]
+    
+    return encrypted_code[:12]  # Ensure it's exactly 12 digits
 
-name = "Om\n"
-age = 22
-print(f"Hello, My name is {name} and I'm {age} years old.")
+# Example usage:
+encrypted = encrypt_code("1234")
+print("Encrypted Code:", encrypted)

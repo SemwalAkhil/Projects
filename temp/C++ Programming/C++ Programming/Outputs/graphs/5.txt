@@ -1,0 +1,6 @@
+Enter number of vertices: 3
+Enter number of edges: 3
+Enter edge (u v): 0 1
+Enter edge (u v): 1 2
+Enter edge (u v): 0 2
+BFS Traversal starting from vertex 0: 0 1 2 

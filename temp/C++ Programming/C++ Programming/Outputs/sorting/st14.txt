@@ -1,0 +1,7 @@
+Enter the number of strings: 3
+Enter the strings:
+pear banana apple
+Sorted array: apple banana pear
+Time taken: 0.000001 seconds
+Best case complexity: O(n)
+Worst case complexity: O(n^2)

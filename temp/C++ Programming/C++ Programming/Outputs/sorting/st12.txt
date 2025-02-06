@@ -1,0 +1,7 @@
+Enter the number of strings: 4
+Enter the strings:
+kiwi lemon apple mango
+Sorted array: apple kiwi lemon mango
+Time taken: 0.000002 seconds
+Best case complexity: O(n^2)
+Worst case complexity: O(n^2)

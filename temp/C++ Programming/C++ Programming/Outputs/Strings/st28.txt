@@ -1,0 +1,6 @@
+1. Create 2. Delete 3. Search 4. Exit
+Enter your choice: 1
+Enter word:smile
+Enter meaning: happy
+1. Create 2. Delete 3. Search 4. Exit
+Enter your choice: 4

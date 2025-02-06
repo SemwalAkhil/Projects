@@ -1,0 +1,20 @@
+@echo off
+REM Usage: insert_data.bat [DB_USER] [DB_PASS] [DB_NAME]
+
+set DB_HOST=localhost
+
+set DB_USER=%~1
+
+set DB_PASS=%~2
+
+set DB_NAME=%~3
+
+set SQL_FILE=insert_data.sql
+
+REM Execute MySQL command with arguments
+mysql -h %DB_HOST% -u %DB_USER% -p%DB_PASS% %DB_NAME% < %SQL_FILE%
+
+rm %SQL_FILE%
+
+echo Data insertion completed!
+pause

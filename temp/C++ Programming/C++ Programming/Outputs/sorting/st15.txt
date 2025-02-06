@@ -1,0 +1,7 @@
+Enter the number of strings: 4
+Enter the strings:
+cherry apple banana date
+Sorted array: apple banana cherry date
+Time taken: 0.000002 seconds
+Best case complexity: O(n)
+Worst case complexity: O(n^2)

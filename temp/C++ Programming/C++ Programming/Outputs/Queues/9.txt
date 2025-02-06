@@ -1,0 +1,8 @@
+Enter integers to insert at rear (type -1 to stop):
+1
+2
+3
+-1
+Front element: 1
+Rear element: 3
+Front element after deletion: 2

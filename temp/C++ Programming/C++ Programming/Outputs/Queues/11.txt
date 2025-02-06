@@ -1,0 +1,8 @@
+Enter integers to insert (type -1 to stop):
+3
+1
+4
+1
+-1
+First element: 1
+First element after deletion: 1

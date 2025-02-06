@@ -1,0 +1,6 @@
+Enter elements for a 2x2 matrix:
+1 2
+3 4
+Copied matrix:
+1    2
+3    4

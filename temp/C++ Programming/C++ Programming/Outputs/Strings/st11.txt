@@ -1,0 +1,5 @@
+Input: madam
+Output: String is palindrome
+Input: hello
+Output: String is not palindrome
+

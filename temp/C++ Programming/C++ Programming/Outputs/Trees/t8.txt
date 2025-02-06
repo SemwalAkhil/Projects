@@ -1,0 +1,7 @@
+Inorder traversal: 8 10 12 15 17 25
+Preorder traversal: 15 10 8 12 20 17 25
+Postorder traversal: 8 12 10 17 25 20 15
+Minimum element in the BST: 8
+Searching for 10 in BST: Found
+Deleting 20 from BST.
+Inorder traversal after deletion: 8 10 12 15 17 25

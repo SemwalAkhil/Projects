@@ -1,0 +1,158 @@
+.home{
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+}
+
+.about{
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+}
+
+.programs{
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+}
+
+.twod{
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+
+}
+
+
+
+.bcp{
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+
+}
+
+
+.dc{
+  display: inline-block;
+  padding: 10px ;
+  margin: 10px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+
+}
+
+
+.fh{
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+
+}
+
+
+.fun{
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+
+}
+
+
+.inherit{
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.oop{
+  display: inline-block;
+  padding: 10px ;
+  margin: 10px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+}
+
+
+.oover{
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+
+}
+
+
+.sd{
+  display: inline-block;
+  padding: 10px ;
+  margin: 10px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+
+}
+
+
+
+.str{
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  
+}
+
+
+.vf{
+  display: inline-block;
+  padding: 10px ;
+  margin: 10px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+
+}
+
+
+
+.code{
+  background-color:aliceblue
+}
+
+.output{
+  background-color: aliceblue;
+}

@@ -1,0 +1,45 @@
+1. Push to Stack 1
+2. Push to Stack 2
+3. Pop from Stack 1
+4. Pop from Stack 2
+5. Display Stacks
+6. Exit
+Choose an operation: 1
+Enter value to push into Stack 1: 10
+
+1. Push to Stack 1
+2. Push to Stack 2
+3. Pop from Stack 1
+4. Pop from Stack 2
+5. Display Stacks
+6. Exit
+Choose an operation: 1
+Enter value to push into Stack 1: 20
+
+1. Push to Stack 1
+2. Push to Stack 2
+3. Pop from Stack 1
+4. Pop from Stack 2
+5. Display Stacks
+6. Exit
+Choose an operation: 2
+Enter value to push into Stack 2: 30
+
+1. Push to Stack 1
+2. Push to Stack 2
+3. Pop from Stack 1
+4. Pop from Stack 2
+5. Display Stacks
+6. Exit
+Choose an operation: 5
+Stack 1: 10 20 
+Stack 2: 30 
+
+1. Push to Stack 1
+2. Push to Stack 2
+3. Pop from Stack 1
+4. Pop from Stack 2
+5. Display Stacks
+6. Exit
+Choose an operation: 3
+Popped from Stack 1: 20

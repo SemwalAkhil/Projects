@@ -1,0 +1,2 @@
+Input: apple, appls
+Output: Sum of absolute differences of ASCII of strings = 1

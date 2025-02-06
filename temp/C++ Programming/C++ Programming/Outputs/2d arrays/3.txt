@@ -1,0 +1,9 @@
+Enter elements for 1st 2x2 matrix:
+9 8
+7 6
+Enter elements for 2nd 2x2 matrix:
+5 4
+3 2
+Difference of the matrices:
+4    4
+4    4

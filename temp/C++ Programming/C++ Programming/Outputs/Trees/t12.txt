@@ -1,0 +1,8 @@
+Enter the number of elements to insert in the BST: 5
+Enter value 1: 15
+Enter value 2: 10
+Enter value 3: 20
+Enter value 4: 8
+Enter value 5: 12
+Enter K to find Kth largest element: 2
+The 2th largest element in the BST is: 15

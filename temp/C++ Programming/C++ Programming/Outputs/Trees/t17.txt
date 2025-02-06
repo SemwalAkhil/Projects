@@ -1,0 +1,14 @@
+Enter node value (-1 to stop): 10
+Enter left child of 10:
+Enter node value (-1 to stop): 5
+Enter left child of 5:
+Enter node value (-1 to stop): -1
+Enter right child of 5:
+Enter node value (-1 to stop): -1
+Enter right child of 10:
+Enter node value (-1 to stop): 20
+Enter left child of 20:
+Enter node value (-1 to stop): -1
+Enter right child of 20:
+Enter node value (-1 to stop): -1
+InOrder Traversal of the Strictly Binary Tree: 5 10 20 

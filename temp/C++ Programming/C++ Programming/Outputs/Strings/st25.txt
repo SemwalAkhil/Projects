@@ -1,0 +1,2 @@
+Input: hello world
+Output: Trimmed string: 'hello world'

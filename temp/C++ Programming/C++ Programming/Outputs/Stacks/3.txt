@@ -1,0 +1,24 @@
+1.Push
+2.Pop
+3.Peek
+4.IsEmpty
+5.IsFull
+6.Exit
+Choose an operation: 1
+Enter number to push: 10
+1.Push
+2.Pop
+3.Peek
+4.IsEmpty
+5.IsFull
+6.Exit
+Choose an operation: 2
+10
+1.Push
+2.Pop
+3.Peek
+4.IsEmpty
+5.IsFull
+6.Exit
+Choose an operation: 2
+Stack Empty !!!

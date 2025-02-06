@@ -1,0 +1,11 @@
+Enter the number of elements to insert into the BST: 7
+Enter the elements:
+20
+8
+22
+4
+12
+10
+14
+Enter the value of k: 3
+K-th Smallest Element is 10
