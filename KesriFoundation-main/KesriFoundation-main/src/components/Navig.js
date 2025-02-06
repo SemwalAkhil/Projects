@@ -15,8 +15,8 @@ export const Navig = () => {
 
         <Link href='/'><div className='px-10 text-xl bg-transparent font-serif font-bold text-blue-900 hover:bg-blue-900 hover:text-white rounded-full '><button>Home</button></div></Link>
         <Link href='/Aboutus'><div className='px-10 text-xl bg-transparent font-serif font-bold text-blue-900 hover:bg-blue-900 rounded-full  hover:text-white'><button>About Kesri Foundation</button></div></Link>
-        <Link href='/Service'><div className='px-10 text-xl bg-transparent font-serif font-bold text-blue-900 hover:bg-blue-900 rounded-full  hover:text-white'><button>What We Provide For Institutes</button></div></Link>
-        <Link href='/Service2'><div className='px-10 text-xl bg-transparent font-serif font-bold text-blue-900 hover:bg-blue-900 rounded-full  hover:text-white'><button>What We Provide For Professionals</button></div></Link>
+        <Link href='/Service'><div className='px-10 text-xl bg-transparent font-serif font-bold text-blue-900 hover:bg-blue-900 rounded-full  hover:text-white'><button>Services For Institutes</button></div></Link>
+        <Link href='/Service2'><div className='px-10 text-xl bg-transparent font-serif font-bold text-blue-900 hover:bg-blue-900 rounded-full  hover:text-white'><button>Services For Professionals/Students</button></div></Link>
         <Link href='/Accredition'><div className='px-10 text-xl bg-transparent font-serif font-bold text-blue-900 hover:bg-blue-900 rounded-full  hover:text-white'><button>Our Accredition</button></div></Link>
         <Link href='/Gallerys'><div className='px-10 text-xl bg-transparent font-serif font-bold text-blue-900 hover:bg-blue-900 rounded-full  hover:text-white'><button>Glimpse of Our Events</button></div></Link>
         <Link href='/Testimonials'><div className='px-10 text-xl bg-transparent font-serif font-bold text-blue-900 hover:bg-blue-900 rounded-full  hover:text-white'><button>Testimonials</button></div></Link>
@@ -27,8 +27,8 @@ export const Navig = () => {
 
         <Link href='/'><div className='px-10 text-xl bg-transparent font-serif font-bold text-blue-900 hover:bg-blue-900 hover:text-white rounded-full p-5'><button>Home</button></div></Link>
         <Link href='/Aboutus'><div className='px-10 text-xl bg-transparent font-serif font-bold text-blue-900 hover:bg-blue-900 rounded-full p-5 hover:text-white'><button>About Kesri Foundation</button></div></Link>
-        <Link href='/Service'><div className='px-10 text-xl bg-transparent font-serif font-bold text-blue-900 hover:bg-blue-900 rounded-full p-5 hover:text-white'><button>What We Provide For Institutes</button></div></Link>
-        <Link href='/Service2'><div className='px-10 text-xl bg-transparent font-serif font-bold text-blue-900 hover:bg-blue-900 rounded-full p-5 hover:text-white'><button>What We Provide For Professionals</button></div></Link>
+        <Link href='/Service'><div className='px-10 text-xl bg-transparent font-serif font-bold text-blue-900 hover:bg-blue-900 rounded-full p-5 hover:text-white'><button>Services For Institutes</button></div></Link>
+        <Link href='/Service2'><div className='px-10 text-xl bg-transparent font-serif font-bold text-blue-900 hover:bg-blue-900 rounded-full p-5 hover:text-white'><button>Services For Professionals/Students</button></div></Link>
         <Link href='/Accredition'><div className='px-10 text-xl bg-transparent font-serif font-bold text-blue-900 hover:bg-blue-900 rounded-full p-5 hover:text-white'><button>Our Accredition</button></div></Link>
         <Link href='/Gallerys'><div className='px-10 text-xl bg-transparent font-serif font-bold text-blue-900 hover:bg-blue-900 rounded-full p-5 hover:text-white'><button>Glimpse of Our Events</button></div></Link>
         <Link href='/Testimonials'><div className='px-10 text-xl bg-transparent font-serif font-bold text-blue-900 hover:bg-blue-900 rounded-full p-5 hover:text-white'><button>Testimonials</button></div></Link>

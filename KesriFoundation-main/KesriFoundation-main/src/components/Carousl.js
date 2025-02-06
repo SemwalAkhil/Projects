@@ -10,6 +10,7 @@ export const Carousl = () => {
         <img src="/gallery/26.jpg" alt="..." />
         <img src="/gallery/27.jpg" alt="..." />
         <img src="/gallery/1.jpg" alt="..." />
+        <video src="" alt="..."/>
       </Carousel>
 </div>
   )
