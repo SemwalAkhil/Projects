@@ -11,7 +11,7 @@ import uvicorn
 app = FastAPI()
 
 # Load SQL scripts dynamically from a folder
-SQL_SCRIPTS_DIR = "sql_scripts"
+SQL_SCRIPTS_DIR = "./sql_scripts"
 
 class QueryRequest(BaseModel):
     db_type: str
