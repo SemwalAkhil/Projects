@@ -10,11 +10,14 @@ host = os.getenv("HOST")
 db = os.getenv("DB")
 dsn = os.getenv("DSN")
 
+print(user2,pass2)
+
 MYSQL_CONFIG = {
     "host": host,
     "user": user1,
     "password": pass1,
-    "database": db
+    "database": db,
+    "port": 3306  # Default MySQL port
 }
 
 ORACLE_CONFIG = {
