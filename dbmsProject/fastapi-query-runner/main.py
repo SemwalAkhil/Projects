@@ -6,6 +6,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 import re
+import uvicorn
 
 app = FastAPI()
 
@@ -118,3 +119,7 @@ async def execute_query(request: QueryRequest):
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+if __name__ == "__main__":
+    port = int(os.getenv("PORT", 8000))  # Use Render's port if available
+    uvicorn.run(app, host="0.0.0.0", port=port)
