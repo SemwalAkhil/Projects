@@ -63,6 +63,9 @@ async def execute_query(request: QueryRequest):
         else:
             raise HTTPException(status_code=400, detail="Unsupported database type")
 
+        if not conn:
+            raise HTTPException(status_code=400, detail="Connection Failed")
+
         cursor = conn.cursor()
         
         # Enable DBMS_OUTPUT buffer (for Oracle)
@@ -73,6 +76,8 @@ async def execute_query(request: QueryRequest):
         messages = []
         for query in queries:
             query = query.strip()
+            if not cursor:
+                raise HTTPException(status_code=400, detail="Cursor creation failed")
             cursor.execute(query)
             # Fetch column names if query returns rows
             if query.lower().startswith(("select","desc","show")):
@@ -121,5 +126,5 @@ async def execute_query(request: QueryRequest):
         raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":
-    port = int(os.getenv("PORT", 8000))  # Use Render's port if available
+    port = int(os.getenv("PORT", 10000))  # Use Render's port if available
     uvicorn.run(app, host="0.0.0.0", port=port)
