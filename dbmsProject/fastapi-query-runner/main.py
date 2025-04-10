@@ -1,22 +1,31 @@
 from fastapi import FastAPI, HTTPException, Query
 from database import get_mysql_connection, get_oracle_connection
-from fastapi.responses import HTMLResponse
-import os
-from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
-import re
+import os
+import uvicorn
+from typing import Optional, Dict, Union
+from mysql.connector.connection import MySQLConnection
+# Import your Oracle connection class too if available, else use `Any`
+from typing import Any
 
 app = FastAPI()
 
-# Load SQL scripts dynamically from a folder
-SQL_SCRIPTS_DIR = "sql_scripts"
+# Directory to load SQL scripts dynamically
+SQL_SCRIPTS_DIR = "./sql_scripts"
+
+# Persistent DB connections
+connections: Dict[str, Optional[Union[MySQLConnection, Any]]] = {
+    "mysql": None,
+    "oracle": None
+}
 
 class QueryRequest(BaseModel):
     db_type: str
     sql: str
 
-# Mount 'static' directory for serving static files
+# Mount 'static' directory for serving frontend assets
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # Serve index.html as the homepage
@@ -37,8 +46,8 @@ def get_sql_scripts():
     return {"categories": categories}
 
 @app.get("/get-script-content/")
-async def get_script_content(category: str, script_name: str):
-    """Get the script content by the name and folder category"""
+def get_script_content(category: str, script_name: str):
+    """Retrieve the script content by category and name."""
     script_path = os.path.join(SQL_SCRIPTS_DIR, category, script_name)
 
     if not os.path.exists(script_path):
@@ -50,43 +59,43 @@ async def get_script_content(category: str, script_name: str):
     return {"script_name": script_name, "content": content}
 
 @app.post("/execute-query")
-async def execute_query(request: QueryRequest):
-    """Execute query as requested"""
-    output_messages = []
-    columns = None
+def execute_query(request: QueryRequest):
+    """Execute SQL query and return results."""
     try:
-        if request.db_type == "mysql":
-            conn = get_mysql_connection()
-        elif request.db_type == "oracle":
-            conn = get_oracle_connection()
-        else:
-            raise HTTPException(status_code=400, detail="Unsupported database type")
+        # Get the persistent database connection
+        conn = connections.get(request.db_type)
+        if not conn:
+            raise HTTPException(status_code=500, detail=f"No {request.db_type} connection available.")
 
         cursor = conn.cursor()
-        
-        # Enable DBMS_OUTPUT buffer (for Oracle)
+
+        # Enable DBMS_OUTPUT for Oracle
         if request.db_type == "oracle":
             cursor.execute("BEGIN DBMS_OUTPUT.ENABLE(NULL); END;")
-        
-        queries = request.sql.strip().split(";")
-        messages = []
+
+        queries = [q.strip() for q in request.sql.strip().split(";") if q.strip()]
+        output_messages = []
+        data = None
+        columns = None
+
         for query in queries:
-            query = query.strip()
+            if query.find("--") != -1:
+                continue
+            
             cursor.execute(query)
-            # Fetch column names if query returns rows
-            if query.lower().startswith(("select","desc","show")):
+
+            if query.lower().startswith(("select", "desc", "show")):
                 data = cursor.fetchall()
-                columns = [desc[0] for desc in cursor.description]  # Fetch column names
+                columns = [desc[0] for desc in cursor.description] if cursor.description else []
                 output_messages.append("Query executed successfully.")
             else:
-                conn.commit()  # Commit for INSERT, UPDATE, DELETE
+                # conn.commit()
                 output_messages.append(f"{cursor.rowcount} row(s) affected.")
 
-
+            # Fetch DBMS_OUTPUT messages for Oracle
             if request.db_type == "oracle":
-                output_var = conn.cursor()
-                # Execute the procedure to get DBMS_OUTPUT messages
-                output_var.execute("""
+                output_cursor = conn.cursor()
+                output_cursor.execute("""
                 DECLARE 
                     l_line VARCHAR2(32767);
                     l_done NUMBER;
@@ -97,24 +106,41 @@ async def execute_query(request: QueryRequest):
                         DBMS_OUTPUT.PUT_LINE(l_line);
                     END LOOP;
                 END;
-            """)
-                # Extract the messages from the output variable
+                """)
                 try:
-                    for i in output_var.fetchall():
-                        output_messages.append(i[0])
+                    output_messages.extend([row[0] for row in output_cursor.fetchall()])
                 except:
-                    print("failed fetching")
-
-                output_var.close()
+                    pass  # No output to fetch
+                output_cursor.close()
 
         cursor.close()
-        conn.close()
 
         return {
-            "columns": columns or None,
-            "data": data if request.sql.strip().lower().startswith(("select","desc","show")) else None,
-            "messages": [msg for msg in output_messages]  # Extract messages from tuples
+            "columns": columns,
+            "data": data,
+            "messages": output_messages
         }
-
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+@app.on_event("startup")
+def connect_to_databases():
+    try:
+        connections["mysql"] = get_mysql_connection()
+        connections["oracle"] = get_oracle_connection()
+    except Exception as e:
+        print(f"Error connecting to databases: {e}")
+
+@app.on_event("shutdown")
+def close_database_connections():
+    for conn in connections.values():
+        if conn:
+            try:
+                conn.close()
+            except:
+                pass
+
+# Configure application for Render deployment
+if __name__ == "__main__":
+    port = int(os.getenv("PORT", 10000))  # Render dynamically assigns a port
+    uvicorn.run(app, host="0.0.0.0", port=port)

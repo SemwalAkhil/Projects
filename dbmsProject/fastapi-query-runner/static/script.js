@@ -115,11 +115,19 @@ function formatTable(columns, data) {
 // show table content by firing select query
 async function showTableContent() {
     let tableName = prompt("Enter table name:");
-    runQuery(`select * from ${tableName}`)
+    runQuery(`select * from ${tableName};`)
 }
 
 // show table structure by firing desc query
 async function showTableMetadata() {
     let tableName = prompt("Enter table name:");
-    runQuery(`desc ${tableName}`)
+    runQuery(`desc ${tableName};`)
+}
+
+async function rollbackQuery(){
+    runQuery("rollback;");
+}
+
+async function commitQuery(){
+    runQuery("commit;");
 }
