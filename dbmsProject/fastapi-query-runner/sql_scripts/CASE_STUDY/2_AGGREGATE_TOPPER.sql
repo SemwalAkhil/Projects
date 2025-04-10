@@ -1,0 +1,1 @@
+SELECT name as "Name",marks1+marks2+marks3+marks4 as 'Total Marks', RANK() OVER (ORDER BY marks1 + marks2 + marks3 + marks4 DESC) AS "Rank" FROM marks WHERE t1.marks1 > (t1.marks1 * 0.6) AND t1.marks2 > (t1.marks2 * 0.6) AND t1.marks3 > (t1.marks3 * 0.6) AND t1.marks4 > (t1.marks4 * 0.6) LIMIT 3 ;
