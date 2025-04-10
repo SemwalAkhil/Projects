@@ -1,0 +1,2 @@
+-- SELECT col1, col2, col3 ... FROM table_name (WHERE condition GROUP BY col1, col2, col3 ... HAVING group_function condition ORDER BY col1, col2, col3 ...);
+SELECT rollno,sname FROM students WHERE rollno > 1 ORDER BY rollno DESC;
