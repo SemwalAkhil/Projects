@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Query Runner</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="/static/script.js" defer></script>
+</head>
+
+<body>
+    <nav id="navbar">
+        <h2>SQL Scripts</h2>
+        <ul id="categories"></ul>
+    </nav>
+
+    <div id="main-container" class="container">
+        <div class="left-panel">
+            <h2>SQL Query Runner</h2>
+            <label for="dbType">Select Database:</label>
+            <select id="dbType">
+                <option value="mysql">MySQL</option>
+                <option value="oracle">Oracle</option>
+            </select>
+            <label for="script-selector">Select Script:</label>
+            <select id="script-selector"></select>
+            <pre id="query" rows="10"></pre>
+            <button onclick="runQuery()">Run Query</button>
+            <button onclick="commitQuery()">Commit</button>
+            <button onclick="rollbackQuery()">Rollback</button>
+        </div>
+        <div class="right-panel">
+            <h2>Output</h2>
+            <pre id="output"></pre>
+            <button onclick="showTableContent()">Show Table Content</button>
+            <button onclick="showTableMetadata()">Show Table Structure</button>
+        </div>
+    </div>
+</body>
+
+</html>
