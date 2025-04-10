@@ -1,1 +1,0 @@
-CREATE TABLE temp(col_n char(100));

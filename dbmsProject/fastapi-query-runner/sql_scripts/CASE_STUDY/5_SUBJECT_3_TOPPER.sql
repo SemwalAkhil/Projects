@@ -1,0 +1,1 @@
+SELECT name as "Name",marks3 as 'Subject 3', RANK() OVER (ORDER BY marks3 DESC,marks1+marks2+marks3+marks4 DESC) AS "Rank" FROM marks WHERE marks1 > (45 * 0.6) AND marks2 > (65 * 0.6) AND marks3 > (65 * 0.6) AND marks4 > (65 * 0.6) LIMIT 3 ;
