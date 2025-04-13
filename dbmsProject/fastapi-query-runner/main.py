@@ -57,7 +57,7 @@ def get_script_content(category: str, script_name: str):
 
     with open(script_path, "r", encoding="utf-8") as file:
         content = file.read()
-
+    print(content.count("\n"))
     return {"script_name": script_name, "content": content}
 
 @app.post("/execute-query")
@@ -80,22 +80,34 @@ def execute_query(request: QueryRequest):
             for match in re.finditer(
                 r"(.*?)(?=(?:declare|begin|create or replace (?:trigger|function))|$)((?:declare|begin|create or replace (?:trigger|function)).*?end;)?",
                 request.sql.strip(), re.DOTALL | re.IGNORECASE):
-                queries.extend([i for i in match.group(1).split(";") if i] + [match.group(2)])
+                queries.extend([i for i in match.group(1).split("\n") if i] + [match.group(2)])
         else:
             # For MySQL, split by semicolons to separate queries
-            queries = [q.strip() for q in request.sql.strip().split(";") if q.strip()]
+            queries = [q.strip() for q in request.sql.strip().split("\n") if q.strip()]
 
         output_messages = []
         data = None
         columns = None
-
+        tempQuery = ""
         # Execute each query and process the results
         for query in queries:
             if query is None or "--" in query:  # Skip empty or comment lines
                 continue
+            tempQuery += query
+            if (not query.strip().endswith(";")) and query != queries[-1]:
+                continue
+            else:
+                query = tempQuery
+                tempQuery = ""
+            # pattern_slash_end = r'END\b.*?;\s*\n\s*/'          # Match block ending with slash
+            # pattern_wrong_semicolon = r';\s*\n(?!\s*/)'        # Semicolon not followed by a slash
 
+            # # Combine with 'or' if you want to find either case
+            # combined_pattern = fr'({pattern_slash_end})|({pattern_wrong_semicolon})'
             # Clean up any unnecessary slashes from queries (specific to Oracle or other systems)
-            query = re.sub("/", "", query)
+            query = re.sub(r"(?:^\s*/|/\s*$|(?<!END)\s*;$)", "", query)
+
+            print(f"<-----\n{query}\n----->")
 
             # Execute the query
             cursor.execute(query)

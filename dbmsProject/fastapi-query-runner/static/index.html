@@ -5,36 +5,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SQL Query Runner</title>
+    <!-- Adding Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Adding Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
     <link rel="stylesheet" href="/static/styles.css">
     <script src="/static/script.js" defer></script>
+    <!-- Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-sql.min.js"></script>
 </head>
 
-<body>
+<body class="line-numbers">
+    <!-- Sidebar Navigation -->
     <nav id="navbar">
-        <h2>SQL Scripts</h2>
+        <div class="nav-header">
+            <h2><i class="fas fa-database"></i> SQL Scripts</h2>
+        </div>
         <ul id="categories"></ul>
     </nav>
 
-    <div id="main-container" class="container">
+    <div id="main-container">
+        <!-- Query Editor Panel -->
         <div class="left-panel">
-            <h2>SQL Query Runner</h2>
-            <label for="dbType">Select Database:</label>
-            <select id="dbType">
-                <option value="mysql">MySQL</option>
-                <option value="oracle">Oracle</option>
-            </select>
-            <label for="script-selector">Select Script:</label>
-            <select id="script-selector"></select>
-            <pre id="query" rows="10"></pre>
-            <button onclick="runQuery()">Run Query</button>
-            <button onclick="commitQuery()">Commit</button>
-            <button onclick="rollbackQuery()">Rollback</button>
+            <h2><i class="fas fa-code"></i> SQL Query Editor</h2>
+            <div class="control-group">
+                <label for="dbType">Database Type:</label>
+                <select id="dbType" class="select-input">
+                    <option value="mysql">MySQL</option>
+                    <option value="oracle">Oracle</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="script-selector">Select Script:</label>
+                <select id="script-selector" class="select-input"></select>
+            </div>
+            <div class="query-container">
+                <pre id="query" class="code-editor language-sql"></pre>
+            </div>
+            <div class="button-group">
+                <button onclick="runQuery()" class="primary-btn"><i class="fas fa-play"></i> Run Query</button>
+                <button onclick="commitQuery()" class="success-btn"><i class="fas fa-check"></i> Commit</button>
+                <button onclick="rollbackQuery()" class="danger-btn"><i class="fas fa-undo"></i> Rollback</button>
+            </div>
         </div>
+        <!-- Results Panel -->
         <div class="right-panel">
-            <h2>Output</h2>
-            <pre id="output"></pre>
-            <button onclick="showTableContent()">Show Table Content</button>
-            <button onclick="showTableMetadata()">Show Table Structure</button>
+            <h2><i class="fas fa-table"></i> Query Results</h2>
+            <div class="output-container">
+                <pre id="output"></pre>
+            </div>
+            <div class="button-group">
+                <button onclick="showTableContent()" class="secondary-btn"><i class="fas fa-list"></i> Show Table
+                    Content</button>
+                <button onclick="showTableMetadata()" class="secondary-btn"><i class="fas fa-info-circle"></i> Show
+                    Table Structure</button>
+                <button onclick="dropTable()" class="danger-btn"><i class="fas fa-trash"></i> Drop Table</button>
+            </div>
         </div>
     </div>
 </body>

@@ -1,71 +1,134 @@
+// Global variables to track query history
 let queryHistory = [];
 let currentQueryIndex = -1;
-const runBtn = document.getElementById("runBtn")
-const query = document.getElementById("query")
 
-// runBtn.addEventListener("click",runQuery(query.innerText))
-// load sql scripts to form navbar when page loads  
+// Main initialization when document loads
 document.addEventListener("DOMContentLoaded", () => {
     loadSQLScripts();
+    setupEventListeners();
 });
-async function loadSQLScripts() {
-    let response = await fetch("/get-sql-scripts");
-    let data = await response.json();
-    let navbar = document.getElementById("categories");
-    navbar.innerHTML = "";
 
-    for (let category in data.categories) {
-        let categoryItem = document.createElement("li");
-        categoryItem.innerText = category;
-        categoryItem.onclick = () => {
-            document.querySelectorAll("#categories li").forEach(li => li.classList.remove("selected"));
-            loadScripts(category, data.categories[category])
-            categoryItem.classList.add("selected");
-        };
-        navbar.appendChild(categoryItem);
+// Add this function to the script.js file
+function highlightCode() {
+    // Check if Prism is loaded
+    if (window.Prism) {
+        // Highlight all SQL elements
+        Prism.highlightElement(document.getElementById('query'));
     }
 }
 
-// load script content when script selected
-async function loadScriptContent() {
-    // console.log("change")
-    let category = document.querySelector("#categories li.selected")?.innerText;
-    let scriptName = document.getElementById("script-selector").value;
-    // console.log(category)
-    // console.log(scriptName)
-    if (!category || !scriptName) return;
 
-    let response = await fetch(`/get-script-content/?category=${category}&script_name=${scriptName}`);
-    let data = await response.json();
-
-    document.getElementById("query").innerText = data.content;
+/**
+ * Set up all event listeners for the application
+ */
+function setupEventListeners() {
+    // Script selector change event
+    document.getElementById("script-selector").addEventListener("change", loadScriptContent);
+    
+    // Add keyboard shortcuts for the query editor
+    document.getElementById("query").addEventListener("keydown", function(e) {
+        // Execute query with Ctrl+Enter
+        if (e.ctrlKey && e.key === "Enter") {
+            runQuery();
+            e.preventDefault();
+        }
+    });
 }
 
-// Add event listener when the script is selected
-document.getElementById("script-selector").addEventListener("click", loadScriptContent);
+/**
+ * Load SQL scripts and populate the sidebar navigation
+ */
+async function loadSQLScripts() {
+    try {
+        const response = await fetch("/get-sql-scripts");
+        const data = await response.json();
+        const navbar = document.getElementById("categories");
+        navbar.innerHTML = "";
 
+        // Create category items in the sidebar
+        for (let category in data.categories) {
+            let categoryItem = document.createElement("li");
+            categoryItem.innerHTML = `<i class="fas fa-folder"></i> ${category}`;
+            categoryItem.onclick = () => {
+                document.querySelectorAll("#categories li").forEach(li => li.classList.remove("selected"));
+                categoryItem.classList.add("selected");
+                loadScripts(category, data.categories[category]);
+            };
+            navbar.appendChild(categoryItem);
+        }
+        
+        // Show status message in output area
+        document.getElementById("output").textContent = "Ready. Select a script category and file to begin.";
+    } catch (error) {
+        console.error("Error loading SQL scripts:", error);
+        document.getElementById("output").textContent = "Failed to load SQL scripts. Please check server connection.";
+    }
+}
+
+/**
+ * Load the content of the selected script
+ */
+async function loadScriptContent() {
+    const category = document.querySelector("#categories li.selected")?.innerText.replace(/^\s*\S+\s+/, '').trim(); // Remove icon
+    const scriptName = document.getElementById("script-selector").value;
+    console.log(category,scriptName);
+    if (!category || !scriptName) return;
+
+    try {
+        const response = await fetch(`/get-script-content/?category=${encodeURIComponent(category)}&script_name=${encodeURIComponent(scriptName)}`);
+        const data = await response.json();
+
+        document.getElementById("query").textContent = data.content;
+
+        // Highlight the code after setting content
+        highlightCode();
+
+        // Add to query history
+        queryHistory.push(data.content);
+        currentQueryIndex = queryHistory.length - 1;
+    } catch (error) {
+        console.error("Error loading script content:", error);
+        document.getElementById("output").textContent = "Failed to load script content.";
+    }
+}
+
+/**
+ * Populate script selector dropdown with scripts from the selected category
+ * @param {string} category - The selected category
+ * @param {Array} scripts - List of scripts in the category
+ */
 function loadScripts(category, scripts) {
-    let selector = document.getElementById("script-selector");
+    const selector = document.getElementById("script-selector");
     selector.innerHTML = "";
 
     scripts.forEach(script => {
-        let option = document.createElement("option");
+        const option = document.createElement("option");
         option.value = script;
         option.text = script;
         selector.appendChild(option);
     });
+    
+    // Load the first script content if available
+    loadScriptContent();
+    
 }
 
-// Execute query and display output on output panel
-async function runQuery(query=document.getElementById("query").textContent) {
+/**
+ * Execute the current SQL query
+ * @param {string} query - SQL query to execute (optional, defaults to query editor content)
+ */
+async function runQuery(query = document.getElementById("query").textContent) {
     const dbType = document.getElementById("dbType").value;
     const outputElement = document.getElementById("output");
-    console.log(query)
-
+    
     if (!query.trim()) {
         outputElement.textContent = "Please enter a SQL query.";
         return;
     }
+    
+    // Show loading indicator
+    outputElement.innerHTML = "<div style='text-align:center; padding: 20px;'><i class='fas fa-spinner fa-spin'></i> Executing query...</div>";
+    
     try {
         const response = await fetch("/execute-query", {
             method: "POST",
@@ -74,60 +137,117 @@ async function runQuery(query=document.getElementById("query").textContent) {
         });
 
         const result = await response.json();
+        
         if (response.ok) {
-            outputElement.innerHTML = "<pre>"
-            if (result.data){
-                outputElement.innerHTML += formatTable(result.columns, result.data) + "\n";
+            outputElement.innerHTML = "";
+            
+            // Display table results if available
+            if (result.data && result.data.length > 0) {
+                outputElement.innerHTML += formatTable(result.columns, result.data);
+                outputElement.innerHTML += `<div class="query-info">${result.data.length} rows returned</div>`;
+            } else if (result.data) {
+                outputElement.innerHTML += "<div class='no-results'>Query executed successfully. No rows returned.</div>";
             }
-            if (result.messages){
-                outputElement.innerHTML += result.messages.join("\n");
+            
+            // Display query messages if available
+            if (result.messages && result.messages.length > 0) {
+                outputElement.innerHTML += "<div class='query-messages'>" + result.messages.join("<br>") + "</div>";
             }
-            outputElement.innerHTML +=  "</pre>";
         } else {
-            outputElement.textContent = `Error: ${result.detail}`;
+            outputElement.innerHTML = `<div class="error-message"><i class="fas fa-exclamation-triangle"></i> Error: ${result.detail}</div>`;
         }
     } catch (error) {
-        console.log(error)
-        outputElement.textContent = "Failed to execute query. Check server connection. ";
+        console.error("Query execution error:", error);
+        outputElement.innerHTML = `<div class="error-message"><i class="fas fa-exclamation-triangle"></i> Failed to execute query. Check server connection.</div>`;
     }
 }
 
-// format the output table
+/**
+ * Format query results as an HTML table
+ * @param {Array} columns - Column names
+ * @param {Array} data - Table data rows
+ * @returns {string} HTML table
+ */
 function formatTable(columns, data) {
+    if (!data || data.length === 0) return "";
     
-    let table = "<table border='1' style='width:100%; border-collapse: collapse;'>";
+    let table = "<table class='results-table'>";
     
-    // Extract column headers from API response
+    // Table header with column names
     if (columns && columns.length > 0) {
-        table += "<tr>" + columns.map(col => `<th>${col}</th>`).join("") + "</tr>";
+        table += "<thead><tr>" + columns.map(col => `<th>${escapeHTML(col)}</th>`).join("") + "</tr></thead>";
     }
     
-    // Populate rows with data
+    // Table body with data rows
+    table += "<tbody>";
     data.forEach(row => {
-        table += "<tr>" + row.map(value => `<td>${value}</td>`).join("") + "</tr>";
+        table += "<tr>" + row.map(value => 
+            `<td>${value === null ? '<span class="null-value">NULL</span>' : escapeHTML(String(value))}</td>`
+        ).join("") + "</tr>";
     });
+    table += "</tbody></table>";
     
-    table += "</table>";
-    // console.log(table);
     return table;
 }
 
-// show table content by firing select query
+/**
+ * Escape HTML special characters to prevent XSS
+ * @param {string} str - String to escape
+ * @returns {string} Escaped string
+ */
+function escapeHTML(str) {
+    return str
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+/**
+ * Show table content by prompting for table name
+ */
 async function showTableContent() {
-    let tableName = prompt("Enter table name:");
-    runQuery(`select * from ${tableName};`)
+    const tableName = prompt("Enter table name:");
+    if (tableName) {
+        runQuery(`SELECT * FROM ${tableName};`);
+    }
 }
 
-// show table structure by firing desc query
+/**
+ * Show table structure by prompting for table name
+ */
 async function showTableMetadata() {
-    let tableName = prompt("Enter table name:");
-    runQuery(`desc ${tableName};`)
+    const tableName = prompt("Enter table name:");
+    if (tableName) {
+        runQuery(`DESC ${tableName};`);
+    }
 }
 
-async function rollbackQuery(){
-    runQuery("rollback;");
+/**
+ * Rollback the current transaction
+ */
+async function rollbackQuery() {
+    runQuery("ROLLBACK;");
 }
 
-async function commitQuery(){
-    runQuery("commit;");
+/**
+ * Commit the current transaction
+ */
+async function commitQuery() {
+    runQuery("COMMIT;");
+}
+
+/**
+ * Drop table after confirming with user
+ */
+async function dropTable() {
+    const tableName = prompt("Enter table name to DROP:");
+    if (!tableName) return;
+    
+    // Double confirm with user to prevent accidents
+    const confirmed = confirm(`Are you sure you want to DROP table ${tableName}? This action cannot be undone.`);
+    if (confirmed) {
+        runQuery(`DROP TABLE ${tableName};`);
+    }
 }

@@ -1,11 +1,25 @@
+-- LOOPS
 DECLARE
-  v_counter NUMBER := 1;
-  v_max_limit NUMBER := 5;
-
+   i NUMBER := 1;
 BEGIN
+  DBMS_OUTPUT.PUT_LINE('SIMPLE LOOP');
   LOOP
-    EXIT WHEN v_counter > v_max_limit;
-    DBMS_OUTPUT.PUT_LINE('Iteration: ' || v_counter);
-    v_counter := v_counter + 1;
+     DBMS_OUTPUT.PUT_LINE('i = ' || i);
+     i := i + 1;
+     EXIT WHEN i > 5;
+  END LOOP;
+  DBMS_OUTPUT.PUT_LINE('WHILE LOOP');
+  i := 1;
+  WHILE i <= 5 LOOP
+     DBMS_OUTPUT.PUT_LINE('i = ' || i);
+     i := i + 1;
+  END LOOP;
+  DBMS_OUTPUT.PUT_LINE('FOR LOOP');
+  FOR i IN 1..5 LOOP
+     DBMS_OUTPUT.PUT_LINE('i = ' || i);
+  END LOOP;
+  DBMS_OUTPUT.PUT_LINE('REVERSE FOR LOOP');
+  FOR i IN REVERSE 1..5 LOOP
+     DBMS_OUTPUT.PUT_LINE('i = ' || i);
   END LOOP;
 END;

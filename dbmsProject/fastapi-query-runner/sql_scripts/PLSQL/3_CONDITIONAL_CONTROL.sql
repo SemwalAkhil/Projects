@@ -1,3 +1,4 @@
+-- CONDITIONAL CONTROLS (IF, ELSIF, ELSE)
 DECLARE
   v_sales NUMBER := 1200;
   v_discount NUMBER;

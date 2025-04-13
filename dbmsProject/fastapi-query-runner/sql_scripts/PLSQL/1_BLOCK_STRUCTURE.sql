@@ -1,14 +1,17 @@
+-- BASIC BLOCK STRUCTURE OF PLSQL
+-- DECLARATION BLOCK (OPTIONAL)
 DECLARE
   v_name VARCHAR2(50);
   v_message VARCHAR2(100);
-
+-- START OF MAIN BLOCK
 BEGIN
   v_name := 'Alice';
   v_message := 'Hello, ' || v_name || '! Welcome to PL/SQL.';
 
   DBMS_OUTPUT.PUT_LINE(v_message);
-
+-- EXCEPTION BLOCK (OPTIONAL)
 EXCEPTION
   WHEN OTHERS THEN
     DBMS_OUTPUT.PUT_LINE('An error occurred: ' || SQLERRM);
 END;
+-- END OF BLOCK

@@ -1,2 +1,2 @@
--- DROP VIEW view_name;
-DROP VIEW high_scorers;
+-- DROP VIEW view_name
+drop view high_scorers;

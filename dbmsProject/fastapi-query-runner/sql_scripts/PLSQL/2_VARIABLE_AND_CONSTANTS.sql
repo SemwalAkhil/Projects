@@ -1,7 +1,6 @@
+-- VARIABLES AND CONSTANTS IN PLSQL
 DECLARE
   c_tax_rate CONSTANT NUMBER := 0.18;
-
-
   v_price       NUMBER := 1000;    
   v_tax_amount  NUMBER;
   v_total_price NUMBER;

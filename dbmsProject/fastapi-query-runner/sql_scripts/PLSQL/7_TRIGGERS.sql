@@ -1,6 +1,6 @@
 CREATE TABLE employees (
   emp_id NUMBER PRIMARY KEY,
-  name VARCHAR2(50),
+  sname VARCHAR2(50),
   salary NUMBER
 );
 
@@ -14,5 +14,5 @@ BEGIN
 END;
 /
 
-INSERT INTO employees (emp_id, name, salary) VALUES (1, 'Alice', 50000);
-INSERT INTO employees (emp_id, name, salary) VALUES (2, 'Bob', -1000);
+INSERT INTO employees (emp_id, sname, salary) VALUES (1, 'Alice', 50000);
+INSERT INTO employees (emp_id, sname, salary) VALUES (2, 'Bob', -1000);
