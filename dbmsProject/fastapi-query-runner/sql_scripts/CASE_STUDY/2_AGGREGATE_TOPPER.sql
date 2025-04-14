@@ -2,4 +2,4 @@
 -- RULES:
 -- MARKS > 60% IN EACH SUBJECT
 -- IF TWO STUDENTS HAVE SAME MARKS THEN SAME POSITION 
-SELECT name as "Name",marks1 + marks2 + marks3 + marks4 as 'Total Marks', RANK() OVER (ORDER BY marks1+marks2+marks3+marks4 DESC) AS "Rank" FROM marks WHERE marks1 > (45 * 0.6) AND marks2 > (65 * 0.6) AND marks3 > (65 * 0.6) AND marks4 > (65 * 0.6) LIMIT 3 ;
+SELECT NAME as "Name",MARKS1 + MARKS2 + MARKS3 + MARKS4 as 'Total Marks', RANK() OVER (ORDER BY MARKS1+mArks2+MARKS3+MARKS4 DESC) AS "Rank" FROM MARKS WHERE MARKS1 > (45 * 0.6) AND MARKS2 > (65 * 0.6) AND MARKS3 > (65 * 0.6) AND MARKS4 > (65 * 0.6) LIMIT 3 ;

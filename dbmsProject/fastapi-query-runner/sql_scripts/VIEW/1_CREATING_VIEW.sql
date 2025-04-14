@@ -1,4 +1,4 @@
 -- CREATE VIEW view_name AS SELECT column1, column2 FROM table_name WHERE condition
-CREATE VIEW high_scorers AS SELECT name, (marks1 + marks2 + marks3 + marks4) AS total FROM marks WHERE ( marks1 + marks2 + marks3 + marks4 ) > 160;
+CREATE VIEW HIGH_SCORERS AS SELECT NAME, (MARKS1 + MARKS2 + MARKS3 + MARKS4) AS TOTAL FROM MARKS WHERE ( MARKS1 + MARKS2 + MARKS3 + MARKS4 ) > 160;
 
-SELECT * FROM high_scorers ORDER BY total;
+SELECT * FROM HIGH_SCORERS ORDER BY TOTAL;

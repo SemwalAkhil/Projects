@@ -143,7 +143,7 @@ async function runQuery(query = document.getElementById("query").textContent) {
             
             // Display table results if available
             if (result.data && result.data.length > 0) {
-                outputElement.innerHTML += formatTable(result.columns, result.data);
+                outputElement.innerHTML += formatTable(result);
                 outputElement.innerHTML += `<div class="query-info">${result.data.length} rows returned</div>`;
             } else if (result.data) {
                 outputElement.innerHTML += "<div class='no-results'>Query executed successfully. No rows returned.</div>";
@@ -168,25 +168,28 @@ async function runQuery(query = document.getElementById("query").textContent) {
  * @param {Array} data - Table data rows
  * @returns {string} HTML table
  */
-function formatTable(columns, data) {
-    if (!data || data.length === 0) return "";
+function formatTable(result) {
+    console.log("Format table function");
+    console.log("Creating table : ", result);
+    if (!result || !result.data || result.data.length === 0) return "";
     
+    const { columns, data } = result;
     let table = "<table class='results-table'>";
-    
-    // Table header with column names
+
+    // Table header
     if (columns && columns.length > 0) {
         table += "<thead><tr>" + columns.map(col => `<th>${escapeHTML(col)}</th>`).join("") + "</tr></thead>";
     }
     
-    // Table body with data rows
+    // Table body
     table += "<tbody>";
     data.forEach(row => {
-        table += "<tr>" + row.map(value => 
-            `<td>${value === null ? '<span class="null-value">NULL</span>' : escapeHTML(String(value))}</td>`
+        table += "<tr>" + columns.map(col =>
+            `<td>${row[col] === null ? '<span class="null-value">NULL</span>' : escapeHTML(String(row[col]))}</td>`
         ).join("") + "</tr>";
     });
     table += "</tbody></table>";
-    
+    console.log(table);
     return table;
 }
 

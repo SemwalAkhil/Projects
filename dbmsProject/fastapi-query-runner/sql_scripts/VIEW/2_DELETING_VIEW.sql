@@ -1,2 +1,2 @@
 -- DROP VIEW view_name
-drop view high_scorers;
+DROP VIEW HIGH_SCORERS;
