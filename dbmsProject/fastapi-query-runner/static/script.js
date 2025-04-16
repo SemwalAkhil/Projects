@@ -6,9 +6,42 @@ let currentQueryIndex = -1;
 document.addEventListener("DOMContentLoaded", () => {
     loadSQLScripts();
     setupEventListeners();
+    setupMobileNavigation();
 });
 
-// Add this function to the script.js file
+// Function to handle mobile navigation toggle
+function setupMobileNavigation() {
+    const menuToggle = document.getElementById("menuToggle");
+    const navbar = document.getElementById("navbar");
+    
+    if (menuToggle) {
+        menuToggle.addEventListener("click", () => {
+            navbar.classList.toggle("active");
+            // Change icon based on menu state
+            const icon = menuToggle.querySelector("i");
+            if (navbar.classList.contains("active")) {
+                icon.className = "fas fa-times";
+                
+            } else {
+                icon.className = "fas fa-bars";
+            }
+        });
+    }
+    
+    // Close menu when a category is selected on mobile
+    const categories = document.getElementById("categories");
+    if (categories) {
+        categories.addEventListener("click", (e) => {
+            if (window.innerWidth <= 992 && e.target.tagName === "LI") {
+                navbar.classList.remove("active");
+                const icon = menuToggle.querySelector("i");
+                icon.className = "fas fa-bars";
+            }
+        });
+    }
+}
+
+// Function to highlight code
 function highlightCode() {
     // Check if Prism is loaded
     if (window.Prism) {
@@ -16,7 +49,6 @@ function highlightCode() {
         Prism.highlightElement(document.getElementById('query'));
     }
 }
-
 
 /**
  * Set up all event listeners for the application
@@ -33,6 +65,25 @@ function setupEventListeners() {
             e.preventDefault();
         }
     });
+    
+    // Add resize event listener for responsive adjustments
+    window.addEventListener("resize", handleResize);
+}
+
+/**
+ * Handle window resize events
+ */
+function handleResize() {
+    const navbar = document.getElementById("navbar");
+    const menuToggle = document.getElementById("menuToggle");
+    
+    // Reset navbar styles when switching between mobile and desktop views
+    if (window.innerWidth > 992) {
+        navbar.classList.remove("active");
+        if (menuToggle && menuToggle.querySelector("i")) {
+            menuToggle.querySelector("i").className = "fas fa-bars";
+        }
+    }
 }
 
 /**
@@ -174,7 +225,7 @@ function formatTable(result) {
     if (!result || !result.data || result.data.length === 0) return "";
     
     const { columns, data } = result;
-    let table = "<table class='results-table'>";
+    let table = "<div class='table-responsive'><table class='results-table'>";
 
     // Table header
     if (columns && columns.length > 0) {
@@ -188,7 +239,7 @@ function formatTable(result) {
             `<td>${row[col] === null ? '<span class="null-value">NULL</span>' : escapeHTML(String(row[col]))}</td>`
         ).join("") + "</tr>";
     });
-    table += "</tbody></table>";
+    table += "</tbody></table></div>";
     console.log(table);
     return table;
 }

@@ -25,53 +25,63 @@
 </head>
 
 <body class="line-numbers">
-    <!-- Sidebar Navigation -->
-    <nav id="navbar">
-        <div class="nav-header">
-            <h2><i class="fas fa-database"></i> SQL Scripts</h2>
-        </div>
-        <ul id="categories"></ul>
-    </nav>
+    <div class="content-wrapper">
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
 
-    <div id="main-container">
-        <!-- Query Editor Panel -->
-        <div class="left-panel">
-            <h2><i class="fas fa-code"></i> SQL Query Editor</h2>
-            <div class="control-group">
-                <label for="dbType">Database Type:</label>
-                <select id="dbType" class="select-input">
-                    <option value="mysql">MySQL</option>
-                    <option value="oracle">Oracle</option>
-                </select>
+        <!-- Sidebar Navigation -->
+        <nav id="navbar">
+            <div class="nav-header">
+                <h2><i class="fas fa-database"></i> SQL Scripts</h2>
             </div>
-            <div class="control-group">
-                <label for="script-selector">Select Script:</label>
-                <select id="script-selector" class="select-input"></select>
+            <ul id="categories"></ul>
+        </nav>
+
+        <div id="main-container">
+            <!-- Query Editor Panel -->
+            <div class="left-panel">
+                <h2><i class="fas fa-code"></i> SQL Query Editor</h2>
+                <div class="control-group">
+                    <label for="dbType">Database Type:</label>
+                    <select id="dbType" class="select-input">
+                        <option value="mysql">MySQL</option>
+                        <option value="oracle">Oracle</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="script-selector">Select Script:</label>
+                    <select id="script-selector" class="select-input"></select>
+                </div>
+                <div class="query-container">
+                    <pre id="query" class="code-editor language-sql"></pre>
+                </div>
+                <div class="button-group">
+                    <button onclick="runQuery()" class="primary-btn"><i class="fas fa-play"></i> Run Query</button>
+                    <button onclick="commitQuery()" class="success-btn"><i class="fas fa-check"></i> Commit</button>
+                    <button onclick="rollbackQuery()" class="danger-btn"><i class="fas fa-undo"></i> Rollback</button>
+                </div>
             </div>
-            <div class="query-container">
-                <pre id="query" class="code-editor language-sql"></pre>
-            </div>
-            <div class="button-group">
-                <button onclick="runQuery()" class="primary-btn"><i class="fas fa-play"></i> Run Query</button>
-                <button onclick="commitQuery()" class="success-btn"><i class="fas fa-check"></i> Commit</button>
-                <button onclick="rollbackQuery()" class="danger-btn"><i class="fas fa-undo"></i> Rollback</button>
-            </div>
-        </div>
-        <!-- Results Panel -->
-        <div class="right-panel">
-            <h2><i class="fas fa-table"></i> Query Results</h2>
-            <div class="output-container">
-                <pre id="output"></pre>
-            </div>
-            <div class="button-group">
-                <button onclick="showTableContent()" class="secondary-btn"><i class="fas fa-list"></i> Show Table
-                    Content</button>
-                <button onclick="showTableMetadata()" class="secondary-btn"><i class="fas fa-info-circle"></i> Show
-                    Table Structure</button>
-                <button onclick="dropTable()" class="danger-btn"><i class="fas fa-trash"></i> Drop Table</button>
+            <!-- Results Panel -->
+            <div class="right-panel">
+                <h2><i class="fas fa-table"></i> Query Results</h2>
+                <div class="output-container">
+                    <pre id="output"></pre>
+                </div>
+                <div class="button-group">
+                    <button onclick="showTableContent()" class="secondary-btn"><i class="fas fa-list"></i> Show Table
+                        Content</button>
+                    <button onclick="showTableMetadata()" class="secondary-btn"><i class="fas fa-info-circle"></i> Show
+                        Table Structure</button>
+                    <button onclick="dropTable()" class="danger-btn"><i class="fas fa-trash"></i> Drop Table</button>
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>DBMS Project by Akhil Semwal | BCA 2nd Year | Roll No. 4033/23</p>
+    </footer>
 </body>
 
 </html>
