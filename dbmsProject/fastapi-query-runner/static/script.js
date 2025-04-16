@@ -21,7 +21,6 @@ function setupMobileNavigation() {
             const icon = menuToggle.querySelector("i");
             if (navbar.classList.contains("active")) {
                 icon.className = "fas fa-times";
-                
             } else {
                 icon.className = "fas fa-bars";
             }
@@ -122,7 +121,6 @@ async function loadSQLScripts() {
 async function loadScriptContent() {
     const category = document.querySelector("#categories li.selected")?.innerText.replace(/^\s*\S+\s+/, '').trim(); // Remove icon
     const scriptName = document.getElementById("script-selector").value;
-    console.log(category,scriptName);
     if (!category || !scriptName) return;
 
     try {
@@ -220,8 +218,6 @@ async function runQuery(query = document.getElementById("query").textContent) {
  * @returns {string} HTML table
  */
 function formatTable(result) {
-    console.log("Format table function");
-    console.log("Creating table : ", result);
     if (!result || !result.data || result.data.length === 0) return "";
     
     const { columns, data } = result;
@@ -240,7 +236,6 @@ function formatTable(result) {
         ).join("") + "</tr>";
     });
     table += "</tbody></table></div>";
-    console.log(table);
     return table;
 }
 
