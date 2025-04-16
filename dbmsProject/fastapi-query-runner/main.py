@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException
 from database import get_mysql_connection, get_oracle_connection
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
@@ -91,7 +91,7 @@ def execute_query(request: QueryRequest):
         tempQuery = ""
         # Execute each query and process the results
         for query in queries:
-            if query is None or "--" in query:  # Skip empty or comment lines
+            if query is None or query.startswith("--"):  # Skip empty or comment lines
                 continue
             tempQuery += query
             if (not query.strip().endswith(";")) and query != queries[-1]:
@@ -99,11 +99,6 @@ def execute_query(request: QueryRequest):
             else:
                 query = tempQuery
                 tempQuery = ""
-            # pattern_slash_end = r'END\b.*?;\s*\n\s*/'          # Match block ending with slash
-            # pattern_wrong_semicolon = r';\s*\n(?!\s*/)'        # Semicolon not followed by a slash
-
-            # # Combine with 'or' if you want to find either case
-            # combined_pattern = fr'({pattern_slash_end})|({pattern_wrong_semicolon})'
             # Clean up any unnecessary slashes from queries (specific to Oracle or other systems)
             query = re.sub(r"(?:^\s*/|/\s*$|(?<!END)\s*;$)", "", query)
 
@@ -164,5 +159,5 @@ def close_database_connections():
 
 # Run the application using Uvicorn with dynamic port from the environment
 if __name__ == "__main__":
-    port = int(os.getenv("PORT", 10000))  # Render dynamically assigns a port
+    port = int(os.getenv("PORT", 8080))
     uvicorn.run(app, host="0.0.0.0", port=port)
