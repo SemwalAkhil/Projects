@@ -77,6 +77,7 @@ def execute_query(request: QueryRequest):
 
             # Split queries and keep track of DECLARE/BEGIN blocks for Oracle
             queries = []
+            request.sql = request.sql.lower()
             for match in re.finditer(
                 r"(.*?)(?=(?:declare|begin|create or replace (?:trigger|function))|$)((?:declare|begin|create or replace (?:trigger|function)).*?end;)?",
                 request.sql.strip(), re.DOTALL | re.IGNORECASE):
