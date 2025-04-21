@@ -80,6 +80,14 @@ def execute_query(request: QueryRequest):
             for match in re.finditer(
                 r"(.*?)(?=(?:declare|begin|create or replace (?:trigger|function))|$)((?:declare|begin|create or replace (?:trigger|function)).*?end;)?",
                 request.sql.strip(), re.DOTALL | re.IGNORECASE):
+                r'''
+                r"(.*?)" → non-greedy capture of any text (Part 1),
+                (?=...) → lookahead for declare, begin, or create or replace trigger|function, or end of string,
+                ((...).*?end;)? → optionally captures a full PL/SQL block starting with the matched keyword and ending at the first end; (Part 2).
+                Flags:
+                re.DOTALL → allows . to match newlines,
+                re.IGNORECASE → case-insensitive matching.
+                '''
                 queries.extend([i for i in match.group(1).split("\n") if i] + [match.group(2)])
         else:
             # For MySQL, split by semicolons to separate queries
@@ -101,8 +109,12 @@ def execute_query(request: QueryRequest):
                 query = tempQuery
                 tempQuery = ""
             # Clean up any unnecessary slashes from queries (specific to Oracle or other systems)
-            query = re.sub(r"(?:^\s*/|/\s*$|(?<!END)\s*;$)", "", query)
-
+            query = re.sub(r"(?:^\s*/|/\s*$|(?<!end)\s*;$)", "", query,flags=re.IGNORECASE)
+            r'''
+                ^\s*/ → leading slash with optional whitespace,
+                /\s*$ → trailing slash with optional whitespace,
+                (?<!end)\s*;$ → semicolon at the end not preceded by "end", with optional whitespace before it.
+            '''
             print(f"<-----\n{query}\n----->")
 
             # Execute the query
