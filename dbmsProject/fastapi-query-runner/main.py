@@ -77,7 +77,6 @@ def execute_query(request: QueryRequest):
 
             # Split queries and keep track of DECLARE/BEGIN blocks for Oracle
             queries = []
-            request.sql = request.sql.lower()
             for match in re.finditer(
                 r"(.*?)(?=(?:declare|begin|create or replace (?:trigger|function))|$)((?:declare|begin|create or replace (?:trigger|function)).*?end;)?",
                 request.sql.strip(), re.DOTALL | re.IGNORECASE):
@@ -94,6 +93,7 @@ def execute_query(request: QueryRequest):
         for query in queries:
             if query is None or query.startswith("--"):  # Skip empty or comment lines
                 continue
+            query = query.lower()
             tempQuery += query
             if (not query.strip().endswith(";")) and query != queries[-1]:
                 continue
