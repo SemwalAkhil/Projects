@@ -1,3 +1,0 @@
-Input: hello world
-Index: 6
-Output: Character at index 6 is W

@@ -1,2 +1,0 @@
-Input: Hello
-Output: Length of string is: 5

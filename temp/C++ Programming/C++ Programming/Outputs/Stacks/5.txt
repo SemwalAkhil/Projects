@@ -1,2 +1,0 @@
-Enter string: Hello
-olleH

@@ -1,2 +1,0 @@
-Enter the total number of nodes: 5
-InOrder Traversal of the Almost Complete Binary Tree: 4 2 5 1 3 

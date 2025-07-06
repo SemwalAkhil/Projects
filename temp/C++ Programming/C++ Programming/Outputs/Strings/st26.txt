@@ -1,3 +1,0 @@
-Input: hello world
-Output: Start index of second word: 6
-

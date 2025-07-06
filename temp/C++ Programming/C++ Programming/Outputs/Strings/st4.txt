@@ -1,3 +1,0 @@
-Input: hello world
-Output: Hello World
-

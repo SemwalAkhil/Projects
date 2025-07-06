@@ -1,1 +1,0 @@
-The BST contains a dead end.

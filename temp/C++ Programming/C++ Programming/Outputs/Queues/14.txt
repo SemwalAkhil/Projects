@@ -1,2 +1,0 @@
-Enter parentheses string: ()(()))))
-Length of longest valid substring: 6

@@ -1,4 +1,0 @@
-Input: hello world
-Character: w
-Output: Value found at index 6
-

@@ -1,4 +1,0 @@
-Input: hello world
-Character: x
-Output: -1
-
