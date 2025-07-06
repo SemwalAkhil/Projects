@@ -1,2 +1,0 @@
--- DROP VIEW view_name
-DROP VIEW HIGH_SCORERS;

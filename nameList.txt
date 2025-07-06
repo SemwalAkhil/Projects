@@ -1,0 +1,484 @@
+BonChon Chicken
+Cupbop
+L&L Hawaiian Barbecue
+Manchu Wok
+Noodles & Company
+Ono Hawaiian
+Panda Express
+Pei Wei Asian Diner
+Phở Hòa
+Pick Up Stix
+Sarku Japan
+Yoshinoya
+Au Bon Pain
+Auntie Anne's
+Bruegger's Bagels
+Cinnabon
+Crumbl Cookies
+Daylight Donuts
+Duck Donuts
+Einstein Bros. Bagels
+Great American Cookies
+Great Harvest Bread Company
+Honey Dew Donuts
+Insomnia Cookies
+Krispy Kreme
+La Madeleine
+Le Pain Quotidien
+Mrs. Fields
+Pretzelmaker
+Shipley Do-Nuts
+Wetzel's Pretzels
+Winchell's Donuts
+Yum-Yum Donuts
+7 Brew Coffee
+7 Leaves Cafe
+Argo Tea
+Biggby Coffee
+Caribou Coffee
+The Coffee Bean & Tea Leaf
+Coffee Beanery
+CosMc's
+Dunkin' Donuts
+Dunn Brothers Coffee
+Dutch Bros. Coffee
+Gloria Jean's Coffees
+Gregorys Coffee
+Heine Brothers'
+Intelligentsia Coffee & Tea
+It's Boba Time
+Jamba Juice
+Juice It Up!
+Kung Fu Tea
+Orange Julius
+Peet's Coffee
+Philz Coffee
+Planet Smoothie
+Robeks
+Seattle's Best Coffee
+Smoothie King
+Starbucks
+Swig
+Tim Hortons
+Tropical Smoothie Cafe
+Bojangles' Famous Chicken 'n Biscuits
+Boston Market
+Brown's Chicken & Pasta
+Bush's Chicken
+Chester's International
+Chick-fil-A
+Chicken Express
+Chicken Salad Chick
+Church's Chicken
+Cluck-U Chicken
+Dave's Hot Chicken
+El Pollo Loco
+Golden Chick
+Grandy's
+Guthrie's
+Harold's Chicken Shack
+Hartz Chicken
+Jollibee
+KFC
+Lee's Famous Recipe Chicken
+Louisiana Famous Fried Chicken
+Maryland Fried Chicken
+Pollo Campero
+Pollo Tropical
+Popeyes
+Raising Cane's Chicken Fingers
+Slim Chickens
+Smithfield's Chicken 'N Bar-B-Q
+Wingstop
+Zaxby's
+Gold Star Chili
+Skyline Chili
+Andy's Frozen Custard
+Baskin-Robbins
+Ben & Jerry's
+Braum's
+Bruster's Ice Cream
+Carvel
+Cauldron Ice Cream
+Cold Stone Creamery
+Dairy Queen
+Dippin' Dots
+Fosters Freeze
+Golden Spoon
+Graeter's
+Häagen-Dazs
+Handel's Homemade Ice Cream & Yogurt
+MaggieMoo's Ice Cream and Treatery
+Marble Slab Creamery
+Menchie's Frozen Yogurt
+Oberweis Dairy
+Pinkberry
+Popbar
+Red Mango
+Rita's Italian Ice
+Sweet Frog
+Tastee-Freez
+TCBY
+Tropical Sno
+Tutti Frutti Frozen Yogurt
+Wanderlust Creamery
+Yogen Früz
+Yogurtland
+A&W Restaurants
+Arctic Circle Restaurants
+Back Yard Burgers
+Big Boy
+Blake's Lotaburger
+Bumper's Drive-In
+Burger King
+Burger Street
+BurgerFi
+Burgerville
+Carl's Jr. Hardee's
+Checkers Rally's
+Cheeburger Cheeburger
+Cook Out
+Culver's
+Farmer Boys
+Fatburger
+Five Guys
+Freddy's Frozen Custard & Steakburgers
+Frisch's Big Boy
+Fuddruckers
+Good Times Burgers & Frozen Custard
+The Habit Burger Grill
+Hwy 55 Burgers Shakes & Fries
+In-N-Out Burger
+Jack in the Box
+Jack's
+Krystal
+McDonald's
+Milo's Hamburgers
+Mooyah
+Original Tommy's
+Roy Rogers Restaurants
+Shake Shack
+Smashburger
+Sonic Drive-In
+Spangles
+Steak 'n Shake
+Swensons
+Umami Burger
+Ward's
+Wayback Burgers
+Wendy's
+Whataburger
+White Castle
+Zip's Drive-in
+Hot Dog on a Stick
+James Coney Island
+Nathan's Famous
+Portillo's Restaurants
+Sneaky Pete's
+Ted's Hot Dogs
+Wienerschnitzel
+Cava
+Daphne's Greek Cafe
+The Halal Guys
+Pita Pit
+Taziki's Mediterranean Cafe
+Zankou Chicken
+Baja Fresh
+Cafe Rio
+California Tortilla
+Chipotle Mexican Grill
+Del Taco
+El Taco Tote
+Fuzzy's Taco Shop
+Green/Red Burrito
+La Salsa
+Mighty Taco
+Moe's Southwest Grill
+Qdoba
+Rubio's Coastal Grill
+Salsarita's Fresh Mexican Grill
+Taco Bell
+Taco Bueno
+Taco Cabana
+Taco Casa
+Taco Casa
+Taco del Mar
+Tacos El Cuñado
+Taco John's
+Taco Mayo
+Taco Palenque
+Taco Time
+Taco Time (Northwest)
+Taco Villa
+Tijuana Flats
+Wahoo's Fish Taco
+America's Incredible Pizza Company
+Big Mama's & Papa's Pizzeria
+Blackjack Pizza
+Blaze Pizza
+Casey's
+Cicis
+D.P. Dough
+Domino's
+Donatos Pizza
+East of Chicago Pizza
+Fazoli's
+Fox's Pizza Den
+Frank Pepe's
+Gino's East
+Gino's Pizza and Spaghetti
+Giordano's Pizzeria
+Godfather's Pizza
+Grotto Pizza
+Happy's Pizza
+Hungry Howie's Pizza
+Hunt Brothers Pizza
+Jet's Pizza
+Ledo Pizza
+Little Caesars
+Lou Malnati's
+Marco's Pizza
+MOD Pizza
+Monical's Pizza
+Mountain Mike's Pizza
+Mr. Gatti's Pizza
+Papa Gino's
+Papa John's Pizza
+Papa Murphy's
+Pieology Pizzeria
+Pizza Fusion
+Pizza Hut
+Pizza Inn
+Pizza Patrón
+Pizza Ranch
+Pizzeria Regina
+Round Table Pizza
+Sbarro
+Uncle Maddio's Pizza Joint
+We, the Pizza
+Chopt
+Just Salad
+Saladworks
+Sweetgreen
+Veggie Grill
+WaBa Grill
+Amato's
+Arby's
+Atlanta Bread Company
+Biscuitville
+Blimpie
+Camille's Sidewalk Cafe
+Capriotti's
+Charleys Philly Steaks
+Corner Bakery Cafe
+Così
+Cousins Subs
+D'Angelo Grilled Sandwiches
+DiBella's
+Earl of Sandwich
+Eegee's
+Erbert & Gerbert's
+Firehouse Subs
+Great Wraps
+HoneyBaked Ham Co.
+Jason's Deli
+Jerry's Subs & Pizza
+Jersey Mike's Subs
+Jimmy John's
+Kelly's Roast Beef
+Lee's Sandwiches
+Lenny's Grill & Sub
+Lion's Choice
+Maid-Rite
+McAlister's Deli
+Mendocino Farms
+Miami Grill
+Milio's
+Nardelli's
+Newk's Eatery
+Panera Bread
+Paris Baguette
+Penn Station East Coast Subs
+Port of Subs
+Potbelly Sandwich Shop
+Pret a Manger
+Primo Hoagies
+Quiznos
+Rax Roast Beef
+Runza
+Sandella's Flatbread Café
+Schlotzsky's
+Steak Escape
+Subway
+Togo's
+Tubby's
+Tudor's Biscuit World
+Which Wich?
+Arthur Treacher's
+Captain D's
+H. Salt Esq. Fish & Chips
+Long John Silver's
+Applebee's
+Bakers Square
+Bennigan's
+BJ's Restaurant
+Black Bear Diner
+Bob Evans Restaurant
+Boomarang Diner
+Cheddar's Scratch Kitchen
+The Cheesecake Factory
+Coco's Bakery
+Cooper's Hawk Winery & Restaurant
+Copeland's
+Cracker Barrel
+Del Frisco's Grille
+Denny's
+Friendly's
+Golden Corral
+Gordon Biersch Brewery Restaurant
+Ground Round
+Hard Rock Cafe
+Hash House A Go Go
+Hooters
+Houlihan's
+Houston's Restaurant
+Huddle House
+IHOP
+J. Alexander's
+Karl Strauss Brewing Company
+Lazy Dog Restaurant & Bar
+Luby's
+Mateo's Burger Grill
+Marie Callender's
+Metro Diner
+Norm's
+O'Charley's
+The Original Pancake House
+Perkins Restaurant and Bakery
+Planet Hollywood
+Rainforest Cafe
+Rock Bottom Restaurant & Brewery
+Ruby Tuesday
+Ruby's Diner
+Rusty Bucket Restaurant & Tavern
+Seasons 52
+Shari's Cafe & Pies
+Shoney's
+Ted's Montana Grill
+TGI Fridays
+Village Inn
+Waffle House
+Wood Ranch
+Ayce Gogi
+Benihana
+Gen Korean BBQ
+HuHot Mongolian Grill
+Kabuki Japanese Restaurant
+Kona Grill
+Manila Sunset
+Nobu
+P.F. Chang's China Bistro
+Roy's
+Bar Louie
+Beef O'Brady's
+Champps
+HopCat
+Miller's Ale House
+Twin Peaks
+Yard House
+Bill Miller Bar-B-Q
+Dickey's Barbecue Pit
+Famous Dave's
+Lucille's Smokehouse Bar-B-Que
+Pappas Bar-B-Q
+Red Hot & Blue
+Rocklands Barbeque and Grilling Company
+Shane's Rib Shack
+Smokey Bones
+Sonny Bryan's Smokehouse
+Sonny's BBQ
+Tony Roma's
+Another Broken Egg Cafe
+First Watch
+Le Peep
+Bahama Breeze
+Jimmy Buffett's Margaritaville
+Buffalo Wild Wings
+Hooters
+Hurricane Grill & Wings
+WingHouse Bar & Grill
+The Melting Pot
+Mimi's Cafe
+Olga's Kitchen
+Islands
+Johnny Rockets
+Max & Erma's
+Red Robin
+Wahlburgers
+Chevys Fresh Mex
+Chili's
+Chuy's
+El Cholo
+El Torito
+On the Border Mexican Grill & Cantina
+Pappasito's Cantina
+Uncle Julio's
+Brio Tuscan Grill
+Buca di Beppo
+California Pizza Kitchen
+Carino's Italian
+Carrabba's Italian Grill
+Maggiano's Little Italy
+The Old Spaghetti Factory
+Olive Garden
+Romano's Macaroni Grill
+Valentino's
+Bertucci's
+Giordano's
+Happy Joe's
+LaRosa's Pizzeria
+Mellow Mushroom
+Old Chicago Pizza & Taproom
+Rosati's Authentic Chicago Pizza
+Rotolo's Pizzeria
+Shakey's Pizza
+Uno Pizzeria & Grill
+Earth Burger
+Souper Salad
+WaBa Grill
+The Boiling Crab
+Bonefish Grill
+Bubba Gump Shrimp Company
+Eddie V's Prime Seafood
+Joe's Crab Shack
+The Kickin' Crab
+Landry's Seafood
+Legal Sea Foods
+McCormick & Schmick's
+Ocean Prime
+Pappadeaux Seafood Kitchen
+Red Lobster
+Black Angus Steakhouse
+The Capital Grille
+Claim Jumper
+Del Frisco's Double Eagle Steakhouse
+Fleming's Prime Steakhouse & Wine Bar
+Fogo de Chão
+Logan's Roadhouse
+LongHorn Steakhouse
+Montana Mike's
+Morton's The Steakhouse
+Outback Steakhouse
+The Palm
+Ponderosa Bonanza Steakhouses
+Ruth's Chris Steak House
+Saltgrass Steak House
+Sizzler
+Stonefire Grill
+Texas de Brazil
+Texas Roadhouse
+Western Sizzlin'
+Chuck E. Cheese
+Dave & Busters
+Peter Piper Pizza
+Topgolf

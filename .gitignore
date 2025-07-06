@@ -1,7 +1,0 @@
-.env.local
-credentials
-*.sql
-pklData.json
-KesriFoundation
-venv
-.venv
