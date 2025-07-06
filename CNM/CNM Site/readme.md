@@ -66,33 +66,6 @@ Visit the interactive website to explore all programs with syntax highlighting a
 - C++ compiler (GCC, Clang, or MSVC)
 - Web browser (for viewing the interactive site)
 
-### Installation
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/your-username/cnm-practical-work.git
-cd cnm-practical-work
-```
-
-2. Navigate to the codes directory:
-
-```bash
-cd "CNM Site/codes"
-```
-
-3. Compile any program:
-
-```bash
-g++ -o program_name program_number.cpp
-```
-
-4. Run the compiled program:
-
-```bash
-./program_name
-```
-
 ### Using the Web Interface
 
 1. Open `index.html` in your web browser
@@ -143,14 +116,6 @@ Each program includes:
 - Input/output handling
 - Error checking where applicable
 - Comments explaining key concepts
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/new-method`)
-3. Commit your changes (`git commit -am 'Add new numerical method'`)
-4. Push to the branch (`git push origin feature/new-method`)
-5. Create a Pull Request
 
 ## 📝 Assignment Information
 
