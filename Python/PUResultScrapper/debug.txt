@@ -1,0 +1,388 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>
+	Panjab University Result
+</title>    
+    <style type="text/css">
+        .auto-style7 {
+            width: 154px;
+        }
+        .auto-style8 {
+            height: 19px;
+        }
+    </style>
+    <link href="style.css" rel="stylesheet" type="text/css">
+       
+    <script type="text/javascript">
+        function blink() {
+            var blinks = document.getElementsByTagName('blink');
+            for (var i = blinks.length - 1; i >= 0; i--) {
+                var s = blinks[i];
+                s.style.visibility = (s.style.visibility === 'visible') ? 'hidden' : 'visible';
+            }
+            window.setTimeout(blink, 200);
+        }
+        if (document.addEventListener) document.addEventListener("DOMContentLoaded", blink, false);
+        else if (window.addEventListener) window.addEventListener("load", blink, false);
+        else if (window.attachEvent) window.attachEvent("onload", blink);
+        else window.onload = blink;
+</script>
+
+
+    
+
+     <link href="/WebResource.axd?d=4xbzNbV7M96So6MgOjaKcKGQAMNU3GYfLeOHyS5MEn-QzFhid2y2iX1InGEMR-X97NAhCMAdylf0f0ba5QZbRUA3XmvxhGt8cNxmSh570UctAUCXzuCSZsukte8y8HQQguICKlSvhlvzRUtfES0cxxm1P2RAdO-WrI_v0QJgNjM1&amp;t=634946627606530000" type="text/css" rel="stylesheet"></head>
+<body>
+    
+
+    <form name="aspnetForm" method="post" action="./ShowResultSemester.aspx?CL=etEEa0aE7Ok%3d&amp;SS=dg+pZgzRaoY%3d&amp;Sem=mzi02FJa0LU%3d" id="aspnetForm" style="height:100%">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJMjI3MDEzMjk0D2QWAmYPZBYCAgMPZBYCAgMPZBYEAgMPFgIeB1Zpc2libGVoFgICAQ9kFgJmD2QWAgIDDw8WAh4EVGV4dAUFNDI5NDRkZAIFDxYCHwBnFhBmD2QWAmYPZBYCZg8PFgIfAWVkZAIBD2QWAgIBD2QWAgICDw8WAh8BBQlNYXksIDIwMjVkZAICD2QWAgIBD2QWAgIBDw8WAh8BBS5CYWNoZWxvciBvZiBDb21wdXRlciBBcHBsaWNhdGlvbiA2dGggIFNlbWVzdGVyZGQCAw9kFgICAQ9kFgICAQ8QZBAVCw9TZWxlY3QgU2VtZXN0ZXIBMQEyATMBNAE1ATYBNwE4ATkCMTAVCwItMQExATIBMwE0ATUBNgE3ATgBOQIxMBQrAwtnZ2dnZ2dnZ2dnZ2RkAgQPZBYCAgEPZBYCAgEPEA8WBh4NRGF0YVRleHRGaWVsZAUJQ29sbF9OYW1lHg5EYXRhVmFsdWVGaWVsZAUJQ29sbF9Db2RlHgtfIURhdGFCb3VuZGdkEBUFDUZ1bGwgU3ViamVjdHMVUmUtYXBwZWFyIENhbmRpZGF0ZS9zFURlZmljaWVudCBDYW5kaWRhdGUvcxVBZGRpdGlvbmFsICBTdWJqZWN0L3MaSW1wcm92ZW1lbnQgb2YgUGVyZm9ybWFuY2UVBQItMQIzNAIzNQIzNgIzNxQrAwVnZ2dnZ2RkAgYPFgIfAGcWAgIBD2QWAgIBDw8WAh8BBQsxNzYyMjAwMDgxMmRkAgcPFgIfAGcWAgIBD2QWAgIBDw8WAh8BBQRBU0hBZGQCCA8WAh8AZxYCAgEPZBYCAgEPDxYCHwEFBDE2ODZkZBgBBRNjdGwwMCRjcGgxJENhcHRjaGExDwUkNWEwYWU5YmYtOTRiNC00YzAxLWJkZDMtZjMxNTFkY2FhMmQzZP2df8cj1RwZmVWXYJ2RIar0R3Wyhceau9LXNqEPsLuJ">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=0W6Li_T4udRnErNEFyxQ3SWVRrSoyhytiKordcbaeTCWEJpuxmQZEdiShfxUqYHRuDPVOAB8fFk7lm4mpobwmUhAORBpF58noCDXbqNYOPs1&amp;t=638651969264922286" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=IZnvZI7Z8MuY5Ez6acp99v02uf_DQePrOdhZCor3p3p7lfVgbOGDK_C8-C0zahREQNKVuFQvF0wR40jjfmVXyZG2eeVVuDF38s1qKXK94PSXiXaBW6OwT_1Pzw4bh4qyH-s0U0kAydUGvgkn8MajmQ2&amp;t=23c9c237" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=TMrX-hbNTsWqpKLEwQ1RUq7P6de3zgBKmv-L30sq4lcGvGAYwQsDfHJ5fIfcO6j55CxE5x4eF8syDdxyhfKsx4r86tegwiX5r1IVEPcrTbmBTUTxsbcmmiQVTMyzBTlcaUuVl-nHW59vcrmhjWNRVw2&amp;t=23c9c237" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="1B01934C">
+	<input type="hidden" name="__PREVIOUSPAGE" id="__PREVIOUSPAGE" value="LYtW1wnfngRrVGwRGD7olI6q9R22HPwQHf0bzkABoju9C1k72pLd5p429x_g2CtmuPr9g3xorZeiGcm2igUX_d_ibMkmGVkOOBgSlCMIdUMjb1cq-ZHN3FklC67gWfFR0">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdADTHP7R45UTQjpr+1AR5aVj4PBz3fLu77W1aBG3ZSnmeBfKfPjvS7lXAom8I/FWpQdrXYN4CDnYkQRdyf8TPeW9dd6L+Kjz8da4xNQFKw9q45yg/hO2whnNoZzRuuFNjTNn6Q/FwakJbb/5ufeSQEtlur8euZAnI4NJlvPcKsCDAG1+KhWo0RMOcxfAnd+4BzisusdiqTDwyU9T26KANCu95m6mrqh8scR8brxZcSaBNUotnMQ9FBwV8UzvdPRPcNl355CM0pVLNRAjfDaLxNeaOK/vXI5HNnw/jyMZWeYtGK1BnJ/SnV5fR7swLfGGpeFUONbgzgLnx8vdm3UD9s57Y4HIPlrOeSQLttF/t8367aQuBcyL3RSufUtKN5gtKmXwZNj/psJPaOXl+SvuoH5s3yS7BO8d514sSR2jbdL7m3CF1M+eVybi/Tx15IRXPOpgvNRaKRRixEMo8ddd+0OuPE8e6LaD38DeTElYEw+/sUyfARzb8Ahc7mdwGJgZ9AjERg/gruSllifG64Mp+e0PP+n5vjpTYUkymimMWe8zV/b3+QNOSGugUbPBcGyTFWAXw2IOuMez4rWA2oNE3iyEhgNe6LLplnyEJhSnxVv8sd7exxeOmX1Q7QLiUOguRweTM0Ez3y2uyxeV3l0Pve+BBgdI8SZ08h6zN/3B+c0M9EsamaRLMDtOOkWce7AnI0yI1HjqoTQPJVM6aMDqXDUdEbe9F54Ct3B9DtPbGOecZ8sZ1pqqoX7tY1yg3D/A58EVAP97ywZVflwPCTMhNGpy1XoSltHsbWnb+CFwEVWNOtkUlqXR8WaPzd9txaaf6JuJnF7rxFLhmCONS2JCWXIl2CT3KNu+Zs0Y1Hkk8ZLRG9OmDd5vQ5z0MXYGdFsBptO8JTUgdWlbe73HCZea36/tkXNwKxcfWtLY3REObyA+oXRzOmlY58bnbdEvyvYi+Dmb/MlDWqt23wURGsvXNdXkeW7ya+pdMa/L3G15v2tNJ9F+LeishyZGzye7k55xBqqUwEjikY7+pIL2uC79PlkvVqGFIENTx1vnqaGBghwU2naLKiszwK8J9DXDpCAAu/AH3r6WNnwoA3GZmX6LAZCbpYT6OLtPBAjWvJ7Uw/m9hne7uDixytjm6Wna+Jv6fbro=">
+</div>
+    
+        <div id="header">
+            <div class="logo">
+                 <img src="https://results.puexam.in/images/logo7.jpg" alt="" style="border-radius: 50px">
+            </div>
+    <div id="topmenu"> <h1 style="color:white;">Panjab University,Chandigarh</h1>
+        <h2 style="color:white">Examination Results</h2>
+  <ul>
+      <li><a href="HomePage.aspx">Home</a></li>
+
+    <li> <a id="ctl00_LinkButton_Entrance" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$LinkButton_Entrance&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">Entrance Results</a></li>
+      <li><a href="https://envresult.puexam.in/">Environment Result</a></li>
+    <li><a href="ContactUs.aspx">Contact Us</a></li>
+  </ul>
+        </div>
+         
+</div>
+        <div style="clear:both;"></div>
+        <div id="ctl00_div_menu" class="menu">
+            <fieldset>
+                                <legend>Semester Results</legend>
+                                <ul>
+                                     <li>
+                                        <a id="ctl00_lbtnMay25" class="MainLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lbtnMay25&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">May,2025</a>
+                                                </li><br>
+                                      <li>
+                                        <a id="ctl00_lbtnDec24" class="MainLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lbtnDec24&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">December,2024</a>
+                                                </li><br>
+                                     <li>
+                                        <a id="ctl00_lbtnMay24" class="MainLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lbtnMay24&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">May,2024</a>
+                                                </li><br>
+                                     <li>
+                                        <a id="ctl00_lbtnDec23" class="MainLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lbtnDec23&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">December,2023</a>
+                                                </li><br>
+                                       <li>
+                                        <a id="ctl00_lbtnMay23" class="MainLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lbtnMay23&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">May,2023</a>
+                                                </li><br>
+                                      
+                                    
+                                      <li>
+                                        <a id="ctl00_lbtnDec22" class="MainLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lbtnDec22&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">December,2022</a>
+                                                </li><br>
+                                      <li>
+                                        <a id="ctl00_lbtnMay22" class="MainLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lbtnMay22&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">June/July,2022</a>
+                                                </li><br>
+                                      <li>
+                                        <a id="ctl00_lbtnDec21" class="MainLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lbtnDec21&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">December,2021</a>
+                                                </li><br>
+                                    
+                                    
+                                  
+                                    
+                                    <li>
+                                        <a id="ctl00_lbtnMay21" class="MainLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lbtnMay21&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">May/June,2021</a>
+                                                </li><br>
+                                    
+                                    
+                                     <li>
+                                        <a id="ctl00_lbtnDec20" class="MainLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lbtnDec20&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">December,2020 /February,2021</a>
+                                                </li><br>
+                                    
+                                    <li>
+                                        <a id="ctl00_lbtnMay20" class="MainLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lbtnMay20&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">September,2020 /January, 2021</a>
+                                                </li><br>
+                                    
+                                     <li>
+                                        <a id="ctl00_lbtnDec19" class="MainLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lbtnDec19&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">December,2019</a>
+                                                </li><br>
+                                     <li>
+                                        <a id="ctl00_lbtnSep19" class="MainLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lbtnSep19&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">September,2019</a>
+                                                </li><br>
+                                   
+                                    <li>
+                                        <a id="ctl00_lbtnMay19" class="MainLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lbtnMay19&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">May,2019</a>
+                                                </li><br>
+                                    <li>
+                                        <a id="ctl00_lbtnDec18" class="MainLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lbtnDec18&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">December,2018</a>
+                                                </li><br>
+                                     
+                                         <li>
+                                        <a id="ctl00_lbtnNov18" class="MainLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lbtnNov18&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">November,2018</a>
+                                                </li><br>
+                                     <li>
+                                        <a id="ctl00_lbtnMay18" class="MainLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lbtnMay18&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">May,2018</a>
+                                                </li><br>
+                                    <li>
+                                        <a id="ctl00_lbtnDec17" class="MainLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lbtnDec17&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">December,2017</a>
+                                                </li><br>
+                                     <li>
+                                        <a id="ctl00_lbtnMay17" class="MainLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lbtnMay17&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">May,2017</a>
+                                                </li><br>
+                                     <li>
+                                        <a id="ctl00_lbtnDec16" class="MainLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lbtnDec16&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">December,2016</a>
+                                                </li><br>
+
+                                     <li>
+                                        <a id="ctl00_lbtnMay16" class="MainLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lbtnMay16&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">May,2016</a>
+                                                </li><br>
+
+                                     <li>
+                                        <a id="ctl00_lbtnDec15" class="MainLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lbtnDec15&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">December,2015</a>
+                                                </li><br>
+                                                
+                                        
+                                    
+                                    <li>
+                                        <a id="ctl00_lbtnMay15" class="MainLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lbtnMay15&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">May,2015</a>
+                                                </li><br>
+                                                
+                                        
+                                    <li>
+                                        <a id="ctl00_lbtnDec14" class="MainLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lbtnDec14&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">December,2014</a><br>
+                                    </li>
+                                </ul>
+                            </fieldset>
+          <fieldset>
+                                <legend>Annual Results</legend>
+                                <ul>
+                                    <li>
+                                        <a id="ctl00_lbtnOct16" class="MainLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lbtnOct16&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">October,2016</a>
+                                    </li>
+                                    <br>
+                                     <li>
+                                        <a id="ctl00_lbtnApr16" class="MainLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lbtnApr16&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">April,2016</a>
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <a id="ctl00_lbtnApr15" class="MainLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lbtnApr15&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">April,2015</a>
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <a id="ctl00_lbtnSep15" class="MainLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$lbtnSep15&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))">October,2015</a>
+                                    </li>
+                                </ul>
+                            </fieldset>
+                           
+         <fieldset>                                <legend>Login</legend>
+                                <ul>
+                                    <li>
+                                        <a id="ctl00_LinkButton2" class="MainLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$LinkButton2&quot;, &quot;&quot;, true, &quot;&quot;, &quot;frmLogin.aspx&quot;, false, true))">College Admin</a>
+                                                </li><br>
+                                                
+                                    <li>
+                                        <a id="ctl00_LinkButton3" class="MainLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$LinkButton3&quot;, &quot;&quot;, true, &quot;&quot;, &quot;frmWebAdminLogin.aspx&quot;, false, true))">Web Admin</a>
+                                    </li>
+                                </ul>
+                               
+                            </fieldset>
+                            <fieldset>
+                                <legend>Others</legend>
+                                <ul>
+                                    <li><a href="ShowNotifications.aspx" class="MainLink">Notifications</a></li><br>
+                                        
+                                    <li><a href="Re_Evaluation.aspx" class="MainLink">Re-Evaluation Results</a></li><br>
+
+                                    <li><a href="ToppersMain.aspx" class="MainLink">Toppers Lists</a></li><br>
+                                       
+                                    <li><a href="AnnualCompResults.aspx" class="MainLink">Annual Results</a></li><br>
+
+                                     <li><a href="SpecialChance.aspx" class="MainLink">Special/Golden Chance-July,2016</a></li><br>
+
+                                     <li><a href="SpecialChanceJul17.aspx" class="MainLink">Special/Golden Chance-July,2017</a></li><br>
+                                    <li><a href="PassPercentage.aspx" class="MainLink">University Pass Percentage</a></li><br>
+                                        
+                                </ul>
+                            </fieldset>
+            
+        
+ 
+    </div> 
+          
+         <div style="float:right;width:85%">
+                            
+    
+     <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$cph1$ScriptManager1', 'aspnetForm', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+  <div style="width:70%;   
+    margin-left:10px;    
+    margin-top:10px ">
+        <div style=" background-image:url('images/bg.jpg'); border-radius:10px 10px 0px 0px;background-repeat:repeat-x;padding:10px;
+    font-size:medium;height:20px;color:white;
+    font-weight:bold;">Semester Results
+        </div>
+    
+   
+     <div style="width:100%; margin:auto">
+         
+             
+   
+    <table id="ctl00_cph1_tblResult" style="width:100%;border:double;border-color:skyblue; cellpadding:5;height:200px">
+	<tbody><tr>
+		<td colspan="3"><span id="ctl00_cph1_lblMsg" color="" style="color:Red;font-weight:bold;"></span></td>
+	</tr>
+	<tr>
+		<td style="font-weight: bold">Session : </td>
+		<td align="left" colspan="2">
+        
+        <span id="ctl00_cph1_lblSession">May, 2025</span>
+    </td>
+	</tr>
+	<tr>
+		<td class="auto-style7" style="font-weight: bold"> Class : </td>
+		<td align="left" colspan="2">
+        <span id="ctl00_cph1_lblClass">Bachelor of Computer Application 6th  Semester</span>
+        
+    </td>
+	</tr>
+	<tr>
+		<td class="auto-style7" style="font-weight: bold">Select Semester : </td>
+		<td class="auto-style1" colspan="2">
+                <select name="ctl00$cph1$ddlSemester" id="ctl00_cph1_ddlSemester" tabindex="2" style="height:33px;width:135px;">
+			<option value="-1">Select Semester</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option selected="selected" value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+
+		</select>
+            </td>
+	</tr>
+	<tr>
+		<td class="auto-style7" style="font-weight: bold">Select Exam Type : </td>
+		<td class="auto-style1" colspan="2">
+                <select name="ctl00$cph1$ddlCollCode" onchange="if (!window.__cfRLUnblockHandlers) return false; javascript:setTimeout('__doPostBack(\'ctl00$cph1$ddlCollCode\',\'\')', 0)" id="ctl00_cph1_ddlCollCode" tabindex="3" style="height:31px;width:195px;">
+			<option selected="selected" value="-1">Full Subjects</option>
+			<option value="34">Re-appear Candidate/s</option>
+			<option value="35">Deficient Candidate/s</option>
+			<option value="36">Additional  Subject/s</option>
+			<option value="37">Improvement of Performance</option>
+
+		</select>
+            </td>
+	</tr>
+	<tr>
+		<td class="auto-style7" style="font-weight: bold">Roll No. : </td>
+		<td class="auto-style5">
+                <input name="ctl00$cph1$txtRollNo" type="text" value="22050334" id="ctl00_cph1_txtRollNo" tabindex="4" style="height:20px;width:164px;">
+            </td>
+		<td>
+                <input type="submit" name="ctl00$cph1$btnShowResult" value="Show Result" onclick="if (!window.__cfRLUnblockHandlers) return false; javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$cph1$btnShowResult&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="ctl00_cph1_btnShowResult" style="font-weight: 700">
+                </td>
+	</tr>
+	<tr id="ctl00_cph1_trRegNo">
+		<td style="font-weight: bold" class="auto-style7">Registration No. :</td>
+		<td colspan="2">
+                <span id="ctl00_cph1_lblRegNo" style="font-weight:bold;">17622000812</span>
+            </td>
+	</tr>
+	<tr id="ctl00_cph1_trName">
+		<td style="font-weight: bold" class="auto-style7">Name :</td>
+		<td colspan="2">
+                <span id="ctl00_cph1_lblCName" style="font-weight:bold;">ASHA</span>
+            </td>
+	</tr>
+	<tr id="ctl00_cph1_trMarks">
+		<td style="font-weight: bold" class="auto-style7">Result/SGPA :</td>
+		<td colspan="2">
+                <span id="ctl00_cph1_lblMarks" style="font-weight:bold;">1686</span>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a id="ctl00_cph1_lbtnMarksDetail" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$cph1$lbtnMarksDetail&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, true))" style="color:Red;font-weight:bold;">Show Result Details</a>
+            </td>
+	</tr>
+	<tr>
+		<td colspan="3" style="color: red; font-size: medium; ">
+            
+        </td>
+	</tr>
+</tbody></table>
+
+                     
+                 
+        </div>
+    </div>
+
+    
+
+
+
+             </div>
+
+    
+
+
+  
+        
+
+
+       
+        
+       
+                    
+  
+    
+     
+ 
+    </form>
+   
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;9586241c5ca95969&quot;,&quot;version&quot;:&quot;2025.6.2&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;6ccf593586f641248ca7c61891e2cff2&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfEdge&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}}}" crossorigin="anonymous"></script>
+
+
+</body></html>

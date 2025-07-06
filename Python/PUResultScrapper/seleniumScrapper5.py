@@ -10,6 +10,8 @@ from selenium.webdriver.chrome.options import Options
 import csv
 import datetime
 from pypdf import PdfReader
+import time
+import random
 
 def clear_screen():
     if os.name == 'nt':
@@ -75,7 +77,9 @@ def getResult(inputFile:str):
         print("Invalid link number")
         exit(1)
 
+    
     link.click()
+    time.sleep(random.random() * 3)
 
     try:
         course = driver.find_element(By.NAME, "ctl00$cph1$ddlCourse")
@@ -84,6 +88,8 @@ def getResult(inputFile:str):
         exit(1)
 
     course.click()
+    time.sleep(random.random() * 3)
+
     courses = course.find_elements(By.TAG_NAME, "option")
 
     print("----------------------------------")
@@ -105,6 +111,8 @@ def getResult(inputFile:str):
         exit(1)
 
     class_element.click()
+    time.sleep(random.random() * 3)
+
     classes = class_element.find_elements(By.TAG_NAME, "option")
 
     print("----------------------------------")
@@ -117,6 +125,7 @@ def getResult(inputFile:str):
 
     class_choice = int(input("Choose Class: "))
     clear_screen()
+
     try:
         selected_class = classes[class_choice]
         ClassName = selected_class.text.strip()
@@ -125,6 +134,7 @@ def getResult(inputFile:str):
         exit(1)
 
     selected_class.click()
+    time.sleep(random.random() * 3)
 
     try:
         sems = driver.find_element(By.ID, "ctl00_cph1_tbLinks")
@@ -143,6 +153,7 @@ def getResult(inputFile:str):
 
     sem_choice = int(input("Choose Semester: "))
     clear_screen()
+
     try:
         sem = sems[sem_choice]
         semNum = re.findall(r"\d+", sem.text)[0]
@@ -151,15 +162,28 @@ def getResult(inputFile:str):
         exit(1)
 
     sem.click()
+    time.sleep(random.random() * 3)
 
     examKey = None
-    for roll in rollList:
+    for i,roll in enumerate(rollList):
+        if i == 0:
+            while True:
+                print("Please check the captcha: ")
+                if (input("Hit enter to continue: ")):
+                    break
         print(f"Checking roll no. {roll}")
         try:
             entryTable = driver.find_element(By.TAG_NAME, "table")
         except:
             print("Table not found")
-            exit(1)
+            print("1. to skip to next roll no.\nAny other exit\n")
+            while True:
+                if (1 == int(input("Choice: "))):
+                    break
+                else:
+                    print("Exiting")
+                    exit(1)
+            continue
 
         try:
             sem_select = entryTable.find_element(By.ID, "ctl00_cph1_ddlSemester")
@@ -167,17 +191,32 @@ def getResult(inputFile:str):
             for opt in sem_options:
                 if opt.get_attribute("value") == semNum:
                     opt.click()
+                    time.sleep(random.random() * 3)
                     break
         except:
             print("Semester selection failed")
-            exit(1)
+            print("1. to skip to next roll no.\nAny other exit\n")
+            while True:
+                if (1 == int(input("Choice: "))):
+                    break
+                else:
+                    print("Exiting")
+                    exit(1)
+            continue
 
         try:
             exams = entryTable.find_element(By.ID, "ctl00_cph1_ddlCollCode")
             exam_options = exams.find_elements(By.TAG_NAME, "option")
         except:
             print("Exam not found")
-            exit(1)
+            print("1. to skip to next roll no.\nAny other exit\n")
+            while True:
+                if (1 == int(input("Choice: "))):
+                    break
+                else:
+                    print("Exiting")
+                    exit(1)
+            continue
 
         if roll == rollList[0]:
             print("----------------------------------")
@@ -192,9 +231,17 @@ def getResult(inputFile:str):
             exam = exam_options[examKey]
             examType = exam.text.strip()
             exam.click()
+            time.sleep(random.random() * 3)
         except:
             print("Invalid Exam Key")
-            exit(1)
+            print("1. to skip to next roll no.\nAny other exit\n")
+            while True:
+                if (1 == int(input("Choice: "))):
+                    break
+                else:
+                    print("Exiting")
+                    exit(1)
+            continue
 
         try:
             rollno = entryTable.find_element(By.ID, "ctl00_cph1_txtRollNo")
@@ -209,15 +256,17 @@ def getResult(inputFile:str):
         try:
             submit = entryTable.find_element(By.ID, "ctl00_cph1_btnShowResult")
             submit.click()
+            time.sleep(random.random() * 3)
             entryTable = driver.find_element(By.TAG_NAME, "table")
             name = driver.find_element(By.ID, "ctl00_cph1_lblCName").text.strip()
             totalScore = driver.find_element(By.ID, "ctl00_cph1_lblMarks").text.strip()
             resultLink = entryTable.find_element(By.TAG_NAME, "a")
-        except:
+        except Exception as e:
             print(f"Result not found for roll no. {roll}, skipping")
             continue
 
         resultLink.click()
+        time.sleep(random.random() * 3)
 
         try:
             marksTable = driver.find_element(By.ID, "grdResult")
@@ -244,7 +293,8 @@ def getResult(inputFile:str):
         except Exception as e:
             print(f"Error processing roll {roll}: {e}")
             continue
-
+        
+        time.sleep(random.random() * 3)
         driver.back()
 
     if result:
@@ -259,7 +309,7 @@ def getResult(inputFile:str):
             print(f"CSV created as {filename}")
 if __name__ == "__main__":
     options = Options()
-    options.add_argument("--headless")
+    # options.add_argument("--headless")
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
     options.add_argument("--log-level=3")
@@ -272,6 +322,7 @@ if __name__ == "__main__":
     except:
         print("Invalid URL")
         exit(1)
-    path = r"D:\Downloads\bca2.pdf"
+    path = input("Enter path to the pdf: ")
     getResult(path)
+
     driver.quit()

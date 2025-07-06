@@ -117,7 +117,7 @@ def getResult(multiMode: bool = False):
         exit(1)
 
     sem.click()
-
+    home_link = driver.current_url
     if not multiMode:
         rollStart = int(input("Enter Roll No.: "))
         rollEnd = rollStart + 1
@@ -132,7 +132,8 @@ def getResult(multiMode: bool = False):
             entryTable = driver.find_element(By.TAG_NAME, "table")
         except:
             print("Table not found")
-            exit(1)
+            driver.get(home_link)
+            continue
 
         try:
             sem_select = entryTable.find_element(By.ID, "ctl00_cph1_ddlSemester")
@@ -143,14 +144,16 @@ def getResult(multiMode: bool = False):
                     break
         except:
             print("Semester selection failed")
-            exit(1)
+            driver.get(home_link)
+            continue
 
         try:
             exams = entryTable.find_element(By.ID, "ctl00_cph1_ddlCollCode")
             exam_options = exams.find_elements(By.TAG_NAME, "option")
         except:
             print("Exam not found")
-            exit(1)
+            driver.get(home_link)
+            continue
 
         if roll == rollStart:
             print("----------------------------------")
@@ -167,7 +170,8 @@ def getResult(multiMode: bool = False):
             exam.click()
         except:
             print("Invalid Exam Key")
-            exit(1)
+            driver.get(home_link)
+            continue
 
         try:
             rollno = entryTable.find_element(By.ID, "ctl00_cph1_txtRollNo")
@@ -188,9 +192,19 @@ def getResult(multiMode: bool = False):
             resultLink = entryTable.find_element(By.TAG_NAME, "a")
         except:
             print(f"Result not found for roll no. {roll}, skipping")
+            driver.get(home_link)
             continue
-
-        resultLink.click()
+        try:
+            resultLink.click()
+        except:
+            print("Result click failed")
+            driver.get(home_link)
+            continue
+        try:
+                advLink = driver.find_element(By.ID,"lnkDetail")
+                advLink.click()
+        except:
+            pass
 
         try:
             marksTable = driver.find_element(By.ID, "grdResult")
@@ -218,8 +232,7 @@ def getResult(multiMode: bool = False):
             print(f"Error processing roll {roll}: {e}")
             continue
 
-        driver.back()
-
+        driver.get(home_link)
     if multiMode and result:
         result[0].save(f"{sessionName}{ClassName}Result.pdf", save_all=True, append_images=result[1:])
         print(f"Saved result to {sessionName}{ClassName}Result.pdf")
@@ -233,7 +246,7 @@ def getResult(multiMode: bool = False):
 
 if __name__ == "__main__":
     options = Options()
-    options.add_argument("--headless")
+    # options.add_argument("--headless")
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
     options.add_argument("--log-level=3")

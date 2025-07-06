@@ -184,7 +184,6 @@ def getResult(multiMode: bool = False):
             submit.click()
             entryTable = driver.find_element(By.TAG_NAME, "table")
             name = driver.find_element(By.ID, "ctl00_cph1_lblCName").text.strip()
-            # totalScore = driver.find_element(By.ID, "ctl00_cph1_lblMarks").text.strip()
             resultLink = entryTable.find_element(By.TAG_NAME, "a")
         except:
             print(f"Result not found for roll no. {roll}, skipping")
@@ -193,29 +192,12 @@ def getResult(multiMode: bool = False):
         resultLink.click()
 
         try:
-            # marksTable = driver.find_element(By.ID, "grdResult")
-            # header_row = marksTable.find_element(By.TAG_NAME, "tr")
-            # subject_headers = [th.text.strip() for th in header_row.find_elements(By.TAG_NAME, "th")]
-            # data_rows = marksTable.find_elements(By.TAG_NAME, "tr")[1:]
-            # marks_data = []
-            # for row in data_rows:
-            #     cells = row.find_elements(By.TAG_NAME, "td")
-            #     marks_data.extend([cell.text.strip() for cell in cells])
-            # subject_headers_repeated = []
-            # for i in range(len(data_rows)):
-            #     for header in subject_headers:
-            #         subject_headers_repeated.append(f"{header} {i+1}")
             fatherName = driver.find_element(By.ID, "lblFName").text
             motherName = driver.find_element(By.ID, "lblMName").text
             if global_headers is None:
                 global_headers = ["Roll", "Name", "Father's Name", "Mother's Name"]
-            # current_date = datetime.date.today().strftime("%Y-%m-%d")
             row_data = [roll, name, fatherName, motherName]
             marksList.append(row_data)
-            # image = Image.open(io.BytesIO(driver.get_screenshot_as_png()))
-            # if image.mode != "RGB":
-            #     image = image.convert("RGB")
-            # result.append(image)
         except Exception as e:
             print(f"Error processing roll {roll}: {e}")
             continue
@@ -223,8 +205,6 @@ def getResult(multiMode: bool = False):
         driver.back()
     
     if multiMode:
-        # result[0].save(f"{sessionName}{ClassName}Result.pdf", save_all=True, append_images=result[1:])
-        # print(f"Saved result to {sessionName}{ClassName}Result.pdf")
         if global_headers and marksList:
             filename = f"{sessionName}{ClassName}data.csv"
             with open(filename, "w", newline="", encoding="utf-8") as file:
