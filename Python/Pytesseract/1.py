@@ -1,6 +1,6 @@
 path = r"D:\tesseract\tesseract.exe"
 from PIL import Image
-
+import os
 import pytesseract
 
 # If you don't have tesseract executable in your PATH, include the following:
@@ -8,8 +8,12 @@ pytesseract.pytesseract.tesseract_cmd = path
 # Example tesseract_cmd = r'C:\Program Files (x86)\Tesseract-OCR\tesseract'
 
 # Simple image to string
-print(pytesseract.image_to_string(Image.open(r"D:\Downloads\spm1.1.jpg")))
-
+img_type = ".jpg"
+location = r"D:\Kesri\Catalog\artTherapy\art therapy workshop1.2\ilovepdf_pages-to-jpg1"
+paths = [fr"{location}\{i}" for i in os.listdir(location) if i.endswith(img_type)]
+for path in paths:
+    with open(fr"{location}\text.txt","a",encoding="utf-8") as file:
+        file.write(pytesseract.image_to_string(Image.open(path)))
 # # In order to bypass the image conversions of pytesseract, just use relative or absolute image path
 # # NOTE: In this case you should provide tesseract supported images or tesseract will return error
 # print(pytesseract.image_to_string('test.png'))

@@ -13,6 +13,33 @@ from pypdf import PdfReader
 import time
 import random
 import undetected_chromedriver as uc
+from proxy import ProxyFetcher
+
+def file_name(path:str,name:str,extension:str)->str:
+        """
+        generates numbered file name for file in the given path, creates the folder if it doesn't exist
+        path : path to folder (creates if one doesn't exist)
+        name : name of file (before numbering)
+        extension : extension of file
+        """
+        if not os.path.exists(path):
+            os.makedirs(path,exist_ok=True)
+        count = 0
+        while (True):
+            if count == 0:
+                temp_path = os.path.join(path,f"{name}.{extension}")
+                if os.path.exists(temp_path):
+                    count += 1
+                    continue
+                else:
+                    return temp_path
+            else:
+                temp_path = os.path.join(path,f"{name}{count}.{extension}")
+                if os.path.exists(temp_path):
+                    count += 1
+                    continue     
+                else:
+                    return temp_path
 
 def clear_screen():
     if os.name == 'nt':
@@ -47,12 +74,41 @@ def extract_text_from_pdf(pdf_path):
         print(f"An unexpected error occurred: {e}")
         return None
 
-def getResult(inputFile:str):
-    rollList = extract_text_from_pdf(inputFile)
-    if not rollList:
-        print("Roll No. list not found")
-        exit()
+def getResult(mode:int=0,inputFile:str="",start_roll:int=0,end_roll:int=0,count:int=0):
+    """
+    Gets result based on roll number
+
+    Args:
+        mode: mode in which results will be fetched 
+            -> 0 (default) : by pdf file
+            -> 1 : start and end roll number
+            -> 2 : start roll number and count (number of students)
         
+        OPTIONAL ARGUEMENTS BASED ON MODE
+        
+        inputFile: path to pdf file
+        start_roll: starting roll number
+        end_roll: ending roll number
+        count: number of students
+ 
+    """
+    if mode == 0 and inputFile != "":
+        rollList = extract_text_from_pdf(inputFile)
+        if not rollList:
+            print("Roll No. list not found")
+            exit()
+    elif mode == 1 and start_roll != end_roll:
+        rollList = [i for i in range(start_roll,end_roll+1)]
+    elif mode == 2 and start_roll != start_roll + count:
+        rollList = [i for i in range(start_roll,start_roll+count)]
+    else:
+        print("[!] Invalid Arguement combination")
+        exit()
+    
+    if not rollList or len(rollList) == 0:
+        print("[!] Empty roll number list")
+        return
+    
     result = []
     marksList = []
     global_headers = None
@@ -299,31 +355,41 @@ def getResult(inputFile:str):
         driver.back()
 
     if result:
-        result[0].save(f"{sessionName}{ClassName}Result.pdf", save_all=True, append_images=result[1:])
+        result[0].save(file_name(r"D:\results",f"{sessionName}{ClassName}Result","pdf"), save_all=True, append_images=result[1:])
         print(f"Saved result to {sessionName}{ClassName}Result.pdf")
         if global_headers and marksList:
-            filename = f"{sessionName}{ClassName}Result.csv"
+            filename = file_name(r"D:\results",f"{sessionName}{ClassName}Result","csv")
             with open(filename, "w", newline="", encoding="utf-8") as file:
                 writer = csv.writer(file)
                 writer.writerow(global_headers)
                 writer.writerows(marksList)
             print(f"CSV created as {filename}")
 if __name__ == "__main__":
+    pf = ProxyFetcher()
+    working_proxy = pf.get_working_proxies(1)
     options = uc.ChromeOptions()
     # options.add_argument("--headless")
-    options.add_argument("--disable-gpu")
-    options.add_argument("--no-sandbox")
+    # options.add_argument("--disable-gpu")
+    # options.add_argument("--no-sandbox")
     options.add_argument("--log-level=3")
-    options.add_argument("--disable-software-rasterizer")
-    options.add_argument("--disable-webgl")
-
+    # options.add_argument("--disable-software-rasterizer")
+    # options.add_argument("--disable-webgl")
+    if working_proxy:
+        options.add_argument(f'--proxy-server={working_proxy}')
     driver = uc.Chrome(options=options)
     try:
         driver.get("https://results.puexam.in/")
     except:
         print("Invalid URL")
         exit(1)
-    path = input("Enter path to the pdf: ")
-    getResult(path)
-
+    mode = int(input("mode in which results will be fetched\n-> 0 (default) : by pdf file\n-> 1 : start and end roll number\n-> 2 : start roll number and count (number of students)\nEnter mode: "))
+    if mode == 0:
+        getResult(mode=mode, inputFile=input("Enter path to input file: "))
+    elif mode == 1:
+        getResult(mode=mode, start_roll=int(input("Enter start roll number: ")), end_roll=int(input("Enter end roll number: ")))
+    elif mode == 2:
+        getResult(mode=mode, start_roll=int(input("Enter start roll number: ")), count=int(input("Enter number of students: ")))
+    else:
+        print("[!] Invalid Mode arguement")
+        exit()
     driver.quit()
