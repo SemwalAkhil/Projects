@@ -1,0 +1,5 @@
+OUTPUT:-
+
+Child class name: Dog
+Parent class name: Animal
+This is the Animal class

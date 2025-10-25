@@ -1,0 +1,23 @@
+OUTPUT:-
+
+----- Insert a New Row -----
+Enter Rollno: 4033
+Enter Name: Akhil
+New row inserted successfully!
+
+----- Update an Existing Row -----
+Enter Rollno of the row to update: 90
+Enter new Name: Gagandeep Singh
+Row updated successfully!
+
+----- Delete a Row -----
+Enter Rollno of the row to delete: 4062
+Row deleted successfully!
+
+----- Updated Table -----
+Rollno  Name
+---------------------
+90      Gagandeep Singh
+4048    Sachin
+4082    Uday
+4033    Akhil

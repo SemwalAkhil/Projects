@@ -1,0 +1,14 @@
+OUTPUT:-
+
+1 record updated successfully
+
+
+In MYSQl:-
+
+mysql> select * from java;
++--------+-----------------+
+| Rollno | Name            |
++--------+-----------------+
+|     90 | Gagandeep Singh |
++--------+-----------------+
+1 row in set (0.00 sec)

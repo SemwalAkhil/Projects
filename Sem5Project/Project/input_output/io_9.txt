@@ -1,0 +1,4 @@
+OUTPUT:-
+
+File content:
+Hello JAVA

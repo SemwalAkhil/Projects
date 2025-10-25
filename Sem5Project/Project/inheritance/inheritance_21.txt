@@ -1,0 +1,9 @@
+OUTPUT:-
+
+----- Car -----
+Car engine started with key ignition.
+Car engine stopped safely.
+
+----- Motorcycle -----
+Motorcycle engine started with self-start button.
+Motorcycle engine stopped using the kill switch.

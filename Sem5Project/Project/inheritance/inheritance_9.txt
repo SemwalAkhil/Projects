@@ -1,0 +1,16 @@
+OUTPUT:-
+
+----- Truck Details -----
+Truck Fuel Efficiency: 8 km/l
+Truck Distance Traveled: 240 km
+Truck Maximum Speed: 120 km/h
+
+----- Car Details -----
+Car Fuel Efficiency: 15 km/l
+Car Distance Traveled: 240 km
+Car Maximum Speed: 180 km/h
+
+----- Motorcycle Details -----
+Motorcycle Fuel Efficiency: 20 km/l
+Motorcycle Distance Traveled: 100 km
+Motorcycle Maximum Speed: 150 km/h

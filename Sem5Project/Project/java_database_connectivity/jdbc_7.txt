@@ -1,0 +1,5 @@
+OUTPUT:-
+
+Enter the row number to display: 1
+Rollno: 90
+Name: Gagandeep Singh

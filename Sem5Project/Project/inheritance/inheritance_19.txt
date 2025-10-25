@@ -1,0 +1,13 @@
+OUTPUT:-
+
+----- Manager Details -----
+Manager Name: Rohit
+Basic Salary: 50000.0
+Bonus: 15000.0
+Total Salary of Manager: 65000.0
+
+----- Programmer Details -----
+Programmer Name: Amit
+Basic Salary: 40000.0
+Overtime Pay: 8000.0
+Total Salary of Programmer: 48000.0

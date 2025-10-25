@@ -1,0 +1,4 @@
+OUTPUT:-
+
+Enter a string: hello java
+You entered: hello java

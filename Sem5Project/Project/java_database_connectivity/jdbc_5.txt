@@ -1,0 +1,34 @@
+OUTPUT:-
+
+1 record deleted successfully
+
+
+In MYSQl:-
+
+java TABLE before deletion
+
+mysql> select * from java;
++--------+-----------------+
+| Rollno | Name            |
++--------+-----------------+
+|     90 | Gagandeep Singh |
+|   4082 | Uday            |
+|   4062 | Neeraj          |
+|   4048 | Sachin          |
+|   4079 | Karan           |
++--------+-----------------+
+5 rows in set (0.00 sec)
+
+
+java TABLE after deletion
+
+mysql> select * from java;
++--------+-----------------+
+| Rollno | Name            |
++--------+-----------------+
+|     90 | Gagandeep Singh |
+|   4082 | Uday            |
+|   4062 | Neeraj          |
+|   4048 | Sachin          |
++--------+-----------------+
+4 rows in set (0.00 sec)

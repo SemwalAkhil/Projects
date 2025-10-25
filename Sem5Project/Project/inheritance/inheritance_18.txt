@@ -1,0 +1,13 @@
+OUTPUT:-
+
+----- Lion Behavior -----
+Lion eats meat and hunts for food.
+Lion sleeps for around 20 hours a day.
+
+----- Tiger Behavior -----
+Tiger eats flesh and prefers to hunt alone.
+Tiger sleeps for about 16 hours a day.
+
+----- Deer Behavior -----
+Deer eats grass, leaves, and plants.
+Deer sleeps lightly to stay alert from predators.

@@ -1,0 +1,4 @@
+OUTPUT:-
+
+Enter a float value: 6.6
+You entered: 6.6

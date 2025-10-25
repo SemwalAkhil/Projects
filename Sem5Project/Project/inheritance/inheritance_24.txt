@@ -1,0 +1,9 @@
+OUTPUT:-
+
+----- Rectangle -----
+Drawing a Rectangle of width 4.0 and height 6.0
+Resized Rectangle to width 6.0 and height 9.0
+
+----- Circle -----
+Drawing a Circle with radius 5.0
+Resized Circle to radius 10.0

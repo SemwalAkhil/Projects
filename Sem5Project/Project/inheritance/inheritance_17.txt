@@ -1,0 +1,16 @@
+OUTPUT:-
+
+----- Savings Account Operations -----
+Rs.200.0 deposited in Savings Account.
+Current Balance: 700.0
+Rs.550.0 withdrawn from Savings Account.
+Current Balance: 150.0
+Rs.50.0 withdrawn from Savings Account.
+Current Balance: 100.0
+
+----- Current Account Operations -----
+Rs.300.0 deposited in Current Account.
+Current Balance: 1300.0
+Rs.1200.0 withdrawn from Current Account.
+Current Balance: 100.0
+Withdrawal denied! Insufficient balance in Current Account.

@@ -1,0 +1,16 @@
+OUTPUT:-
+
+----- Manager Details -----
+Manager Bonus: Rs.16000.0
+Manager Amit has excellent team management skills.
+Manager Amit is managing multiple projects.
+
+----- Developer Details -----
+Developer Bonus: Rs.9000.0
+Developer Rohan has good coding and debugging skills.
+Developer Rohan is working on backend development.
+
+----- Programmer Details -----
+Programmer Bonus: Rs.5000.0
+Programmer Gagan writes efficient and clean code.
+Programmer Gagan is maintaining existing projects.

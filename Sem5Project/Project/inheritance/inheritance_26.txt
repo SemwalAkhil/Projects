@@ -1,0 +1,9 @@
+OUTPUT:-
+
+----- Triangle -----
+Area of Triangle: 10.0
+Perimeter of Triangle: 15.0
+
+----- Square -----
+Area of Square: 25.0
+Perimeter of Square: 20.0

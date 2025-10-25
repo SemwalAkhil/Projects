@@ -1,0 +1,19 @@
+OUTPUT:-
+
+Your table created succesfully
+
+
+In MYSQl:-
+
+mysql> show tables;
++---------------------------+
+| Tables_in_bca2ndyear_4090 |
++---------------------------+
+| java                      |
+| marks                     |
+| paper                     |
+| student                   |
+| students                  |
+| temp                      |
++---------------------------+
+6 rows in set (0.00 sec)

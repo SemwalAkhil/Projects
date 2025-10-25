@@ -1,0 +1,4 @@
+OUTPUT:-
+
+Enter a short integer: 1
+You entered: 1

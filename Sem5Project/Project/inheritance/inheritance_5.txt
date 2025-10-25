@@ -1,0 +1,5 @@
+OUTPUT:-
+
+Rs.199 successfully deposited in your account.
+Current Balance: 199
+You can withdraw only Rs. 99 from your account because the account balance falls below one hundred.

@@ -1,0 +1,8 @@
+OUTPUT:-
+
+File content:
+Hello JAVA
+
+Total Lines: 1
+Total Words: 2
+Total Characters: 10

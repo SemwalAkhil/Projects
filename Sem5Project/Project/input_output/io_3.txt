@@ -1,0 +1,4 @@
+OUTPUT:-
+
+Enter an integer: 6
+You entered: 6

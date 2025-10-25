@@ -1,0 +1,9 @@
+OUTPUT:-
+
+----- Athlete -----
+Athlete eats a healthy diet full of proteins and vitamins.
+Athlete exercises daily with running and gym workouts.
+
+----- Lazy Person -----
+Lazy person eats junk food and snacks all day.
+Lazy person prefers sleeping instead of exercising.
