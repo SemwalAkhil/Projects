@@ -1,3 +1,20 @@
+<?php
+/**
+ * Main Index Page - Requires Authentication
+ */
+
+session_start();
+
+// Check if user is logged in
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+    header("Location: " . BASE_PATH . " login.php");
+    exit();
+}
+
+// Get username for display
+$username = $_SESSION['username'] ?? 'User';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,17 +24,19 @@
     <link rel="stylesheet" href="index.css">
     <link rel="icon" type="image/x-icon" href="logo.png">
     <title>Java Practical</title>
-    <script src="index.js"></script>
     <!-- Syntax highlighting for code display -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/vs2015.min.css">
-    <script src="/path/to/highlight.min.js"></script>
 </head>
 
 <body>
     <!-- Navigation bar -->
     <nav>
         <h1>Java Programming Language</h1>
-        <a href="index.php">Home</a>
+        <div class="nav-links">
+            <span class="nav-user">👤 <?php echo htmlspecialchars($username); ?></span>
+            <a href="index.php">Home</a>
+            <a href="logout.php">Logout</a>
+        </div>
     </nav>
 
     <?php
@@ -51,8 +70,16 @@
             if (isset($_POST["code"])){
                 $path = $_POST["code"];
                 
+                // Get user input if provided
+                $userInput = isset($_POST["user_input"]) ? $_POST["user_input"] : "";
+                
                 // Compile the Java file
                 $compile = shell_exec("javac $path 2>&1");
+                
+                // Check for compilation errors
+                if (strpos($compile, 'error') !== false) {
+                    return "<div class='terminal'><label class='prompt'>Compilation Error</label><pre class='output' style='color: #ef4444;'><code>$compile</code></pre></div>";
+                }
                 
                 // Only execute if no validation parameter is set
                 if (!(isset($_GET['val']))){
@@ -84,7 +111,9 @@
                         }
                         // Pop stack on closing brackets
                         elseif (preg_match("/[\)\}\]]/",$val) != 0) {
-                            array_pop($stack);
+                            if (count($stack) > 0) {
+                                array_pop($stack);
+                            }
                         }
                         // Stop when main method is found
                         elseif (preg_match("/main/",$val) != 0) {
@@ -96,25 +125,52 @@
                     if (count($stack) > 0){
                         $class = $stack[count($stack) - 1];
                         // Remove trailing bracket if present
-                        $class = substr($class, 0, strlen($class) - 1);
+                        $class = rtrim($class, '{');
                         
                         // Change to the directory containing the Java file
                         $classPath = substr($path, 0, strrpos($path, "/"));
-                        echo "<script>console.log('$classPath')</script>";
                         chdir($classPath);
                         
-                        // Execute the Java program
-                        $output = shell_exec("java $class 2>&1");
+                        // Execute the Java program with input
+                        if (!empty($userInput)) {
+                            // Create temporary input file
+                            $inputFile = tempnam(sys_get_temp_dir(), 'java_input_');
+                            file_put_contents($inputFile, $userInput);
+                            
+                            // Execute with input redirection
+                            $output = shell_exec("java $class < $inputFile 2>&1");
+                            
+                            // Clean up temp file
+                            unlink($inputFile);
+                        } else {
+                            // Execute without input
+                            $output = shell_exec("java $class 2>&1");
+                        }
                         
                         // Return to parent directory
                         chdir("..");
                         
+                        // Check if output indicates missing input
+                        if (empty($output) || strpos($output, 'NoSuchElementException') !== false || strpos($output, 'NumberFormatException') !== false) {
+                            return "<div class='terminal'>
+                                <label class='prompt'>Error - Input Required</label>
+                                <pre class='output' style='color: #f59e0b;'><code>⚠️ This program requires input data.
+Please provide input in the text area above and run again.
+
+Error Details:
+$output</code></pre>
+                            </div>";
+                        }
+                        
                         // Return formatted output
+                        $output = htmlspecialchars($output);
                         return "<div class='terminal'><label class='prompt'>Output</label><pre class='output'><code>$output</code></pre></div>";
                     }
                 }  
             }
+            return "";
         }
+
         
         /**
          * Scans current directory and displays all subdirectories as clickable containers
@@ -203,11 +259,21 @@ HTM;
                         if (isset($_POST["code"]) && $_POST["code"] == $path){
                             $output = showOutput();
                             
-                            // Display with output
+                            // Display with output and input box
                             $program_strs[] = <<<HTM
                                 <div class="programsTop">
-                                    <label for="code$num">Program $num</label>
                                     <button type="submit" name="code" value="$path">Run Code</button>
+                                    <label for="code$num">Program $num</label>
+                                </div>
+                                <div class="input-section">
+                                    <label for="input$num">📝 Input Data (one value per line):</label>
+                                    <textarea 
+                                        name="user_input" 
+                                        id="input$num" 
+                                        placeholder="Example:&#10;5&#10;10&#10;15&#10;&#10;Enter each input value on a new line.&#10;For matrix: rows, cols, then all elements."
+                                        rows="6"
+                                    ></textarea>
+                                    <small class="input-hint">💡 Tip: Enter values in the order the program asks for them</small>
                                 </div>
                                 <div class="prgrm" id="prg$num">
                                     <pre><code id="code$num">$text_str</code></pre>
@@ -216,11 +282,21 @@ HTM;
 HTM;
                         }       
                         else{
-                            // Display without output
+                            // Display without output but with input box
                             $program_strs[] = <<<HTM
                                 <div class="programsTop">
-                                    <label for="code$num">Program $num</label>
                                     <button type="submit" name="code" value="$path">Run Code</button>
+                                    <label for="code$num">Program $num</label>
+                                </div>
+                                <div class="input-section">
+                                    <label for="input$num">📝 Input Data (one value per line):</label>
+                                    <textarea 
+                                        name="user_input" 
+                                        id="input$num" 
+                                        placeholder="Example:&#10;5&#10;10&#10;15&#10;&#10;Enter each input value on a new line.&#10;For matrix: rows, cols, then all elements."
+                                        rows="6"
+                                    ></textarea>
+                                    <small class="input-hint">💡 Tip: Enter values in the order the program asks for them</small>
                                 </div>
                                 <div class="prgrm" id="prg$num">
                                     <pre><code id="code$num">$text_str</code></pre>

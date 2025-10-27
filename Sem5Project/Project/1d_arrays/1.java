@@ -1,5 +1,7 @@
-class Main {
-    public static void main(String[] args) {
+// 1. Program to copy all elements of one array into another array
+
+class p1 {
+    public static void main(String args[]) {
         int[] arr1 = {1, 2, 3, 4, 5};   // Original array
         int[] arr2 = new int[arr1.length]; // New array with same size
 
