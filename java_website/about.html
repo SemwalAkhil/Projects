@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - JavaPro</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.png" type="image/png">
+</head>
+
+<body>
+
+  <!-- 🌐 Navbar -->
+  <nav>
+    <div class="logo">JavaPro</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+    </ul>
+  </nav>
+
+  <!-- 🧑‍💻 About Section -->
+  <div class="container" id="aboutBox">
+    <h1>Meet the Developer</h1>
+    <div class="typing" id="typingText"></div>
+
+    <div class="info-card float">
+      <p><span class="highlight">Name:</span> Akhil Semwal</p>
+      <p><span class="highlight">Class:</span> BCA 5th Semester</p>
+      <p><span class="highlight">Roll No:</span> 4033/23</p>
+      <p><span class="highlight">Mentor:</span> Mr. Chetan Gupta</p>
+    </div>
+
+    <h2>Why Java?</h2>
+    <ul>
+      <li>Java enables developers to write code once and run it anywhere — a hallmark of platform independence.</li>
+      <li>It powers everything from mobile apps to enterprise-scale systems.</li>
+      <li>Built on a strong foundation of <strong>Object-Oriented Programming</strong> and <strong>robust
+          libraries</strong>.</li>
+      <li>Its multithreading capabilities make Java a top choice for performance-critical applications.</li>
+      <li>Frameworks like <strong>Spring</strong> and <strong>Hibernate</strong> elevate Java for real-world
+        development.</li>
+    </ul>
+  </div>
+
+  <!-- 👣 Footer -->
+  <footer>
+    © 2025 <span>JavaPro</span> | Designed by <span>Akhil Semwal</span> | Mentor: <span>Mr. Chetan Gupta</span>
+  </footer>
+
+  <script>
+    // ✨ Typing Animation
+    const typingText = document.getElementById("typingText");
+    const text = "Passionate about writing clean code and exploring the endless possibilities of Java.";
+    let i = 0;
+    function typing() {
+      if (i < text.length) {
+        typingText.textContent += text.charAt(i);
+        i++;
+        setTimeout(typing, 60);
+      }
+    }
+    window.onload = typing;
+
+    // 🎬 Smooth fade-in
+    window.addEventListener("load", () => {
+      document.getElementById("aboutBox").classList.add("visible");
+    });
+  </script>
+
+</body>
+
+</html>

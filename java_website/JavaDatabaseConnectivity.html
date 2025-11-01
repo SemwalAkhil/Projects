@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java JavaDatabaseConnectivity - Core Java Programming</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.png" type="image/png">
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">JavaPro</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html#topics">TOPICS</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Core Java Programming - JavaDatabaseConnectivity</h1>
+        <p>Practice and learn Java JavaDatabaseConnectivity programs with output and explanations</p>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <h3>JavaDatabaseConnectivity Menu</h3>
+            <ul id="menuList"></ul>
+        </aside>
+
+        <section id="programs">
+            <h2>Core Java Programming - Practice Problems</h2>
+
+            <!-- JavaScript will insert all programs here dynamically -->
+        </section>
+    </main>
+
+    <script>
+        const programs = [
+            {
+                title: "1. Create the connection with MySQL Database and manage the driver.",
+                code: `import java.sql.*;
+
+public class CreateConnection {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/your_database";
+        String user = "root";
+        String pass = "your_password";
+
+        try {
+            // Load driver (optional for newer JDBC, but shown for clarity)
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            try (Connection con = DriverManager.getConnection(url, user, pass)) {
+                System.out.println("Connected to MySQL successfully!");
+            }
+        } catch (ClassNotFoundException cnfe) {
+            System.out.println("Driver not found: " + cnfe.getMessage());
+        } catch (SQLException se) {
+            System.out.println("SQL error: " + se.getMessage());
+        }
+    }
+}`
+            },
+
+            {
+                title: "2. Create the table in the database from Java API.",
+                code: `import java.sql.*;
+
+public class CreateTable {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/your_database";
+        String user = "root";
+        String pass = "your_password";
+        String createSQL = "CREATE TABLE IF NOT EXISTS students (" +
+                           "id INT PRIMARY KEY AUTO_INCREMENT, " +
+                           "name VARCHAR(100), " +
+                           "age INT)";
+
+        try (Connection con = DriverManager.getConnection(url, user, pass);
+             Statement stmt = con.createStatement()) {
+            stmt.executeUpdate(createSQL);
+            System.out.println("Table 'students' created (if not existed).");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}`
+            },
+
+            {
+                title: "3. Insert the row in the table in the database from Java API.",
+                code: `import java.sql.*;
+
+public class InsertRow {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/your_database";
+        String user = "root";
+        String pass = "your_password";
+        String insertSQL = "INSERT INTO students (name, age) VALUES (?, ?)";
+
+        try (Connection con = DriverManager.getConnection(url, user, pass);
+             PreparedStatement ps = con.prepareStatement(insertSQL)) {
+            ps.setString(1, "Amit");
+            ps.setInt(2, 22);
+            int rows = ps.executeUpdate();
+            System.out.println(rows + " row(s) inserted.");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}`
+            },
+
+            {
+                title: "4. Update the row in the table in the database from Java API.",
+                code: `import java.sql.*;
+
+public class UpdateRow {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/your_database";
+        String user = "root";
+        String pass = "your_password";
+        String updateSQL = "UPDATE students SET age = ? WHERE name = ?";
+
+        try (Connection con = DriverManager.getConnection(url, user, pass);
+             PreparedStatement ps = con.prepareStatement(updateSQL)) {
+            ps.setInt(1, 23);
+            ps.setString(2, "Amit");
+            int rows = ps.executeUpdate();
+            System.out.println(rows + " row(s) updated.");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}`
+            },
+
+            {
+                title: "5. Delete the row in the table in the database from Java API.",
+                code: `import java.sql.*;
+
+public class DeleteRow {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/your_database";
+        String user = "root";
+        String pass = "your_password";
+        String deleteSQL = "DELETE FROM students WHERE name = ?";
+
+        try (Connection con = DriverManager.getConnection(url, user, pass);
+             PreparedStatement ps = con.prepareStatement(deleteSQL)) {
+            ps.setString(1, "Amit");
+            int rows = ps.executeUpdate();
+            System.out.println(rows + " row(s) deleted.");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}`
+            },
+
+            {
+                title: "6. Select multiple rows from the database table in Java API and show the result on the screen.",
+                code: `import java.sql.*;
+
+public class SelectRows {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/your_database";
+        String user = "root";
+        String pass = "your_password";
+        String query = "SELECT id, name, age FROM students";
+
+        try (Connection con = DriverManager.getConnection(url, user, pass);
+             Statement stmt = con.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                int age = rs.getInt("age");
+                System.out.println(id + " | " + name + " | " + age);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}`
+            },
+
+            {
+                title: "7. Create a Scrollable Readonly ResultSet and ask the row number from the user and display that row on the screen.",
+                code: `import java.sql.*;
+import java.util.Scanner;
+
+public class ScrollableReadOnly {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/your_database";
+        String user = "root";
+        String pass = "your_password";
+        String query = "SELECT id, name, age FROM students";
+
+        try (Connection con = DriverManager.getConnection(url, user, pass);
+             Statement stmt = con.createStatement(
+                     ResultSet.TYPE_SCROLL_INSENSITIVE,
+                     ResultSet.CONCUR_READ_ONLY);
+             ResultSet rs = stmt.executeQuery(query);
+             Scanner sc = new Scanner(System.in)) {
+
+            System.out.print("Enter row number to display: ");
+            int row = sc.nextInt();
+
+            if (rs.absolute(row)) { // moves cursor to given row number
+                System.out.println(rs.getInt("id") + " | " +
+                                   rs.getString("name") + " | " +
+                                   rs.getInt("age"));
+            } else {
+                System.out.println("Row " + row + " does not exist.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}`
+            },
+
+            {
+                title: "8. Create a Scrollable Updatable ResultSet and insert a new row, update an existing row and delete the row from ResultSet (changes reflected to DB).",
+                code: `import java.sql.*;
+import java.util.Scanner;
+
+public class ScrollableUpdatable {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/your_database";
+        String user = "root";
+        String pass = "your_password";
+        String query = "SELECT id, name, age FROM students";
+
+        try (Connection con = DriverManager.getConnection(url, user, pass);
+             Statement stmt = con.createStatement(
+                     ResultSet.TYPE_SCROLL_INSENSITIVE,
+                     ResultSet.CONCUR_UPDATABLE);
+             ResultSet rs = stmt.executeQuery(query);
+             Scanner sc = new Scanner(System.in)) {
+
+            System.out.println(\"Choose action: 1=insert, 2=update, 3=delete\");
+            int action = sc.nextInt();
+            sc.nextLine();
+
+            if (action == 1) {
+                System.out.print(\"Name: \");
+                String name = sc.nextLine();
+                System.out.print(\"Age: \");
+                int age = sc.nextInt();
+                rs.moveToInsertRow();
+                rs.updateString(\"name\", name);
+                rs.updateInt(\"age\", age);
+                rs.insertRow();
+                rs.moveToCurrentRow();
+                System.out.println(\"Inserted new row.\");
+            } else if (action == 2) {
+                System.out.print(\"Enter id to update: \");
+                int id = sc.nextInt();
+                if (rs.absolute(0)) {} // ensure cursor is valid
+                boolean found = false;
+                rs.beforeFirst();
+                while (rs.next()) {
+                    if (rs.getInt(\"id\") == id) {
+                        found = true;
+                        rs.updateString(\"name\", \"UpdatedName\"); // or ask user
+                        rs.updateInt(\"age\", 30);
+                        rs.updateRow();
+                        System.out.println(\"Row updated.\");
+                        break;
+                    }
+                }
+                if (!found) System.out.println(\"ID not found.\");
+            } else if (action == 3) {
+                System.out.print(\"Enter id to delete: \");
+                int id = sc.nextInt();
+                boolean found = false;
+                rs.beforeFirst();
+                while (rs.next()) {
+                    if (rs.getInt(\"id\") == id) {
+                        rs.deleteRow();
+                        found = true;
+                        System.out.println(\"Row deleted.\");
+                        break;
+                    }
+                }
+                if (!found) System.out.println(\"ID not found.\");
+            } else {
+                System.out.println(\"Invalid action.\");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}`
+            },
+
+            {
+                title: "9. Create a Java Program to show insert, update, delete of the table using PreparedStatement.",
+                code: `import java.sql.*;
+
+public class PreparedStatementCRUD {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/your_database";
+        String user = "root";
+        String pass = "your_password";
+
+        String insertSQL = "INSERT INTO students (name, age) VALUES (?, ?)";
+        String updateSQL = "UPDATE students SET age = ? WHERE id = ?";
+        String deleteSQL = "DELETE FROM students WHERE id = ?";
+
+        try (Connection con = DriverManager.getConnection(url, user, pass)) {
+
+            // Insert
+            try (PreparedStatement ps = con.prepareStatement(insertSQL)) {
+                ps.setString(1, "Ravi");
+                ps.setInt(2, 21);
+                System.out.println(ps.executeUpdate() + " row(s) inserted.");
+            }
+
+            // Update
+            try (PreparedStatement ps = con.prepareStatement(updateSQL)) {
+                ps.setInt(1, 25);
+                ps.setInt(2, 1); // id to update
+                System.out.println(ps.executeUpdate() + " row(s) updated.");
+            }
+
+            // Delete
+            try (PreparedStatement ps = con.prepareStatement(deleteSQL)) {
+                ps.setInt(1, 2); // id to delete
+                System.out.println(ps.executeUpdate() + " row(s) deleted.");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}`
+            }
+        ];
+
+        // Optionally export for use in a web project:
+        // export default jdbcPrograms;
+
+
+        const section = document.getElementById("programs");
+        const menuList = document.getElementById("menuList");
+
+        programs.forEach((prog, i) => {
+            const div = document.createElement("div");
+            div.className = "program";
+            div.id = "prog" + (i + 1);
+            div.innerHTML = `
+    <h3>${prog.title}</h3>
+    <pre>${prog.code}</pre>
+    <div class="output"><strong>Output:</strong> ${prog.output}</div>`;
+            section.appendChild(div);
+
+            const li = document.createElement("li");
+            li.innerHTML = `<a href="#prog${i + 1}">${prog.title}</a>`;
+            menuList.appendChild(li);
+        });
+    </script>
+
+</body>
+
+</html>

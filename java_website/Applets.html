@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Applets - Core Java Programming</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.png" type="image/png">
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">JavaPro</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html#topics">TOPICS</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Core Java Programming - Applets</h1>
+        <p>Practice and learn Java Applet programs with output and explanations</p>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <h3>Applets Menu</h3>
+            <ul id="menuList"></ul>
+        </aside>
+
+        <section id="programs">
+            <h2>Core Java Programming - Practice Problems</h2>
+
+            <!-- JavaScript will insert all programs here dynamically -->
+        </section>
+    </main>
+
+    <script>
+        const programs = [
+            {
+                title: "1. Create an applet showing the string 'Hello World' embedded in HTML page.", code: `import java.applet.Applet;
+import java.awt.Graphics;
+public class HelloWorldApplet extends Applet {
+    public void paint(Graphics g) {
+        g.drawString("Hello World", 50, 50);
+    }
+}`, output: "Displays 'Hello World' text on browser window."
+            },
+
+            {
+                title: "2. Applet showing 'Hello World' executed by AppletViewer", code: `import java.applet.Applet;
+import java.awt.Graphics;
+/*
+<applet code="HelloWorldApplet.class" width="300" height="100"></applet>
+*/
+public class HelloWorldApplet extends Applet {
+    public void paint(Graphics g) {
+        g.drawString("Hello World using AppletViewer", 50, 50);
+    }
+}`, output: "Displays text 'Hello World using AppletViewer'."
+            },
+
+            {
+                title: "3. Applet to draw a Circle", code: `import java.applet.Applet;
+import java.awt.Graphics;
+public class CircleApplet extends Applet {
+    public void paint(Graphics g) {
+        g.drawOval(50, 50, 100, 100);
+    }
+}`, output: "A circle with diameter 100 pixels."
+            },
+
+            {
+                title: "4. Applet to draw a Polygon", code: `import java.applet.Applet;
+import java.awt.Graphics;
+public class PolygonApplet extends Applet {
+    public void paint(Graphics g) {
+        int x[] = {50, 100, 150, 200, 250};
+        int y[] = {250, 150, 200, 100, 250};
+        g.drawPolygon(x, y, 5);
+    }
+}`, output: "Draws a 5-sided polygon."
+            },
+
+            {
+                title: "5. Applet to draw a Rectangle", code: `import java.applet.Applet;
+import java.awt.Graphics;
+public class RectangleApplet extends Applet {
+    public void paint(Graphics g) {
+        g.drawRect(50, 50, 150, 100);
+    }
+}`, output: "Draws a rectangle."
+            },
+
+            {
+                title: "6. Applet to draw a Square", code: `import java.applet.Applet;
+import java.awt.Graphics;
+public class SquareApplet extends Applet {
+    public void paint(Graphics g) {
+        g.drawRect(50, 50, 100, 100);
+    }
+}`, output: "Draws a square."
+            },
+
+            {
+                title: "7. Applet to draw 4 concentric circles", code: `import java.applet.Applet;
+import java.awt.Graphics;
+public class ConcentricCirclesApplet extends Applet {
+    public void paint(Graphics g) {
+        for(int i=1; i<=4; i++) {
+            g.drawOval(50 - i*10, 50 - i*10, 100 + i*20, 100 + i*20);
+        }
+    }
+}`, output: "Four circles with same center but increasing radius."
+            },
+
+            {
+                title: "8. Applet to draw a Line", code: `import java.applet.Applet;
+import java.awt.Graphics;
+public class LineApplet extends Applet {
+    public void paint(Graphics g) {
+        g.drawLine(20, 20, 200, 200);
+    }
+}`, output: "Draws a straight line from (20,20) to (200,200)."
+            },
+
+            {
+                title: "9. Applet to draw an Oval", code: `import java.applet.Applet;
+import java.awt.Graphics;
+public class OvalApplet extends Applet {
+    public void paint(Graphics g) {
+        g.drawOval(50, 50, 150, 100);
+    }
+}`, output: "Draws an oval shape."
+            },
+
+            {
+                title: "10. Applet to draw an Arc", code: `import java.applet.Applet;
+import java.awt.Graphics;
+public class ArcApplet extends Applet {
+    public void paint(Graphics g) {
+        g.drawArc(50, 50, 100, 100, 0, 120);
+    }
+}`, output: "Draws a 120° arc of a circle."
+            },
+
+            {
+                title: "11. Applet to change background color", code: `import java.applet.Applet;
+import java.awt.Color;
+import java.awt.Graphics;
+public class BgColorApplet extends Applet {
+    public void init() {
+        setBackground(Color.cyan);
+    }
+    public void paint(Graphics g) {
+        g.drawString("Background color changed!", 50, 50);
+    }
+}`, output: "Background appears cyan with text 'Background color changed!'."
+            },
+
+            {
+                title: "12. Applet to draw a Rounded Rectangle", code: `import java.applet.Applet;
+import java.awt.Graphics;
+public class RoundedRectApplet extends Applet {
+    public void paint(Graphics g) {
+        g.drawRoundRect(50, 50, 150, 100, 20, 20);
+    }
+}`, output: "Draws a rectangle with rounded corners."
+            },
+
+            {
+                title: "13. Applet to set Font", code: `import java.applet.Applet;
+import java.awt.*;
+public class FontApplet extends Applet {
+    public void paint(Graphics g) {
+        Font f = new Font("Arial", Font.BOLD, 20);
+        g.setFont(f);
+        g.drawString("Java Font Example", 50, 100);
+    }
+}`, output: "Displays 'Java Font Example' in bold Arial font."
+            },
+
+            {
+                title: "14. Applet to display Digital Clock", code: `import java.applet.*;
+import java.awt.*;
+import java.util.*;
+public class DigitalClockApplet extends Applet implements Runnable {
+    Thread t = null;
+    int hours=0, minutes=0, seconds=0;
+    String timeString = "";
+    public void init() { start(); }
+    public void start() {
+        t = new Thread(this);
+        t.start();
+    }
+    public void run() {
+        try {
+            while(true) {
+                Calendar cal = Calendar.getInstance();
+                hours = cal.get(Calendar.HOUR_OF_DAY);
+                minutes = cal.get(Calendar.MINUTE);
+                seconds = cal.get(Calendar.SECOND);
+                timeString = hours + ":" + minutes + ":" + seconds;
+                repaint();
+                Thread.sleep(1000);
+            }
+        } catch(Exception e) {}
+    }
+    public void paint(Graphics g) {
+        g.drawString(timeString, 100, 100);
+    }
+}`, output: "Continuously updates current time every second."
+            },
+
+            {
+                title: "15. Applet to draw a Smiling Face", code: `import java.applet.Applet;
+import java.awt.*;
+public class SmilingFaceApplet extends Applet {
+    public void paint(Graphics g) {
+        g.setColor(Color.yellow);
+        g.fillOval(60, 60, 200, 200);
+        g.setColor(Color.black);
+        g.fillOval(110, 120, 20, 20);
+        g.fillOval(190, 120, 20, 20);
+        g.drawArc(110, 130, 80, 80, 0, -180);
+    }
+}`, output: "Draws a yellow smiling face."
+            }
+        ];
+
+        const section = document.getElementById("programs");
+        const menuList = document.getElementById("menuList");
+
+        programs.forEach((prog, i) => {
+            const div = document.createElement("div");
+            div.className = "program";
+            div.id = "prog" + (i + 1);
+            div.innerHTML = `
+    <h3>${prog.title}</h3>
+    <pre>${prog.code}</pre>
+    <div class="output"><strong>Output:</strong> ${prog.output}</div>`;
+            section.appendChild(div);
+
+            const li = document.createElement("li");
+            li.innerHTML = `<a href="#prog${i + 1}">${prog.title}</a>`;
+            menuList.appendChild(li);
+        });
+    </script>
+
+</body>
+
+</html>

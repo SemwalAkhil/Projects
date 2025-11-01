@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Programming Portal</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.png" type="image/png">
+</head>
+
+<body>
+  <!-- 🌐 Navigation -->
+  <nav>
+    <div class="logo">JavaPro</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="#topics">Programs</a></li>
+    </ul>
+  </nav>
+
+  <!-- 💡 Hero Section -->
+  <header class="hero">
+    <div>
+      <h1>Master the Art of Java Programming</h1>
+      <h2>Akhil Semwal - 4033/23</h2>
+      <h2>Mentor: Mr. Chetan Gupta</h2>
+      <p>Unleash your creativity through code. Learn Java from basics to advanced concepts with real examples.</p>
+      <a href="#topics" class="btn">Start Learning</a>
+    </div>
+  </header>
+
+  <!-- 📘 Topics Section -->
+  <main class="topics-section" id="topics">
+    <h2>Explore Java Topics</h2>
+    <div class="topics-container" id="topicsContainer">
+      <!-- Java topics will be dynamically added -->
+    </div>
+  </main>
+
+  <script>
+    // 🔹 Java topics array
+    const topics = [
+      "APPLETS", "BASIC PROGRAMMING CONSTRUCTS", "DATA CONVERSION",
+      "DELEGATION EVENT MODEL", "EXCEPTION HANDLING", "FUNCTIONS",
+      "GRAPHICAL USER INTERFACE (AWT)", "GRAPHICAL USER INTERFACE (SWINGS)",
+      "INHERITANCE", "INPUT/OUTPUT", "INTERFACES", "JAVA DATABASE CONNECTIVITY",
+      "MULTI-DIMENSION ARRAYS", "MULTITHREADING", "OBJECT ORIENTED PROGRAMMING",
+      "PACKAGES", "SINGLE DIMENSION ARRAYS", "STRINGS"
+    ];
+
+    const container = document.getElementById("topicsContainer");
+
+    // 🧠 Dynamically generate buttons
+    topics.forEach((topic, i) => {
+      const btn = document.createElement("button");
+      btn.className = "topic-btn";
+      btn.textContent = topic;
+
+      const pages = {
+        "APPLETS": "Applets.html",
+        "BASIC PROGRAMMING CONSTRUCTS": "BasicProgrammingConstructs.html",
+        "DATA CONVERSION": "DataConversion.html",
+        "DELEGATION EVENT MODEL": "DelegationEventModel.html",
+        "EXCEPTION HANDLING": "ExceptionHandling.html",
+        "FUNCTIONS": "Functions.html",
+        "GRAPHICAL USER INTERFACE (AWT)": "GUI_AWT.html",
+        "GRAPHICAL USER INTERFACE (SWINGS)": "GUI_Swings.html",
+        "INHERITANCE": "Inheritance.html",
+        "INPUT/OUTPUT": "InputOutput.html",
+        "INTERFACES": "Interfaces.html",
+        "JAVA DATABASE CONNECTIVITY": "JavaDatabaseConnectivity.html",
+        "MULTI-DIMENSION ARRAYS": "MultiDimensionArrays.html",
+        "MULTITHREADING": "Multithreading.html",
+        "OBJECT ORIENTED PROGRAMMING": "ObjectOrientedProgramming.html",
+        "PACKAGES": "Packages.html",
+        "SINGLE DIMENSION ARRAYS": "SingleDimensionArrays.html",
+        "STRINGS": "Strings.html"
+      };
+
+      btn.onclick = () => window.location.href = pages[topic];
+      btn.style.animationDelay = `${i * 0.1}s`;
+      container.appendChild(btn);
+    });
+  </script>
+</body>
+
+</html>

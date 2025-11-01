@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java DelegationEventModel - Core Java Programming</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.png" type="image/png">
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">JavaPro</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html#topics">TOPICS</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Core Java Programming - DelegationEventModel</h1>
+        <p>Practice and learn Java DelegationEventModel programs with output and explanations</p>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <h3>DelegationEventModel Menu</h3>
+            <ul id="menuList"></ul>
+        </aside>
+
+        <section id="programs">
+            <h2>Core Java Programming - Practice Problems</h2>
+
+            <!-- JavaScript will insert all programs here dynamically -->
+        </section>
+    </main>
+
+    <script>
+        const programs =
+            [
+                {
+                    title: "1. Java Program to Display Some Text in the Frame using Labels",
+                    code: `import java.awt.*;
+
+public class LabelExample {
+    public static void main(String[] args) {
+        Frame f = new Frame("Label Example");
+        Label l1 = new Label("Welcome to Java AWT!");
+        l1.setBounds(80, 100, 200, 30);
+        f.add(l1);
+        f.setSize(400, 300);
+        f.setLayout(null);
+        f.setVisible(true);
+    }
+}`,
+                    output: "Displays a Frame with text 'Welcome to Java AWT!'"
+                },
+
+                {
+                    title: "2. Java Program to Create Text Area and Password Field",
+                    code: `import java.awt.*;
+
+public class TextAreaPasswordExample {
+    public static void main(String[] args) {
+        Frame f = new Frame("TextArea & Password Example");
+        TextArea ta = new TextArea("Enter text here...");
+        ta.setBounds(50, 80, 200, 100);
+        Label l = new Label("Password:");
+        l.setBounds(50, 200, 70, 30);
+        TextField tf = new TextField();
+        tf.setEchoChar('*');
+        tf.setBounds(130, 200, 120, 30);
+        f.add(ta);
+        f.add(l);
+        f.add(tf);
+        f.setSize(400, 350);
+        f.setLayout(null);
+        f.setVisible(true);
+    }
+}`,
+                    output: "Displays a frame with a text area and password field."
+                },
+
+                {
+                    title: "3. Java Program to Create a Button and Display Image in the Frame when Clicked",
+                    code: `import java.awt.*;
+import java.awt.event.*;
+
+public class ButtonImageExample {
+    public static void main(String[] args) {
+        Frame f = new Frame("Button Image Example");
+        Button b = new Button("Show Image");
+        b.setBounds(100, 80, 100, 30);
+        Label l = new Label();
+        l.setBounds(50, 150, 200, 150);
+
+        b.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                l.setText("Image would appear here (demo).");
+            }
+        });
+
+        f.add(b);
+        f.add(l);
+        f.setSize(300, 300);
+        f.setLayout(null);
+        f.setVisible(true);
+    }
+}`,
+                    output: "Displays text or image placeholder when button is clicked."
+                },
+
+                {
+                    title: "4. Java Program to Create 2 Radio Buttons and Display Selected Button Label",
+                    code: `import java.awt.*;
+import java.awt.event.*;
+
+public class RadioButtonExample {
+    public static void main(String[] args) {
+        Frame f = new Frame("Radio Button Example");
+        CheckboxGroup cg = new CheckboxGroup();
+        Checkbox c1 = new Checkbox("Male", cg, false);
+        Checkbox c2 = new Checkbox("Female", cg, false);
+        c1.setBounds(100, 100, 100, 30);
+        c2.setBounds(100, 150, 100, 30);
+        Label l = new Label("Select Gender");
+        l.setBounds(100, 50, 150, 30);
+
+        f.add(c1); f.add(c2); f.add(l);
+        f.setSize(300, 250);
+        f.setLayout(null);
+        f.setVisible(true);
+    }
+}`,
+                    output: "Displays two radio buttons for gender selection."
+                },
+
+                {
+                    title: "5. Java Program to Handle KeyBoardEvent",
+                    code: `import java.awt.*;
+import java.awt.event.*;
+
+public class KeyEventExample extends Frame implements KeyListener {
+    Label l;
+    TextField tf;
+    KeyEventExample() {
+        l = new Label();
+        l.setBounds(100, 120, 200, 30);
+        tf = new TextField();
+        tf.setBounds(100, 80, 200, 30);
+        tf.addKeyListener(this);
+        add(l); add(tf);
+        setSize(400, 250);
+        setLayout(null);
+        setVisible(true);
+    }
+    public void keyTyped(KeyEvent e) { l.setText("Key Typed: " + e.getKeyChar()); }
+    public void keyPressed(KeyEvent e) { l.setText("Key Pressed: " + e.getKeyChar()); }
+    public void keyReleased(KeyEvent e) { l.setText("Key Released: " + e.getKeyChar()); }
+
+    public static void main(String[] args) { new KeyEventExample(); }
+}`,
+                    output: "Displays which key is pressed, released, or typed."
+                },
+
+                {
+                    title: "6. Java Program to Handle MouseEvent",
+                    code: `import java.awt.*;
+import java.awt.event.*;
+
+public class MouseEventExample extends Frame implements MouseListener {
+    Label l;
+    MouseEventExample() {
+        l = new Label();
+        l.setBounds(50, 100, 300, 30);
+        addMouseListener(this);
+        add(l);
+        setSize(400, 250);
+        setLayout(null);
+        setVisible(true);
+    }
+    public void mouseClicked(MouseEvent e) { l.setText("Mouse Clicked"); }
+    public void mouseEntered(MouseEvent e) { l.setText("Mouse Entered"); }
+    public void mouseExited(MouseEvent e) { l.setText("Mouse Exited"); }
+    public void mousePressed(MouseEvent e) { l.setText("Mouse Pressed"); }
+    public void mouseReleased(MouseEvent e) { l.setText("Mouse Released"); }
+
+    public static void main(String[] args) { new MouseEventExample(); }
+}`,
+                    output: "Displays mouse action messages on the frame."
+                },
+
+                {
+                    title: "7. Java Program to Get and Set State and Get Label of a Check Box",
+                    code: `import java.awt.*;
+import java.awt.event.*;
+
+public class CheckboxStateExample {
+    public static void main(String[] args) {
+        Frame f = new Frame("Checkbox State Example");
+        Checkbox cb = new Checkbox("I Agree", false);
+        cb.setBounds(100, 100, 100, 30);
+        f.add(cb);
+
+        Button b = new Button("Check");
+        b.setBounds(100, 150, 80, 30);
+        Label l = new Label();
+        l.setBounds(100, 200, 200, 30);
+
+        b.addActionListener(e -> {
+            l.setText("State: " + cb.getState() + ", Label: " + cb.getLabel());
+        });
+
+        f.add(b); f.add(l);
+        f.setSize(400, 300);
+        f.setLayout(null);
+        f.setVisible(true);
+    }
+}`,
+                    output: "Displays checkbox label and its selected state."
+                },
+
+                {
+                    title: "8. Java Program to Create Check Boxes and Radio Buttons",
+                    code: `import java.awt.*;
+
+public class CheckboxRadioExample {
+    public static void main(String[] args) {
+        Frame f = new Frame("Checkbox & Radio Example");
+        Checkbox c1 = new Checkbox("Music");
+        Checkbox c2 = new Checkbox("Sports");
+        CheckboxGroup cg = new CheckboxGroup();
+        Checkbox r1 = new Checkbox("Male", cg, false);
+        Checkbox r2 = new Checkbox("Female", cg, false);
+
+        c1.setBounds(50, 50, 100, 30);
+        c2.setBounds(50, 80, 100, 30);
+        r1.setBounds(50, 130, 100, 30);
+        r2.setBounds(50, 160, 100, 30);
+
+        f.add(c1); f.add(c2); f.add(r1); f.add(r2);
+        f.setSize(300, 250);
+        f.setLayout(null);
+        f.setVisible(true);
+    }
+}`,
+                    output: "Displays two checkboxes and two radio buttons."
+                },
+
+                {
+                    title: "9. Java Program to Create and Switch between Frames using Buttons",
+                    code: `import java.awt.*;
+import java.awt.event.*;
+
+public class SwitchFrameExample {
+    public static void main(String[] args) {
+        Frame f1 = new Frame("Frame 1");
+        Frame f2 = new Frame("Frame 2");
+        Button b1 = new Button("Go to Frame 2");
+        b1.setBounds(100, 100, 120, 40);
+        f1.add(b1);
+
+        b1.addActionListener(e -> {
+            f1.setVisible(false);
+            f2.setVisible(true);
+        });
+
+        f1.setSize(300, 250);
+        f1.setLayout(null);
+        f1.setVisible(true);
+
+        Button b2 = new Button("Back to Frame 1");
+        b2.setBounds(100, 100, 120, 40);
+        b2.addActionListener(e -> {
+            f2.setVisible(false);
+            f1.setVisible(true);
+        });
+
+        f2.add(b2);
+        f2.setSize(300, 250);
+        f2.setLayout(null);
+    }
+}`,
+                    output: "Switches between two frames using buttons."
+                },
+
+                {
+                    title: "10. Java Program to Create and Set Border to Push Buttons",
+                    code: `import javax.swing.*;
+import java.awt.*;
+
+public class ButtonBorderExample {
+    public static void main(String[] args) {
+        JFrame f = new JFrame("Button Border Example");
+        JButton b = new JButton("Click Me");
+        b.setBounds(100, 100, 120, 40);
+        b.setBorder(BorderFactory.createLineBorder(Color.BLUE, 3));
+        f.add(b);
+        f.setSize(350, 300);
+        f.setLayout(null);
+        f.setVisible(true);
+    }
+}`,
+                    output: "Displays a button with a blue border."
+                },
+
+                {
+                    title: "11. Java Program to Create a List Box to Select Multiple Items and Display it in the Frame",
+                    code: `import java.awt.*;
+import java.awt.event.*;
+
+public class ListBoxExample {
+    public static void main(String[] args) {
+        Frame f = new Frame("List Box Example");
+        List list = new List(4, true);
+        list.add("Java"); list.add("Python"); list.add("C++"); list.add("HTML");
+        list.setBounds(50, 80, 100, 80);
+        Button b = new Button("Show Selected");
+        b.setBounds(170, 80, 100, 30);
+        Label l = new Label();
+        l.setBounds(50, 180, 200, 30);
+
+        b.addActionListener(e -> {
+            String items[] = list.getSelectedItems();
+            String result = String.join(", ", items);
+            l.setText("Selected: " + result);
+        });
+
+        f.add(list); f.add(b); f.add(l);
+        f.setSize(350, 300);
+        f.setLayout(null);
+        f.setVisible(true);
+    }
+}`,
+                    output: "Displays selected list items on button click."
+                },
+
+                {
+                    title: "12. Java Program to Display a Message in a New Frame",
+                    code: `import java.awt.*;
+import java.awt.event.*;
+
+public class NewFrameMessage {
+    public static void main(String[] args) {
+        Frame f = new Frame("Main Frame");
+        Button b = new Button("Open Message");
+        b.setBounds(100, 100, 120, 40);
+
+        b.addActionListener(e -> {
+            Frame f2 = new Frame("Message Frame");
+            Label l = new Label("Hello! This is a new frame.");
+            l.setBounds(50, 100, 200, 30);
+            f2.add(l);
+            f2.setSize(300, 250);
+            f2.setLayout(null);
+            f2.setVisible(true);
+        });
+
+        f.add(b);
+        f.setSize(300, 250);
+        f.setLayout(null);
+        f.setVisible(true);
+    }
+}`,
+                    output: "Displays a new frame with a message."
+                },
+
+                {
+                    title: "13. Java Program to Close the Frame using WindowAdapter Class",
+                    code: `import java.awt.*;
+import java.awt.event.*;
+
+public class CloseFrameExample extends Frame {
+    CloseFrameExample() {
+        setSize(300, 250);
+        setLayout(null);
+        setVisible(true);
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
+            }
+        });
+    }
+    public static void main(String[] args) {
+        new CloseFrameExample();
+    }
+}`,
+                    output: "Closes frame when close button is clicked."
+                },
+
+                {
+                    title: "14. Java Program to Check Which Fonts are Available in a Local System",
+                    code: `import java.awt.*;
+
+public class AvailableFonts {
+    public static void main(String[] args) {
+        GraphicsEnvironment g = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        String[] fonts = g.getAvailableFontFamilyNames();
+        for (String f : fonts) {
+            System.out.println(f);
+        }
+    }
+}`,
+                    output: "Displays list of all system fonts in console."
+                },
+
+                {
+                    title: "15. Java Program to Display Text in Different Fonts",
+                    code: `import java.awt.*;
+
+public class FontsExample extends Frame {
+    public void paint(Graphics g) {
+        g.setFont(new Font("Serif", Font.PLAIN, 20));
+        g.drawString("Serif Font", 50, 100);
+        g.setFont(new Font("SansSerif", Font.BOLD, 20));
+        g.drawString("SansSerif Font", 50, 140);
+    }
+    public static void main(String[] args) {
+        FontsExample f = new FontsExample();
+        f.setSize(300, 250);
+        f.setVisible(true);
+    }
+}`,
+                    output: "Displays text in different fonts."
+                },
+
+                {
+                    title: "16. Java Program to Change Frame Background Color as Cyan",
+                    code: `import java.awt.*;
+
+public class BackgroundColorExample {
+    public static void main(String[] args) {
+        Frame f = new Frame("Background Example");
+        f.setBackground(Color.cyan);
+        f.setSize(300, 250);
+        f.setVisible(true);
+    }
+}`,
+                    output: "Frame background color set to cyan."
+                },
+
+                {
+                    title: "17. Java Program to Change the Applet Background Colour when Button Clicked",
+                    code: `import java.applet.*;
+import java.awt.*;
+import java.awt.event.*;
+
+/*
+<applet code="ChangeColorApplet.class" width="300" height="200"></applet>
+*/
+public class ChangeColorApplet extends Applet implements ActionListener {
+    Button b;
+    public void init() {
+        b = new Button("Change Color");
+        add(b);
+        b.addActionListener(this);
+    }
+    public void actionPerformed(ActionEvent e) {
+        setBackground(Color.yellow);
+    }
+}`,
+                    output: "Changes applet background color when button clicked."
+                },
+
+                {
+                    title: "18. Java Program to Display Several Dots on the Screen Continuously",
+                    code: `import java.awt.*;
+import java.applet.*;
+
+/*
+<applet code="DotsApplet.class" width="300" height="300"></applet>
+*/
+public class DotsApplet extends Applet {
+    public void paint(Graphics g) {
+        for (int i = 0; i < 100; i++) {
+            int x = (int)(Math.random() * 300);
+            int y = (int)(Math.random() * 300);
+            g.fillOval(x, y, 5, 5);
+            try { Thread.sleep(100); } catch (Exception e) {}
+        }
+    }
+}`,
+                    output: "Continuously draws random dots on screen."
+                },
+
+                {
+                    title: "19. Java Program to Validate the TextField for only entering numbers using KeyListener",
+                    code: `import java.awt.*;
+import java.awt.event.*;
+
+public class NumberValidation extends Frame implements KeyListener {
+    TextField tf;
+    Label l;
+    NumberValidation() {
+        tf = new TextField();
+        tf.setBounds(100, 100, 120, 30);
+        l = new Label();
+        l.setBounds(100, 150, 200, 30);
+        tf.addKeyListener(this);
+        add(tf); add(l);
+        setSize(350, 250);
+        setLayout(null);
+        setVisible(true);
+    }
+    public void keyTyped(KeyEvent e) {
+        char c = e.getKeyChar();
+        if (!Character.isDigit(c)) {
+            e.consume();
+            l.setText("Only numbers allowed!");
+        } else {
+            l.setText("");
+        }
+    }
+    public void keyPressed(KeyEvent e) {}
+    public void keyReleased(KeyEvent e) {}
+
+    public static void main(String[] args) { new NumberValidation(); }
+}`,
+                    output: "Allows only numeric input in text field."
+                },
+
+                {
+                    title: "20. Java Program to Validate the TextField for only entering email id using KeyAdapter",
+                    code: `import java.awt.*;
+import java.awt.event.*;
+
+public class EmailValidation extends Frame {
+    TextField tf;
+    Label l;
+    EmailValidation() {
+        tf = new TextField();
+        tf.setBounds(100, 100, 150, 30);
+        l = new Label();
+        l.setBounds(100, 150, 250, 30);
+        tf.addKeyListener(new KeyAdapter() {
+            public void keyReleased(KeyEvent e) {
+                String text = tf.getText();
+                if (text.matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
+                    l.setText("Valid Email ID");
+                } else {
+                    l.setText("Invalid Email ID");
+                }
+            }
+        });
+        add(tf); add(l);
+        setSize(400, 250);
+        setLayout(null);
+        setVisible(true);
+    }
+    public static void main(String[] args) { new EmailValidation(); }
+}`,
+                    output: "Validates email input in real time.",
+                }
+            ]
+
+        const section = document.getElementById("programs");
+        const menuList = document.getElementById("menuList");
+
+        programs.forEach((prog, i) => {
+            const div = document.createElement("div");
+            div.className = "program";
+            div.id = "prog" + (i + 1);
+            div.innerHTML = `
+    <h3>${prog.title}</h3>
+    <pre>${prog.code}</pre>
+    <div class="output"><strong>Output:</strong> ${prog.output}</div>`;
+            section.appendChild(div);
+
+            const li = document.createElement("li");
+            li.innerHTML = `<a href="#prog${i + 1}">${prog.title}</a>`;
+            menuList.appendChild(li);
+        });
+    </script>
+
+</body>
+
+</html>
