@@ -39,410 +39,69 @@
     </main>
 
     <script>
-        const programs = [
-            {
-                title: "1. Enter the Matrix of rows and columns entered by the user and print in matrix format",
-                code: `
-import java.util.Scanner;
-class MatrixInput {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter number of rows: ");
-        int rows = sc.nextInt();
-        System.out.print("Enter number of columns: ");
-        int cols = sc.nextInt();
-
-        int[][] matrix = new int[rows][cols];
-        System.out.println("Enter matrix elements:");
-        for (int i = 0; i < rows; i++)
-            for (int j = 0; j < cols; j++)
-                matrix[i][j] = sc.nextInt();
-
-        System.out.println("Matrix is:");
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++)
-                System.out.print(matrix[i][j] + " ");
-            System.out.println();
-        }
-    }
-}`,
-                output: "Enter number of rows: 2\\nEnter number of columns: 2\\nEnter matrix elements:\\n1 2\\n3 4\\nMatrix is:\\n1 2\\n3 4"
-            },
-
-            {
-                title: "2. Program to Add Two Matrices",
-                code: `
-import java.util.Scanner;
-class AddMatrices {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int[][] a = new int[2][2];
-        int[][] b = new int[2][2];
-        int[][] sum = new int[2][2];
-
-        System.out.println("Enter first 2x2 matrix:");
-        for (int i = 0; i < 2; i++)
-            for (int j = 0; j < 2; j++)
-                a[i][j] = sc.nextInt();
-
-        System.out.println("Enter second 2x2 matrix:");
-        for (int i = 0; i < 2; i++)
-            for (int j = 0; j < 2; j++)
-                b[i][j] = sc.nextInt();
-
-        for (int i = 0; i < 2; i++)
-            for (int j = 0; j < 2; j++)
-                sum[i][j] = a[i][j] + b[i][j];
-
-        System.out.println("Sum of matrices:");
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 2; j++)
-                System.out.print(sum[i][j] + " ");
-            System.out.println();
-        }
-    }
-}`,
-                output: "Enter first 2x2 matrix:\\n1 2\\n3 4\\nEnter second 2x2 matrix:\\n5 6\\n7 8\\nSum of matrices:\\n6 8\\n10 12"
-            },
-
-            {
-                title: "3. Program to Multiply Two Matrices",
-                code: `
-import java.util.Scanner;
-class MultiplyMatrices {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int[][] a = new int[2][2];
-        int[][] b = new int[2][2];
-        int[][] product = new int[2][2];
-
-        System.out.println("Enter first 2x2 matrix:");
-        for (int i = 0; i < 2; i++)
-            for (int j = 0; j < 2; j++)
-                a[i][j] = sc.nextInt();
-
-        System.out.println("Enter second 2x2 matrix:");
-        for (int i = 0; i < 2; i++)
-            for (int j = 0; j < 2; j++)
-                b[i][j] = sc.nextInt();
-
-        for (int i = 0; i < 2; i++)
-            for (int j = 0; j < 2; j++) {
-                product[i][j] = 0;
-                for (int k = 0; k < 2; k++)
-                    product[i][j] += a[i][k] * b[k][j];
-            }
-
-        System.out.println("Product of matrices:");
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 2; j++)
-                System.out.print(product[i][j] + " ");
-            System.out.println();
-        }
-    }
-}`,
-                output: "Enter first 2x2 matrix:\\n1 2\\n3 4\\nEnter second 2x2 matrix:\\n2 0\\n1 2\\nProduct of matrices:\\n4 4\\n10 8"
-            },
-
-            {
-                title: "4. Program to subtract the two matrices",
-                code: `
-import java.util.Scanner;
-class SubtractMatrices {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int[][] a = new int[2][2];
-        int[][] b = new int[2][2];
-        int[][] diff = new int[2][2];
-
-        System.out.println("Enter first 2x2 matrix:");
-        for (int i = 0; i < 2; i++)
-            for (int j = 0; j < 2; j++)
-                a[i][j] = sc.nextInt();
-
-        System.out.println("Enter second 2x2 matrix:");
-        for (int i = 0; i < 2; i++)
-            for (int j = 0; j < 2; j++)
-                b[i][j] = sc.nextInt();
-
-        for (int i = 0; i < 2; i++)
-            for (int j = 0; j < 2; j++)
-                diff[i][j] = a[i][j] - b[i][j];
-
-        System.out.println("Difference of matrices:");
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 2; j++)
-                System.out.print(diff[i][j] + " ");
-            System.out.println();
-        }
-    }
-}`,
-                output: "Enter first 2x2 matrix:\\n5 6\\n7 8\\nEnter second 2x2 matrix:\\n1 2\\n3 4\\nDifference of matrices:\\n4 4\\n4 4"
-            },
-
-            {
-                title: "5. Program to determine whether two matrices are equal",
-                code: `
-import java.util.Scanner;
-class EqualMatrix {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int[][] a = new int[2][2];
-        int[][] b = new int[2][2];
-        boolean equal = true;
-
-        System.out.println("Enter first 2x2 matrix:");
-        for (int i = 0; i < 2; i++)
-            for (int j = 0; j < 2; j++)
-                a[i][j] = sc.nextInt();
-
-        System.out.println("Enter second 2x2 matrix:");
-        for (int i = 0; i < 2; i++)
-            for (int j = 0; j < 2; j++)
-                b[i][j] = sc.nextInt();
-
-        for (int i = 0; i < 2; i++)
-            for (int j = 0; j < 2; j++)
-                if (a[i][j] != b[i][j])
-                    equal = false;
-
-        if (equal)
-            System.out.println("Matrices are equal");
-        else
-            System.out.println("Matrices are not equal");
-    }
-}`,
-                output: "Enter first 2x2 matrix:\\n1 2\\n3 4\\nEnter second 2x2 matrix:\\n1 2\\n3 4\\nMatrices are equal"
-            },
-
-            {
-                title: "6. Program to display the lower triangular matrix",
-                code: `
-class LowerTriangular {
-    public static void main(String[] args) {
-        int[][] matrix = {
-            {1, 2, 3},
-            {4, 5, 6},
-            {7, 8, 9}
-        };
-
-        System.out.println("Lower Triangular Matrix:");
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                if (i < j)
-                    System.out.print("0 ");
-                else
-                    System.out.print(matrix[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
-}`,
-                output: "Lower Triangular Matrix:\\n1 0 0\\n4 5 0\\n7 8 9"
-            },
-
-            {
-                title: "7. Program to display the upper triangular matrix",
-                code: `
-class UpperTriangular {
-    public static void main(String[] args) {
-        int[][] matrix = {
-            {1, 2, 3},
-            {4, 5, 6},
-            {7, 8, 9}
-        };
-
-        System.out.println("Upper Triangular Matrix:");
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                if (i > j)
-                    System.out.print("0 ");
-                else
-                    System.out.print(matrix[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
-}`,
-                output: "Upper Triangular Matrix:\\n1 2 3\\n0 5 6\\n0 0 9"
-            },
-
-            {
-                title: "8. Program to find the frequency of odd & even numbers in the given matrix",
-                code: `
-class OddEvenFrequency {
-    public static void main(String[] args) {
-        int[][] matrix = {
-            {1, 2, 3},
-            {4, 5, 6},
-            {7, 8, 9}
-        };
-        int even = 0, odd = 0;
-
-        for (int[] row : matrix)
-            for (int val : row)
-                if (val % 2 == 0)
-                    even++;
-                else
-                    odd++;
-
-        System.out.println("Even numbers count: " + even);
-        System.out.println("Odd numbers count: " + odd);
-    }
-}`,
-                output: "Even numbers count: 4\\nOdd numbers count: 5"
-            },
-
-            {
-                title: "9. Program to find the sum of each row and each column of a matrix",
-                code: `
-class SumRowsCols {
-    public static void main(String[] args) {
-        int[][] matrix = {
-            {1, 2, 3},
-            {4, 5, 6},
-            {7, 8, 9}
-        };
-        for (int i = 0; i < 3; i++) {
-            int rowSum = 0, colSum = 0;
-            for (int j = 0; j < 3; j++) {
-                rowSum += matrix[i][j];
-                colSum += matrix[j][i];
-            }
-            System.out.println("Row " + (i + 1) + " sum = " + rowSum);
-            System.out.println("Column " + (i + 1) + " sum = " + colSum);
-        }
-    }
-}`,
-                output: "Row 1 sum = 6\\nColumn 1 sum = 12\\nRow 2 sum = 15\\nColumn 2 sum = 15\\nRow 3 sum = 24\\nColumn 3 sum = 18"
-            },
-
-            {
-                title: "10. Program to find the transpose of a given matrix",
-                code: `
-class TransposeMatrix {
-    public static void main(String[] args) {
-        int[][] matrix = {
-            {1, 2, 3},
-            {4, 5, 6},
-            {7, 8, 9}
-        };
-        int[][] transpose = new int[3][3];
-
-        for (int i = 0; i < 3; i++)
-            for (int j = 0; j < 3; j++)
-                transpose[j][i] = matrix[i][j];
-
-        System.out.println("Transpose Matrix:");
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++)
-                System.out.print(transpose[i][j] + " ");
-            System.out.println();
-        }
-    }
-}`,
-                output: "Transpose Matrix:\\n1 4 7\\n2 5 8\\n3 6 9"
-            },
-
-            {
-                title: "11. Program to determine whether a given matrix is an identity matrix",
-                code: `
-class IdentityMatrix {
-    public static void main(String[] args) {
-        int[][] matrix = {
-            {1, 0, 0},
-            {0, 1, 0},
-            {0, 0, 1}
-        };
-        boolean isIdentity = true;
-
-        for (int i = 0; i < 3; i++)
-            for (int j = 0; j < 3; j++)
-                if ((i == j && matrix[i][j] != 1) || (i != j && matrix[i][j] != 0))
-                    isIdentity = false;
-
-        if (isIdentity)
-            System.out.println("Matrix is Identity Matrix");
-        else
-            System.out.println("Matrix is NOT Identity Matrix");
-    }
-}`,
-                output: "Matrix is Identity Matrix"
-            },
-
-            {
-                title: "12. Program to Transpose matrix",
-                code: `
-class TransposeSimple {
-    public static void main(String[] args) {
-        int[][] matrix = {
-            {1, 2},
-            {3, 4}
-        };
-        System.out.println("Original Matrix:");
-        for (int[] row : matrix) {
-            for (int val : row)
-                System.out.print(val + " ");
-            System.out.println();
-        }
-        System.out.println("Transposed Matrix:");
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 2; j++)
-                System.out.print(matrix[j][i] + " ");
-            System.out.println();
-        }
-    }
-}`,
-                output: "Original Matrix:\\n1 2\\n3 4\\nTransposed Matrix:\\n1 3\\n2 4"
-            },
-
-            {
-                title: "13. Program to determine whether a given matrix is a sparse matrix",
-                code: `
-import java.util.Scanner;
-class SparseMatrix {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int[][] matrix = new int[3][3];
-        int count = 0;
-
-        System.out.println("Enter 3x3 matrix:");
-        for (int i = 0; i < 3; i++)
-            for (int j = 0; j < 3; j++) {
-                matrix[i][j] = sc.nextInt();
-                if (matrix[i][j] == 0)
-                    count++;
-            }
-
-        int total = 3 * 3;
-        if (count > total / 2)
-            System.out.println("Matrix is Sparse Matrix");
-        else
-            System.out.println("Matrix is NOT Sparse Matrix");
-    }
-}`,
-                output: "Enter 3x3 matrix:\\n0 0 3\\n0 0 0\\n0 5 0\\nMatrix is Sparse Matrix"
-            }
-        ];
-
+        // --- Configuration: Point to the combined JSON file ---
+        const DATA_FILE = 'all_programs_with_outputs.json';
 
         const section = document.getElementById("programs");
         const menuList = document.getElementById("menuList");
 
-        programs.forEach((prog, i) => {
-            const div = document.createElement("div");
-            div.className = "program";
-            div.id = "prog" + (i + 1);
-            div.innerHTML = `
+        // --- NEW LOGIC: Extract Category from URL Filename ---
+        // 1. Get the full path (e.g., "/my-project/Strings.html")
+        const pathname = window.location.pathname;
+
+        // 2. Extract the filename (e.g., "Strings.html")
+        const filename = pathname.substring(pathname.lastIndexOf('/') + 1);
+
+        // 3. Remove the ".html" extension to get the category (e.g., "Strings")
+        const currentCategory = filename.replace(/\.html$/i, '');
+        // --------------------------------------------------------
+
+        fetch(DATA_FILE)
+            .then(response => {
+                if (!response.ok) {
+                    // If the file isn't found or loaded correctly
+                    throw new Error(`HTTP error! Status: ${response.status}. Did you run 'python build_programs.py'?`);
+                }
+                return response.json();
+            })
+            .then(allPrograms => {
+                // 1. Filter the programs array based on the extracted category
+                const filteredPrograms = allPrograms.filter(prog =>
+                    prog.category && prog.category.toLowerCase() === currentCategory.toLowerCase()
+                );
+
+                if (filteredPrograms.length === 0) {
+                    section.innerHTML = `<h2>No programs found for the category: "${currentCategory}".</h2><p>Please check your JSON data and the HTML filename.</p>`;
+                    return;
+                }
+
+                // 2. Render the filtered programs dynamically
+                filteredPrograms.forEach((prog, i) => {
+                    const div = document.createElement("div");
+                    div.className = "program";
+                    // Create an anchor ID based on the title for easy linking
+                    const anchorId = prog.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+                    div.id = anchorId;
+
+                    // Replace the stored '\n' newlines with HTML line breaks (<br>) for display
+                    const displayOutput = prog.output.replace(/\\n/g, '<br>');
+
+                    div.innerHTML = `
     <h3>${prog.title}</h3>
     <pre>${prog.code}</pre>
-    <div class="output"><strong>Output:</strong> ${prog.output}</div>`;
-            section.appendChild(div);
+    <div class="output"><strong>Output:</strong> ${displayOutput}</div>`;
+                    section.appendChild(div);
 
-            const li = document.createElement("li");
-            li.innerHTML = `<a href="#prog${i + 1}">${prog.title}</a>`;
-            menuList.appendChild(li);
-        });
+                    // Create the navigation link
+                    const li = document.createElement("li");
+                    li.innerHTML = `<a href="#${anchorId}">${prog.title}</a>`;
+                    menuList.appendChild(li);
+                });
+            })
+            .catch(e => {
+                console.error("Error loading program data:", e);
+                section.innerHTML = `<h2>Data Error</h2><p>Could not load programs from ${DATA_FILE}. Please check the console for details.</p>`;
+            });
     </script>
 
 </body>

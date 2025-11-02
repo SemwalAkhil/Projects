@@ -39,226 +39,69 @@
     </main>
 
     <script>
-        const programs =
-            [
-                {
-                    title: "1. Write a Java method to find the smallest number among three numbers.",
-                    code: `public class SmallestNumber {
-    static int smallest(int a, int b, int c) {
-        return Math.min(Math.min(a, b), c);
-    }
-
-    public static void main(String[] args) {
-        System.out.println("Smallest: " + smallest(10, 5, 8));
-    }
-}`,
-                    output: "Smallest: 5"
-                },
-                {
-                    title: "2. Write a Java method to compute the average of three numbers.",
-                    code: `public class AverageCalculator {
-    static double average(double a, double b, double c) {
-        return (a + b + c) / 3;
-    }
-
-    public static void main(String[] args) {
-        System.out.println("Average: " + average(10, 20, 30));
-    }
-}`,
-                    output: "Average: 20.0"
-                },
-                {
-                    title: "3. Write a Java method to display the middle character of a string.",
-                    code: `public class MiddleCharacter {
-    static void printMiddle(String str) {
-        int len = str.length();
-        if (len % 2 == 0)
-            System.out.println("Middle character: " + str.charAt(len / 2 - 1) + str.charAt(len / 2));
-        else
-            System.out.println("Middle character: " + str.charAt(len / 2));
-    }
-
-    public static void main(String[] args) {
-        printMiddle("hello");
-        printMiddle("worlds");
-    }
-}`,
-                    output: "Middle character: l\nMiddle character: rl"
-                },
-                {
-                    title: "4. Write a Java method to count all the words in a string.",
-                    code: `public class WordCount {
-    static int countWords(String str) {
-        String[] words = str.trim().split("\\\\s+");
-        return words.length;
-    }
-
-    public static void main(String[] args) {
-        System.out.println("Word count: " + countWords("Java is fun to learn"));
-    }
-}`,
-                    output: "Word count: 5"
-                },
-                {
-                    title: "5. Write a Java method to compute the future investment value.",
-                    code: `public class InvestmentValue {
-    static double futureInvestmentValue(double investment, double rate, int years) {
-        return investment * Math.pow(1 + rate / 100, years);
-    }
-
-    public static void main(String[] args) {
-        System.out.println("Future value: " + futureInvestmentValue(10000, 5, 10));
-    }
-}`,
-                    output: "Future value: 16288.946267774416"
-                },
-                {
-                    title: "6. Write a Java method to print characters between two characters (i.e. A to P).",
-                    code: `public class CharactersRange {
-    static void printChars(char start, char end) {
-        for (char c = start; c <= end; c++) {
-            System.out.print(c + " ");
-        }
-    }
-
-    public static void main(String[] args) {
-        printChars('A', 'P');
-    }
-}`,
-                    output: "A B C D E F G H I J K L M N O P"
-                },
-                {
-                    title: "7. Write a Java method to check whether a string is a valid password.",
-                    code: `public class PasswordValidator {
-    static boolean isValid(String password) {
-        return password.length() >= 8 &&
-               password.matches(".*[A-Z].*") &&
-               password.matches(".*[a-z].*") &&
-               password.matches(".*[0-9].*");
-    }
-
-    public static void main(String[] args) {
-        System.out.println(isValid("Hello123")); // true
-        System.out.println(isValid("hello"));    // false
-    }
-}`,
-                    output: "true\nfalse"
-                },
-                {
-                    title: "8. Write a Java method to display the current date and time.",
-                    code: `import java.time.*;
-
-public class CurrentDateTime {
-    static void displayDateTime() {
-        System.out.println(LocalDateTime.now());
-    }
-
-    public static void main(String[] args) {
-        displayDateTime();
-    }
-}`,
-                    output: "Displays current date and time, e.g. 2025-10-31T01:25:30.123"
-                },
-                {
-                    title: "9. Write a Java method to find all twin prime numbers less than 100.",
-                    code: `public class TwinPrimes {
-    static boolean isPrime(int n) {
-        if (n < 2) return false;
-        for (int i = 2; i <= n / 2; i++)
-            if (n % i == 0) return false;
-        return true;
-    }
-
-    public static void main(String[] args) {
-        System.out.println("Twin primes under 100:");
-        for (int i = 2; i < 100; i++) {
-            if (isPrime(i) && isPrime(i + 2))
-                System.out.println("(" + i + ", " + (i + 2) + ")");
-        }
-    }
-}`,
-                    output: "Twin primes under 100:\n(3, 5)\n(5, 7)\n(11, 13)\n(17, 19)\n(29, 31)\n(41, 43)\n(59, 61)\n(71, 73)"
-                },
-                {
-                    title: "10. Write a Java method to count the number of digits in an integer with the value 2.",
-                    code: `public class CountDigits {
-    static int countDigitTwo(int num) {
-        int count = 0;
-        while (num > 0) {
-            if (num % 10 == 2) count++;
-            num /= 10;
-        }
-        return count;
-    }
-
-    public static void main(String[] args) {
-        System.out.println("Count of 2s: " + countDigitTwo(222532));
-    }
-}`,
-                    output: "Count of 2s: 3"
-                },
-                {
-                    title: "11. Write a Java method that accepts three integers and checks whether they are consecutive or not.",
-                    code: `public class ConsecutiveNumbers {
-    static boolean areConsecutive(int a, int b, int c) {
-        return (b == a + 1 && c == b + 1);
-    }
-
-    public static void main(String[] args) {
-        System.out.println(areConsecutive(5, 6, 7)); // true
-        System.out.println(areConsecutive(2, 4, 6)); // false
-    }
-}`,
-                    output: "true\nfalse"
-                },
-                {
-                    title: "12. Write a Java method that accepts three integers and returns true if one is the middle point between the other two integers.",
-                    code: `public class MiddlePoint {
-    static boolean isMiddlePoint(int a, int b, int c) {
-        return (b - a == c - b) || (a - b == b - c);
-    }
-
-    public static void main(String[] args) {
-        System.out.println(isMiddlePoint(2, 4, 6)); // true
-        System.out.println(isMiddlePoint(3, 6, 10)); // false
-    }
-}`,
-                    output: "true\nfalse"
-                },
-                {
-                    title: "13. Write a Java method that checks whether all characters in a string are vowels.",
-                    code: `public class AllVowels {
-    static boolean allVowels(String str) {
-        return str.matches("[aeiouAEIOU]+");
-    }
-
-    public static void main(String[] args) {
-        System.out.println(allVowels("aei")); // true
-        System.out.println(allVowels("java")); // false
-    }
-}`,
-                    output: "true\nfalse"
-                }
-
-            ]
+        // --- Configuration: Point to the combined JSON file ---
+        const DATA_FILE = 'all_programs_with_outputs.json';
 
         const section = document.getElementById("programs");
         const menuList = document.getElementById("menuList");
 
-        programs.forEach((prog, i) => {
-            const div = document.createElement("div");
-            div.className = "program";
-            div.id = "prog" + (i + 1);
-            div.innerHTML = `
+        // --- NEW LOGIC: Extract Category from URL Filename ---
+        // 1. Get the full path (e.g., "/my-project/Strings.html")
+        const pathname = window.location.pathname;
+
+        // 2. Extract the filename (e.g., "Strings.html")
+        const filename = pathname.substring(pathname.lastIndexOf('/') + 1);
+
+        // 3. Remove the ".html" extension to get the category (e.g., "Strings")
+        const currentCategory = filename.replace(/\.html$/i, '');
+        // --------------------------------------------------------
+
+        fetch(DATA_FILE)
+            .then(response => {
+                if (!response.ok) {
+                    // If the file isn't found or loaded correctly
+                    throw new Error(`HTTP error! Status: ${response.status}. Did you run 'python build_programs.py'?`);
+                }
+                return response.json();
+            })
+            .then(allPrograms => {
+                // 1. Filter the programs array based on the extracted category
+                const filteredPrograms = allPrograms.filter(prog =>
+                    prog.category && prog.category.toLowerCase() === currentCategory.toLowerCase()
+                );
+
+                if (filteredPrograms.length === 0) {
+                    section.innerHTML = `<h2>No programs found for the category: "${currentCategory}".</h2><p>Please check your JSON data and the HTML filename.</p>`;
+                    return;
+                }
+
+                // 2. Render the filtered programs dynamically
+                filteredPrograms.forEach((prog, i) => {
+                    const div = document.createElement("div");
+                    div.className = "program";
+                    // Create an anchor ID based on the title for easy linking
+                    const anchorId = prog.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+                    div.id = anchorId;
+
+                    // Replace the stored '\n' newlines with HTML line breaks (<br>) for display
+                    const displayOutput = prog.output.replace(/\\n/g, '<br>');
+
+                    div.innerHTML = `
     <h3>${prog.title}</h3>
     <pre>${prog.code}</pre>
-    <div class="output"><strong>Output:</strong> ${prog.output}</div>`;
-            section.appendChild(div);
+    <div class="output"><strong>Output:</strong> ${displayOutput}</div>`;
+                    section.appendChild(div);
 
-            const li = document.createElement("li");
-            li.innerHTML = `<a href="#prog${i + 1}">${prog.title}</a>`;
-            menuList.appendChild(li);
-        });
+                    // Create the navigation link
+                    const li = document.createElement("li");
+                    li.innerHTML = `<a href="#${anchorId}">${prog.title}</a>`;
+                    menuList.appendChild(li);
+                });
+            })
+            .catch(e => {
+                console.error("Error loading program data:", e);
+                section.innerHTML = `<h2>Data Error</h2><p>Could not load programs from ${DATA_FILE}. Please check the console for details.</p>`;
+            });
     </script>
 
 </body>

@@ -39,518 +39,69 @@
     </main>
 
     <script>
-        const programs = [
-            {
-                title: "1. Write a Java program to create an interface Shape with the getArea() method. Create three classes Rectangle, Circle, and Triangle that implement the Shape interface. Implement the getArea() method for each of the three classes.",
-                code: `interface Shape {
-    double getArea();
-}
-
-class Rectangle implements Shape {
-    double length, width;
-
-    Rectangle(double l, double w) {
-        length = l;
-        width = w;
-    }
-
-    public double getArea() {
-        return length * width;
-    }
-}
-
-class Circle implements Shape {
-    double radius;
-
-    Circle(double r) {
-        radius = r;
-    }
-
-    public double getArea() {
-        return Math.PI * radius * radius;
-    }
-}
-
-class Triangle implements Shape {
-    double base, height;
-
-    Triangle(double b, double h) {
-        base = b;
-        height = h;
-    }
-
-    public double getArea() {
-        return 0.5 * base * height;
-    }
-}
-
-public class InterfaceShape {
-    public static void main(String[] args) {
-        Shape r = new Rectangle(5, 3);
-        Shape c = new Circle(4);
-        Shape t = new Triangle(6, 2);
-
-        System.out.println("Rectangle Area: " + r.getArea());
-        System.out.println("Circle Area: " + c.getArea());
-        System.out.println("Triangle Area: " + t.getArea());
-    }
-}`
-            },
-            {
-                title: "2. Write a Java program to create an interface Animal with a method called bark() that takes no arguments and returns void. Create a Dog class that implements Animal and overrides bark() to print 'Dog is barking'.",
-                code: `interface Animal {
-    void bark();
-}
-
-class Dog implements Animal {
-    public void bark() {
-        System.out.println("Dog is barking");
-    }
-}
-
-public class InterfaceAnimal {
-    public static void main(String[] args) {
-        Dog d = new Dog();
-        d.bark();
-    }
-}`
-            },
-            {
-                title: "3. Write a Java program to create an interface Flyable with a method called fly_obj(). Create three classes Spacecraft, Airplane, and Helicopter that implement the Flyable interface. Implement the fly_obj() method for each of the three classes.",
-                code: `interface Flyable {
-    void fly_obj();
-}
-
-class Spacecraft implements Flyable {
-    public void fly_obj() {
-        System.out.println("Spacecraft flies in space");
-    }
-}
-
-class Airplane implements Flyable {
-    public void fly_obj() {
-        System.out.println("Airplane flies in the sky");
-    }
-}
-
-class Helicopter implements Flyable {
-    public void fly_obj() {
-        System.out.println("Helicopter hovers and flies in air");
-    }
-}
-
-public class InterfaceFlyable {
-    public static void main(String[] args) {
-        Flyable f1 = new Spacecraft();
-        Flyable f2 = new Airplane();
-        Flyable f3 = new Helicopter();
-
-        f1.fly_obj();
-        f2.fly_obj();
-        f3.fly_obj();
-    }
-}`
-            },
-            {
-                title: "4. Write a Java program to create a banking system with interfaces and classes for Bank, Account, SavingsAccount, and CurrentAccount.",
-                code: `import java.util.*;
-
-interface Account {
-    void deposit(double amount);
-    void withdraw(double amount);
-    double getBalance();
-}
-
-class SavingsAccount implements Account {
-    private double balance;
-
-    public void deposit(double amount) {
-        balance += amount;
-    }
-
-    public void withdraw(double amount) {
-        if (balance - amount < 100)
-            System.out.println("Minimum balance limit reached!");
-        else
-            balance -= amount;
-    }
-
-    public double getBalance() {
-        return balance;
-    }
-}
-
-class CurrentAccount implements Account {
-    private double balance;
-
-    public void deposit(double amount) {
-        balance += amount;
-    }
-
-    public void withdraw(double amount) {
-        balance -= amount;
-    }
-
-    public double getBalance() {
-        return balance;
-    }
-}
-
-class Bank {
-    private List<Account> accounts = new ArrayList<>();
-
-    public void addAccount(Account acc) {
-        accounts.add(acc);
-    }
-
-    public void showAllBalances() {
-        for (Account acc : accounts) {
-            System.out.println("Balance: " + acc.getBalance());
-        }
-    }
-}
-
-public class InterfaceBank {
-    public static void main(String[] args) {
-        Bank bank = new Bank();
-        SavingsAccount sa = new SavingsAccount();
-        CurrentAccount ca = new CurrentAccount();
-
-        sa.deposit(1000);
-        ca.deposit(5000);
-        sa.withdraw(950);
-        ca.withdraw(2000);
-
-        bank.addAccount(sa);
-        bank.addAccount(ca);
-
-        bank.showAllBalances();
-    }
-}`
-            },
-            {
-                title: "5. Write a Java program to create an interface Resizable with methods resizeWidth(int width) and resizeHeight(int height). Create a class Rectangle that implements the Resizable interface.",
-                code: `interface Resizable {
-    void resizeWidth(int width);
-    void resizeHeight(int height);
-}
-
-class Rectangle implements Resizable {
-    int width, height;
-
-    Rectangle(int w, int h) {
-        width = w;
-        height = h;
-    }
-
-    public void resizeWidth(int width) {
-        this.width = width;
-    }
-
-    public void resizeHeight(int height) {
-        this.height = height;
-    }
-
-    public void show() {
-        System.out.println("Width: " + width + ", Height: " + height);
-    }
-}
-
-public class InterfaceResizable {
-    public static void main(String[] args) {
-        Rectangle r = new Rectangle(10, 5);
-        r.show();
-        r.resizeWidth(20);
-        r.resizeHeight(15);
-        r.show();
-    }
-}`
-            },
-            {
-                title: "6. Write a Java program to create an interface Drawable with a method draw(). Create classes Circle, Rectangle, and Triangle that implement the Drawable interface.",
-                code: `interface Drawable {
-    void draw();
-}
-
-class Circle implements Drawable {
-    public void draw() {
-        System.out.println("Drawing a Circle");
-    }
-}
-
-class RectangleShape implements Drawable {
-    public void draw() {
-        System.out.println("Drawing a Rectangle");
-    }
-}
-
-class Triangle implements Drawable {
-    public void draw() {
-        System.out.println("Drawing a Triangle");
-    }
-}
-
-public class InterfaceDrawable {
-    public static void main(String[] args) {
-        Drawable d1 = new Circle();
-        Drawable d2 = new RectangleShape();
-        Drawable d3 = new Triangle();
-
-        d1.draw();
-        d2.draw();
-        d3.draw();
-    }
-}`
-            },
-            {
-                title: "7. Write a Java program to create an interface Sortable with a method sort() that sorts an array in ascending order. Implement BubbleSort and SelectionSort classes.",
-                code: `interface Sortable {
-    void sort(int[] arr);
-}
-
-class BubbleSort implements Sortable {
-    public void sort(int[] arr) {
-        for (int i = 0; i < arr.length - 1; i++) {
-            for (int j = 0; j < arr.length - i - 1; j++) {
-                if (arr[j] > arr[j + 1]) {
-                    int temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
-                }
-            }
-        }
-        System.out.println("Bubble Sorted: " + java.util.Arrays.toString(arr));
-    }
-}
-
-class SelectionSort implements Sortable {
-    public void sort(int[] arr) {
-        for (int i = 0; i < arr.length - 1; i++) {
-            int min = i;
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[j] < arr[min]) min = j;
-            }
-            int temp = arr[min];
-            arr[min] = arr[i];
-            arr[i] = temp;
-        }
-        System.out.println("Selection Sorted: " + java.util.Arrays.toString(arr));
-    }
-}
-
-public class InterfaceSort {
-    public static void main(String[] args) {
-        int[] arr = {5, 2, 9, 1, 5, 6};
-        new BubbleSort().sort(arr.clone());
-        new SelectionSort().sort(arr.clone());
-    }
-}`
-            },
-            {
-                title: "8. Write a Java program to create an interface Playable with a method play(). Create Football, Volleyball, and Basketball classes implementing Playable.",
-                code: `interface Playable {
-    void play();
-}
-
-class Football implements Playable {
-    public void play() {
-        System.out.println("Playing Football");
-    }
-}
-
-class Volleyball implements Playable {
-    public void play() {
-        System.out.println("Playing Volleyball");
-    }
-}
-
-class Basketball implements Playable {
-    public void play() {
-        System.out.println("Playing Basketball");
-    }
-}
-
-public class InterfacePlayable {
-    public static void main(String[] args) {
-        Playable p1 = new Football();
-        Playable p2 = new Volleyball();
-        Playable p3 = new Basketball();
-
-        p1.play();
-        p2.play();
-        p3.play();
-    }
-}`
-            },
-            {
-                title: "9. Write a Java program to create an interface Searchable with a method search(String keyword). Implement Document and WebPage classes.",
-                code: `interface Searchable {
-    boolean search(String keyword);
-}
-
-class Document implements Searchable {
-    String text = "This is a Java programming document.";
-
-    public boolean search(String keyword) {
-        return text.contains(keyword);
-    }
-}
-
-class WebPage implements Searchable {
-    String content = "Welcome to Java tutorials and examples.";
-
-    public boolean search(String keyword) {
-        return content.contains(keyword);
-    }
-}
-
-public class InterfaceSearchable {
-    public static void main(String[] args) {
-        Searchable doc = new Document();
-        Searchable web = new WebPage();
-
-        System.out.println("Document contains 'Java': " + doc.search("Java"));
-        System.out.println("WebPage contains 'examples': " + web.search("examples"));
-    }
-}`
-            },
-            {
-                title: "10. Write a Java program to create an interface Encryptable with methods encrypt() and decrypt(). Create AES and RSA classes implementing the interface.",
-                code: `interface Encryptable {
-    String encrypt(String data);
-    String decrypt(String encryptedData);
-}
-
-class AES implements Encryptable {
-    public String encrypt(String data) {
-        return new StringBuilder(data).reverse().toString();
-    }
-
-    public String decrypt(String encryptedData) {
-        return new StringBuilder(encryptedData).reverse().toString();
-    }
-}
-
-class RSA implements Encryptable {
-    public String encrypt(String data) {
-        return data.toUpperCase();
-    }
-
-    public String decrypt(String encryptedData) {
-        return encryptedData.toLowerCase();
-    }
-}
-
-public class InterfaceEncryptable {
-    public static void main(String[] args) {
-        Encryptable aes = new AES();
-        Encryptable rsa = new RSA();
-
-        String aesEnc = aes.encrypt("hello");
-        String rsaEnc = rsa.encrypt("hello");
-
-        System.out.println("AES Encrypted: " + aesEnc + ", Decrypted: " + aes.decrypt(aesEnc));
-        System.out.println("RSA Encrypted: " + rsaEnc + ", Decrypted: " + rsa.decrypt(rsaEnc));
-    }
-}`
-            },
-            {
-                title: "11. Write a Java program to create an interface Sortable with a method sort() that sorts an array of integers in descending order. Create QuickSort and MergeSort classes implementing it.",
-                code: `interface Sortable {
-    void sort(int[] arr);
-}
-
-class QuickSort implements Sortable {
-    public void sort(int[] arr) {
-        quickSort(arr, 0, arr.length - 1);
-        System.out.println("QuickSort Desc: " + java.util.Arrays.toString(arr));
-    }
-
-    void quickSort(int[] arr, int low, int high) {
-        if (low < high) {
-            int pi = partition(arr, low, high);
-            quickSort(arr, low, pi - 1);
-            quickSort(arr, pi + 1, high);
-        }
-    }
-
-    int partition(int[] arr, int low, int high) {
-        int pivot = arr[high];
-        int i = (low - 1);
-        for (int j = low; j < high; j++) {
-            if (arr[j] > pivot) {
-                i++;
-                int temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-            }
-        }
-        int temp = arr[i + 1];
-        arr[i + 1] = arr[high];
-        arr[high] = temp;
-        return i + 1;
-    }
-}
-
-class MergeSort implements Sortable {
-    public void sort(int[] arr) {
-        mergeSort(arr, 0, arr.length - 1);
-        System.out.println("MergeSort Desc: " + java.util.Arrays.toString(arr));
-    }
-
-    void mergeSort(int[] arr, int l, int r) {
-        if (l < r) {
-            int m = (l + r) / 2;
-            mergeSort(arr, l, m);
-            mergeSort(arr, m + 1, r);
-            merge(arr, l, m, r);
-        }
-    }
-
-    void merge(int[] arr, int l, int m, int r) {
-        int n1 = m - l + 1, n2 = r - m;
-        int[] L = new int[n1];
-        int[] R = new int[n2];
-        for (int i = 0; i < n1; ++i) L[i] = arr[l + i];
-        for (int j = 0; j < n2; ++j) R[j] = arr[m + 1 + j];
-        int i = 0, j = 0, k = l;
-        while (i < n1 && j < n2) {
-            if (L[i] >= R[j]) arr[k++] = L[i++];
-            else arr[k++] = R[j++];
-        }
-        while (i < n1) arr[k++] = L[i++];
-        while (j < n2) arr[k++] = R[j++];
-    }
-}
-
-public class InterfaceSorting {
-    public static void main(String[] args) {
-        int[] arr = {10, 3, 5, 8, 2};
-        new QuickSort().sort(arr.clone());
-        new MergeSort().sort(arr.clone());
-    }
-}`
-            }
-        ];
-
+        // --- Configuration: Point to the combined JSON file ---
+        const DATA_FILE = 'all_programs_with_outputs.json';
 
         const section = document.getElementById("programs");
         const menuList = document.getElementById("menuList");
 
-        programs.forEach((prog, i) => {
-            const div = document.createElement("div");
-            div.className = "program";
-            div.id = "prog" + (i + 1);
-            div.innerHTML = `
+        // --- NEW LOGIC: Extract Category from URL Filename ---
+        // 1. Get the full path (e.g., "/my-project/Strings.html")
+        const pathname = window.location.pathname;
+
+        // 2. Extract the filename (e.g., "Strings.html")
+        const filename = pathname.substring(pathname.lastIndexOf('/') + 1);
+
+        // 3. Remove the ".html" extension to get the category (e.g., "Strings")
+        const currentCategory = filename.replace(/\.html$/i, '');
+        // --------------------------------------------------------
+
+        fetch(DATA_FILE)
+            .then(response => {
+                if (!response.ok) {
+                    // If the file isn't found or loaded correctly
+                    throw new Error(`HTTP error! Status: ${response.status}. Did you run 'python build_programs.py'?`);
+                }
+                return response.json();
+            })
+            .then(allPrograms => {
+                // 1. Filter the programs array based on the extracted category
+                const filteredPrograms = allPrograms.filter(prog =>
+                    prog.category && prog.category.toLowerCase() === currentCategory.toLowerCase()
+                );
+
+                if (filteredPrograms.length === 0) {
+                    section.innerHTML = `<h2>No programs found for the category: "${currentCategory}".</h2><p>Please check your JSON data and the HTML filename.</p>`;
+                    return;
+                }
+
+                // 2. Render the filtered programs dynamically
+                filteredPrograms.forEach((prog, i) => {
+                    const div = document.createElement("div");
+                    div.className = "program";
+                    // Create an anchor ID based on the title for easy linking
+                    const anchorId = prog.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+                    div.id = anchorId;
+
+                    // Replace the stored '\n' newlines with HTML line breaks (<br>) for display
+                    const displayOutput = prog.output.replace(/\\n/g, '<br>');
+
+                    div.innerHTML = `
     <h3>${prog.title}</h3>
     <pre>${prog.code}</pre>
-    <div class="output"><strong>Output:</strong> ${prog.output}</div>`;
-            section.appendChild(div);
+    <div class="output"><strong>Output:</strong> ${displayOutput}</div>`;
+                    section.appendChild(div);
 
-            const li = document.createElement("li");
-            li.innerHTML = `<a href="#prog${i + 1}">${prog.title}</a>`;
-            menuList.appendChild(li);
-        });
+                    // Create the navigation link
+                    const li = document.createElement("li");
+                    li.innerHTML = `<a href="#${anchorId}">${prog.title}</a>`;
+                    menuList.appendChild(li);
+                });
+            })
+            .catch(e => {
+                console.error("Error loading program data:", e);
+                section.innerHTML = `<h2>Data Error</h2><p>Could not load programs from ${DATA_FILE}. Please check the console for details.</p>`;
+            });
     </script>
 
 </body>

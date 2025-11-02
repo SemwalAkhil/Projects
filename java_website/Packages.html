@@ -40,277 +40,69 @@
     </main>
 
     <script>
-        const programs = [{
-            title: "1. Create a Java program to access the java.util.Date class through import keyword and print the current date of the system.",
-            code: `
-import java.util.Date;
-
-class DateExample1 {
-    public static void main(String[] args) {
-        Date date = new Date();
-        System.out.println("Current Date: " + date);
-    }
-}`,
-            output: "Current Date: Fri Oct 31 01:45:00 IST 2025"
-        },
-
-        {
-            title: "2. Create a Java program to access the java.util.Date class through qualified way and print the current date of the system.",
-            code: `
-class DateExample2 {
-    public static void main(String[] args) {
-        java.util.Date date = new java.util.Date();
-        System.out.println("Current Date: " + date);
-    }
-}`,
-            output: "Current Date: Fri Oct 31 01:45:00 IST 2025"
-        },
-
-        {
-            title: "3. Create a Java program to access the java.util.Date class through import keyword and print the current date of the system but inherit the Date class.",
-            code: `
-import java.util.Date;
-
-class MyDate extends Date {
-    void showDate() {
-        System.out.println("Current Date: " + this);
-    }
-
-    public static void main(String[] args) {
-        MyDate d = new MyDate();
-        d.showDate();
-    }
-}`,
-            output: "Current Date: Fri Oct 31 01:45:00 IST 2025"
-        },
-
-        {
-            title: "4. Create a Java program to access the java.util.Date class through qualified way and print the current date of the system but inherit the Date class.",
-            code: `
-class MyDate2 extends java.util.Date {
-    void showDate() {
-        System.out.println("Current Date: " + this);
-    }
-
-    public static void main(String[] args) {
-        MyDate2 d = new MyDate2();
-        d.showDate();
-    }
-}`,
-            output: "Current Date: Fri Oct 31 01:45:00 IST 2025"
-        },
-
-        {
-            title: "5. Create a Java program to create a package with multiple default classes.",
-            code: `
-// File: mypackage/ClassOne.java
-package mypackage;
-
-class ClassOne {
-    void msg() {
-        System.out.println("Hello from ClassOne!");
-    }
-}
-
-class ClassTwo {
-    void msg() {
-        System.out.println("Hello from ClassTwo!");
-    }
-}
-
-// File: TestPackage.java
-import mypackage.*;
-
-public class TestPackage {
-    public static void main(String[] args) {
-        ClassOne c1 = new ClassOne();
-        ClassTwo c2 = new ClassTwo();
-        c1.msg();
-        c2.msg();
-    }
-}`,
-            output: "Hello from ClassOne!\\nHello from ClassTwo!"
-        },
-
-        {
-            title: "6. Create a Java program to create a package with 4 public classes, create the object in another file and call the function created in those classes.",
-            code: `
-// File: shapes/Circle.java
-package shapes;
-public class Circle {
-    public void draw() { System.out.println("Drawing Circle"); }
-}
-
-// File: shapes/Square.java
-package shapes;
-public class Square {
-    public void draw() { System.out.println("Drawing Square"); }
-}
-
-// File: shapes/Rectangle.java
-package shapes;
-public class Rectangle {
-    public void draw() { System.out.println("Drawing Rectangle"); }
-}
-
-// File: shapes/Triangle.java
-package shapes;
-public class Triangle {
-    public void draw() { System.out.println("Drawing Triangle"); }
-}
-
-// File: TestShapes.java
-import shapes.*;
-
-public class TestShapes {
-    public static void main(String[] args) {
-        new Circle().draw();
-        new Square().draw();
-        new Rectangle().draw();
-        new Triangle().draw();
-    }
-}`,
-            output: "Drawing Circle\\nDrawing Square\\nDrawing Rectangle\\nDrawing Triangle"
-        },
-
-        {
-            title: "7. Write a Java program to perform employee payroll processing using packages.",
-            code: `
-// File: employee/Emp.java
-package employee;
-
-public class Emp {
-    String name, category;
-    int empid;
-    double bpay, hra, da, pf, allowance, incometax, grosspay, npay;
-
-    public void getData(String name, int empid, String category, double bpay) {
-        this.name = name;
-        this.empid = empid;
-        this.category = category;
-        this.bpay = bpay;
-    }
-
-    public void calculate() {
-        hra = 0.1 * bpay;
-        da = 0.05 * bpay;
-        allowance = 0.03 * bpay;
-        pf = 0.02 * bpay;
-        grosspay = bpay + hra + da + allowance;
-        incometax = 0.05 * grosspay;
-        npay = grosspay - (pf + incometax);
-    }
-
-    public void display() {
-        System.out.println("EmpID: " + empid + ", Name: " + name + ", Net Pay: " + npay);
-    }
-}
-
-// File: Emppay.java
-import employee.*;
-
-public class Emppay {
-    public static void main(String[] args) {
-        Emp e = new Emp();
-        e.getData("Ravi", 101, "Manager", 50000);
-        e.calculate();
-        e.display();
-    }
-}`,
-            output: "EmpID: 101, Name: Ravi, Net Pay: 55050.0"
-        },
-
-        {
-            title: "8. Create a Java program to create a package with public class and protected members to be accessed in another class.",
-            code: `
-// File: pack1/MyClass.java
-package pack1;
-
-public class MyClass {
-    protected void display() {
-        System.out.println("Protected method accessed!");
-    }
-}
-
-// File: pack2/TestProtected.java
-package pack2;
-import pack1.*;
-
-public class TestProtected extends MyClass {
-    public static void main(String[] args) {
-        TestProtected obj = new TestProtected();
-        obj.display();
-    }
-}`,
-            output: "Protected method accessed!"
-        },
-
-        {
-            title: "9. Create a Java program to create a nested package i.e. c4.sample with public class and protected members to be accessed in another class.",
-            code: `
-// File: c4/sample/Demo.java
-package c4.sample;
-
-public class Demo {
-    protected void show() {
-        System.out.println("Protected method inside nested package!");
-    }
-}
-
-// File: TestNested.java
-import c4.sample.*;
-
-class TestNested extends Demo {
-    public static void main(String[] args) {
-        TestNested t = new TestNested();
-        t.show();
-    }
-}`,
-            output: "Protected method inside nested package!"
-        },
-
-        {
-            title: "10. Create a Java program to create a package with public class and public members to be accessed in another class.",
-            code: `
-// File: mypackage/PublicClass.java
-package mypackage;
-
-public class PublicClass {
-    public void greet() {
-        System.out.println("Hello from PublicClass in mypackage!");
-    }
-}
-
-// File: TestPublic.java
-import mypackage.PublicClass;
-
-public class TestPublic {
-    public static void main(String[] args) {
-        PublicClass obj = new PublicClass();
-        obj.greet();
-    }
-}`,
-            output: "Hello from PublicClass in mypackage!"
-        }
-        ];
+        // --- Configuration: Point to the combined JSON file ---
+        const DATA_FILE = 'all_programs_with_outputs.json';
 
         const section = document.getElementById("programs");
         const menuList = document.getElementById("menuList");
 
-        programs.forEach((prog, i) => {
-            const div = document.createElement("div");
-            div.className = "program";
-            div.id = "prog" + (i + 1);
-            div.innerHTML = `
+        // --- NEW LOGIC: Extract Category from URL Filename ---
+        // 1. Get the full path (e.g., "/my-project/Strings.html")
+        const pathname = window.location.pathname;
+
+        // 2. Extract the filename (e.g., "Strings.html")
+        const filename = pathname.substring(pathname.lastIndexOf('/') + 1);
+
+        // 3. Remove the ".html" extension to get the category (e.g., "Strings")
+        const currentCategory = filename.replace(/\.html$/i, '');
+        // --------------------------------------------------------
+
+        fetch(DATA_FILE)
+            .then(response => {
+                if (!response.ok) {
+                    // If the file isn't found or loaded correctly
+                    throw new Error(`HTTP error! Status: ${response.status}. Did you run 'python build_programs.py'?`);
+                }
+                return response.json();
+            })
+            .then(allPrograms => {
+                // 1. Filter the programs array based on the extracted category
+                const filteredPrograms = allPrograms.filter(prog =>
+                    prog.category && prog.category.toLowerCase() === currentCategory.toLowerCase()
+                );
+
+                if (filteredPrograms.length === 0) {
+                    section.innerHTML = `<h2>No programs found for the category: "${currentCategory}".</h2><p>Please check your JSON data and the HTML filename.</p>`;
+                    return;
+                }
+
+                // 2. Render the filtered programs dynamically
+                filteredPrograms.forEach((prog, i) => {
+                    const div = document.createElement("div");
+                    div.className = "program";
+                    // Create an anchor ID based on the title for easy linking
+                    const anchorId = prog.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+                    div.id = anchorId;
+
+                    // Replace the stored '\n' newlines with HTML line breaks (<br>) for display
+                    const displayOutput = prog.output.replace(/\\n/g, '<br>');
+
+                    div.innerHTML = `
     <h3>${prog.title}</h3>
     <pre>${prog.code}</pre>
-    <div class="output"><strong>Output:</strong> ${prog.output}</div>`;
-            section.appendChild(div);
+    <div class="output"><strong>Output:</strong> ${displayOutput}</div>`;
+                    section.appendChild(div);
 
-            const li = document.createElement("li");
-            li.innerHTML = `<a href="#prog${i + 1}">${prog.title}</a>`;
-            menuList.appendChild(li);
-        });
+                    // Create the navigation link
+                    const li = document.createElement("li");
+                    li.innerHTML = `<a href="#${anchorId}">${prog.title}</a>`;
+                    menuList.appendChild(li);
+                });
+            })
+            .catch(e => {
+                console.error("Error loading program data:", e);
+                section.innerHTML = `<h2>Data Error</h2><p>Could not load programs from ${DATA_FILE}. Please check the console for details.</p>`;
+            });
     </script>
 
 </body>
