@@ -1,4 +1,0 @@
-OUTPUT:-
-
-Area of Square: 0
-Area of Rectangle: 20

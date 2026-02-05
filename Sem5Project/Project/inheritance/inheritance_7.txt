@@ -1,5 +1,0 @@
-OUTPUT:-
-
-First Name: GAGAN
-Last Name: SAINI, Job Title: Software Programmer
-Employee ID: 90

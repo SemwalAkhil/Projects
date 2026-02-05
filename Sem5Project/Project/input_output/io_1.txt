@@ -1,4 +1,0 @@
-OUTPUT:-
-
-Enter a character: G
-You entered: G

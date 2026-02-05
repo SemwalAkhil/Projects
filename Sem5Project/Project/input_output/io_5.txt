@@ -1,4 +1,0 @@
-OUTPUT:-
-
-Enter a double value: 6.006
-You entered: 6.006

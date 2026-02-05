@@ -1,4 +1,0 @@
-OUTPUT:-
-
-Enter a long integer: 8127982 
-You entered: 8127982

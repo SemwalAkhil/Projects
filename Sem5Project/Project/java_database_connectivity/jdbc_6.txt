@@ -1,8 +1,0 @@
-OUTPUT:-
-
-Rollno  Name
-----------------------
-90      Gagandeep Singh
-4082    Uday
-4062    Neeraj
-4048    Sachin

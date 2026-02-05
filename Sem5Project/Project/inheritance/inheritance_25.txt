@@ -1,9 +1,0 @@
-OUTPUT:-
-
------ Eagle -----
-Eagle flies high with strong wings.
-Eagle screeches loudly.
-
------ Hawk -----
-Hawk soars swiftly and dives to catch prey.
-Hawk makes a sharp, piercing cry.

@@ -1,4 +1,0 @@
-OUTPUT:-
-
-Enter a boolean value (true/false): true
-You entered: true
